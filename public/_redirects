@@ -1,0 +1,5 @@
+# Removed pages: send old links to the closest page that still exists
+/engineering/ /for/front-end/ 301
+/engineering /for/front-end/ 301
+/accessibility/ /for/front-end/ 301
+/accessibility /for/front-end/ 301
