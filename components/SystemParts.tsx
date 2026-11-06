@@ -46,10 +46,11 @@ export function Table({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
     <div className="table-wrap">
       <table>
-        <thead><tr>{head.map((h, i) => <th key={i}>{h}</th>)}</tr></thead>
+        {/* An empty header still gets a name for screen readers; the first cell of each row is its row header. */}
+        <thead><tr>{head.map((h, i) => <th key={i} scope="col">{h || <span className="sr-only">Item</span>}</th>)}</tr></thead>
         <tbody>
           {rows.map((r, i) => (
-            <tr key={i}>{r.map((c, j) => (j === 0 ? <td key={j}><strong>{c}</strong></td> : <td key={j}>{c}</td>))}</tr>
+            <tr key={i}>{r.map((c, j) => (j === 0 ? <th key={j} scope="row"><strong>{c}</strong></th> : <td key={j}>{c}</td>))}</tr>
           ))}
         </tbody>
       </table>

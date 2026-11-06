@@ -51,14 +51,6 @@ export default function Home() {
       <Header name={site.name} />
       <main>
         <div className="hero">
-          {site.openToWork && (
-            <span className="pill">
-              <span className="pulse" aria-hidden="true" />
-              {site.openToWorkLabel}
-              <span className="sep">·</span>
-              <span className="soft">{site.lookingFor}</span>
-            </span>
-          )}
           <h1><Greeting words={site.greetings} /> I&apos;m {site.name}.</h1>
           <div className="meta">
             <span>{site.role}</span>
@@ -87,7 +79,7 @@ export default function Home() {
 
         <section id="playground" aria-labelledby="p-h">
           <div className="sh"><h2 id="p-h">Playground</h2><Link className="hint" href="/playground/">See all explorations →</Link></div>
-          <div className="shots">
+          <div className="shots" tabIndex={0} role="region" aria-label="Playground explorations, scroll sideways">
             {playground.slice(0, 6).map((s) => (
               <figure key={s.src} className="shot">
                 <img src={s.src} alt={`${s.title}, ${s.project}`} loading="lazy" />
@@ -169,7 +161,7 @@ export default function Home() {
 
       <footer>
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>Designed and built by me</span>
+        <span>Designed and built by me · <Link href="/accessibility/">Accessibility</Link></span>
       </footer>
     </div>
   );
