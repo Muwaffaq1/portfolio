@@ -1,0 +1,62 @@
+## Why it was needed
+
+QuickPay is a Nigerian wallet and bills app that hired me to redesign it. When I opened the file there were 105 screens and no system behind them: more than 50 icon sets, about 1,400 unnamed layers, and orange and purple buttons competing on the same screen. Every new screen meant guessing which version was right. The goal was one source of truth that made the next screen faster, not just this redesign prettier.
+
+## How it's structured
+
+Three layers, and components only ever touch the last one. A raw colour never appears on a screen.
+
+<TokenFlow steps={[
+  { label: "Primitive", tokens: [{ name: "Orange 600", value: "#d63f06" }] },
+  { label: "Semantic", tokens: [{ name: "color-bg-brand", value: "#d63f06" }, { name: "color-border-focus", value: "#d63f06" }] },
+  { label: "Component", tokens: [{ name: "Primary button · fill", value: "color-bg-brand" }, { name: "Input · focus ring", value: "color-border-focus" }] }
+]} />
+
+The Figma file follows atomic design page by page: Foundations, Atoms, Molecules, Organisms, Templates, then Pages. Dark mode lives in the same variables as a second mode, so a screen switches theme without being redrawn.
+
+## Foundations
+
+<Figure wide src="/systems/quickpay/palette.png" caption="Raw primitives. Designers reference these only through semantic tokens. Orange 600 is the action colour, chosen so white text passes WCAG AA (4.6:1)." />
+
+Semantic colour tokens, as they are named in Figma and exported to code:
+
+<Swatches tokens={[
+  { name: "color-bg-canvas", value: "#f7f6f2" },
+  { name: "color-bg-surface", value: "#ffffff" },
+  { name: "color-bg-brand", value: "#d63f06" },
+  { name: "color-bg-brand-hover", value: "#b83306" },
+  { name: "color-bg-brand-pressed", value: "#8f2a0c" },
+  { name: "color-text-primary", value: "#2d2b28" },
+  { name: "color-text-secondary", value: "#67635d" },
+  { name: "color-bg-success", value: "#16a34a" },
+  { name: "color-bg-warning", value: "#d97706" },
+  { name: "color-bg-danger", value: "#dc2626" },
+  { name: "color-border-default", value: "#e3e1dd" },
+  { name: "color-border-focus", value: "#d63f06" }
+]} />
+
+<Figure wide src="/systems/quickpay/type.png" caption="Type ramp in Chivo, from Heading/H1 (28/36) down to Overline (11/16)." />
+
+<Figure wide src="/systems/quickpay/spacing.png" caption="Spacing doubles at every step: 2, 4, 8, 16, 32, 64, 128. No in-between values to argue about." />
+
+## Components and states
+
+52 components carry written descriptions in Figma, so anyone picking one up knows when to use it. Every flow covers more than the happy path: loading, pending, failed, limit reached and offline. One rule runs through all of them: **every failure says whether money moved.**
+
+## Documentation and governance
+
+- **Names that travel:** a token's Figma name and its code name match, so `color-bg-brand` means the same thing to a designer and an engineer.
+- **One of everything:** one icon set (Phosphor), one typeface (Chivo), one action colour.
+- **Findable:** 690 layers renamed so engineers can inspect any screen and see what they're looking at.
+- **Checked:** contrast tested on every text pair, then a stress test with worst-case data (long names, huge amounts, empty states).
+
+## What it changed
+
+- Tertiary text contrast raised from 4.21 to 5.0, card labels from 2.59 to 4.59, glass hero text from 3.91 to 5.9
+- 50+ icon sets down to one
+- Two competing button colours down to one
+- About 91 screens rebuilt on the system, in light and dark, with a clickable prototype of 4 flows
+
+## What shipped vs what was designed
+
+Designed: the full system, about 91 screens and the prototype. Delivered as a full Figma rebuild, which QuickPay's engineering team builds from. There are no usage numbers, so there are none here.

@@ -1,0 +1,26 @@
+{
+  "name": "Axis Urban",
+  "summary": "A Framer website for an urban infrastructure and modular housing company",
+  "industry": "Architecture",
+  "year": "’25",
+  "status": "client",
+  "tags": [
+    "Website",
+    "Framer"
+  ],
+  "featured": true,
+  "order": 5,
+  "preview": {
+    "type": "video",
+    "src": "/work/axis.mp4",
+    "poster": "/work/axis.jpg",
+    "wide": true
+  },
+  "link": "https://axisurban.framer.website",
+  "caseStudy": {
+    "role": "Design and Framer build, for the client",
+    "timeline": "2025",
+    "tools": "Framer",
+    "result": "A seven-page site, live on Framer"
+  }
+}

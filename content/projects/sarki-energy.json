@@ -1,0 +1,23 @@
+{
+  "name": "Sarki Energy",
+  "summary": "Corporate site for an integrated energy company",
+  "industry": "Energy",
+  "year": "’26",
+  "status": "client",
+  "tags": [
+    "Website"
+  ],
+  "featured": false,
+  "order": 7,
+  "preview": {
+    "type": "image",
+    "src": "/work/sarki-energy.jpg"
+  },
+  "link": "https://sarki-energy-site.yusufmuwaffaq17.workers.dev",
+  "caseStudy": {
+    "role": "Design system, design and build",
+    "timeline": "Oct – Nov 2026",
+    "tools": "Figma, Next.js, Cloudflare",
+    "result": "26 page types live, built from one token system in light and dark"
+  }
+}

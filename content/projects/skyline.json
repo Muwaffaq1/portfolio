@@ -1,0 +1,16 @@
+{
+  "name": "Skyline",
+  "summary": "A weather app that answers in seconds",
+  "industry": "App",
+  "year": "’26",
+  "status": "completed",
+  "tags": [
+    "App"
+  ],
+  "featured": false,
+  "order": 9,
+  "preview": {
+    "type": "image",
+    "src": "/work/skyline.png"
+  }
+}

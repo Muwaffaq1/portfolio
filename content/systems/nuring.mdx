@@ -1,0 +1,57 @@
+## Why it was needed
+
+Nūring turns grip into data: effort, recovery and accumulated load, starting with baseball. The same numbers are read by an athlete mid-session, a coach deciding who needs attention, and a parent checking on their child. The system had to make dense data calm to read, and make sure a colour never means two different things.
+
+## How it's structured
+
+Five variable collections: **Primitives, Color, Space, Radius and Motion.** Components only use semantic tokens, never raw values.
+
+<TokenFlow steps={[
+  { label: "Primitive", tokens: [{ name: "Primitives collection", value: "#0b0b0d" }, { name: "Primitives collection", value: "#4ade80" }] },
+  { label: "Semantic", tokens: [{ name: "color-bg-ground", value: "#0b0b0d" }, { name: "color-status-good", value: "#4ade80" }] },
+  { label: "Component", tokens: [{ name: "App shell · background", value: "color-bg-ground" }, { name: "Status pill / Good", value: "color-status-good" }] }
+]} />
+
+The Figma file runs from Foundations and Icons through Atoms (buttons, chips, form controls), Molecules (data display, navigation, rows, feedback) and Organisms (player card, app shell, tables, charts, session panels) to Templates.
+
+## Foundations
+
+<Figure wide src="/systems/nuring/colour.png" caption="Semantic colour. Surfaces separate content, not borders. Green, amber and red only ever mean status." />
+
+<Swatches tokens={[
+  { name: "color-bg-ground", value: "#0b0b0d" },
+  { name: "color-bg-surface", value: "#111114" },
+  { name: "color-bg-raised", value: "#16161b" },
+  { name: "color-bg-raised-2", value: "#1c1c22" },
+  { name: "color-text-primary", value: "#f4f4f6" },
+  { name: "color-text-secondary", value: "#b9b9c2" },
+  { name: "color-status-good", value: "#4ade80" },
+  { name: "color-status-watch", value: "#e8a33c" },
+  { name: "color-status-flag", value: "#e2556c" },
+  { name: "color-data-baseline", value: "#85858f" },
+  { name: "color-border-default", value: "#2c2c35" },
+  { name: "color-border-focus", value: "#f4f4f6" }
+]} />
+
+Three typefaces, each with one job: **Archivo Black** for display and hero numbers, **Host Grotesk** for interface text, **JetBrains Mono** for tabular data. Space doubles at every step from 2 to 128, and radius nests: an inner element's radius is the outer radius minus the padding between them.
+
+## One scale for every score
+
+<Figure wide src="/systems/nuring/score-scale.png" caption="Resilience, swing quality and session scores share five bands, always measured against the player's own baseline, never a league average." />
+
+This is the decision I'm proudest of. One scale means a coach reads "Watch" the same way on every screen, and an athlete is only ever compared with themselves.
+
+## Components in real screens
+
+62 components, 25 icons and 14 full-page templates across four roles: athlete, staff, guardian and coach.
+
+<Figure wide src="/systems/nuring/triage.jpg" caption="Staff · Triage: who needs attention after a game, built entirely from system components." />
+
+<Figure wide src="/systems/nuring/resilience.jpg" caption="Athlete · Resilience: KPI tiles, charts, alert cards and key moments from the same library." />
+
+## Documentation and governance
+
+- **Rules written into the file:** depth comes from stacking surface tones; shadows are only for things that float (popovers, modals, the expanded player card).
+- **Names that travel:** each Figma token shows its CSS name beside it, such as `bg/surface` → `--color-bg-surface`.
+- **Copy stored in natural case:** the Label, Action and Code styles set capitals, so text isn't retyped when a style changes.
+- **Status is reserved:** green, amber and red are never used for decoration, so they always mean something.

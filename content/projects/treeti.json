@@ -1,0 +1,26 @@
+{
+  "name": "treeti",
+  "summary": "Interest-free lending records, live with 72 people signed up",
+  "industry": "Fintech",
+  "year": "’26",
+  "status": "live",
+  "tags": [
+    "Own product",
+    "Built with AI"
+  ],
+  "featured": true,
+  "order": 1,
+  "preview": {
+    "type": "video",
+    "src": "/work/treeti.mp4",
+    "poster": "/work/treeti.jpg",
+    "frame": "phone"
+  },
+  "link": "https://usetreeti.xyz",
+  "caseStudy": {
+    "role": "Product, design and build",
+    "timeline": "Oct 2026 – now (launched 14 Oct)",
+    "tools": "Figma, Next.js, Supabase, Cloudflare, Claude Code",
+    "result": "72 people signed up, 23 agreements, ₦549,300 recorded"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "QuickPay",
+  "summary": "105 messy screens rebuilt on one token system",
+  "industry": "Fintech",
+  "year": "’26",
+  "status": "client",
+  "tags": [
+    "Design system",
+    "Mobile"
+  ],
+  "featured": true,
+  "order": 2,
+  "preview": {
+    "type": "video",
+    "src": "/work/quickpay.mp4",
+    "poster": "/work/quickpay.png",
+    "frame": "phone"
+  },
+  "caseStudy": {
+    "role": "Audit, design system and redesign",
+    "timeline": "Nov 2026",
+    "tools": "Figma, Figma MCP, Mobbin",
+    "result": "91 screens on 120+ tokens, with dark mode and a 4-flow prototype"
+  }
+}

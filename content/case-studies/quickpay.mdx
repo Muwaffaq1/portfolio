@@ -1,0 +1,55 @@
+## The audit
+
+QuickPay hired me to redesign its Nigerian wallet and bills app. I started with 105 screens with no system behind them. More than 50 icon sets, about 1,400 unnamed layers, orange and purple buttons competing, bill tiles that paid on a single tap, PIN set and confirm on one screen, and a crypto-style recovery phrase inside a bank app.
+
+## Keep, fix, rebuild
+
+<Table head={["", "What"]} rows={[["Keep", "The flows: onboarding, KYC, send, add and request money, bills, cards, settings"], ["Fix", "Bill tiles select, never pay. PIN set and confirm on separate screens."], ["Fix", "The recovery phrase replaced with a PIN reset using your BVN"], ["Rebuild", "Every visual, on one token system with dark mode"]]} />
+
+## The system
+
+Atomic design from foundations to pages. 120+ variables with light and dark modes, one icon set, Chivo throughout, and spacing that doubles at every step. 52 components carry written descriptions, and 690 layers were renamed so engineers can find things.
+
+Research came first: 11 batches on Mobbin, about 35 flows and 70 screens across 30+ apps, with a deep look at Revolut.
+
+## Every state
+
+The happy path is the easy part. These are the moments that decide whether people trust a money app, straight from the Figma file:
+
+<Screens items={[
+  { src: "/systems/quickpay/states/sending.jpg", caption: "Sending: each step shown, and you can leave the screen" },
+  { src: "/systems/quickpay/states/sent.jpg", caption: "Sent: when it will arrive, not just a tick" },
+  { src: "/systems/quickpay/states/bill-failed.jpg", caption: "Failed: says no money left your wallet" },
+  { src: "/systems/quickpay/states/card-declined.jpg", caption: "Declined: the reason, and that no money was taken" },
+  { src: "/systems/quickpay/states/offline.jpg", caption: "Offline: last known balance, with the time" },
+  { src: "/systems/quickpay/states/locked.jpg", caption: "Locked: why, for how long, and a way back" },
+  { src: "/systems/quickpay/states/kyc-review.jpg", caption: "Under review: what you can still do meanwhile" },
+  { src: "/systems/quickpay/states/no-results.jpg", caption: "No results: names the filters and clears them" }
+]} />
+
+## Rules for showing money
+
+1. **Every failure says whether money moved.** "No money left your wallet." "No money was taken." People should never have to check their bank to find out.
+2. **Never truncate or abbreviate an amount.** The balance steps down in size instead: 48pt up to ₦999,999, 40pt up to ₦999,999,999, then 32pt.
+3. **Naira large, kobo small.** One Amount component shows every figure the same way, from the balance to a single row.
+4. **Pending is never shown as done.** A pending payment is labelled and coloured as pending in the list, and the sending screen shows each step until it's delivered.
+5. **Offline shows the last known balance, with its time,** and nothing is sent until the connection is back.
+6. **Limits are stated in naira, with what you can still do.** While an account is being checked: "Send and pay bills up to ₦50,000 a day."
+7. **A hidden balance shows ₦ ••••••,** never a zero, which could be mistaken for an empty wallet.
+
+## Motion, specified for engineers
+
+Four moments carry the most weight in a money app, so I prototyped them in code and wrote each one down as a spec engineers can build to: timing, curve, haptic and what happens with reduced motion. Try them below; the last one is a swipe.
+
+<MotionSpecs />
+
+## Quality, in numbers
+
+- Tertiary text contrast raised from 4.21 to 5.0
+- Card labels from 2.59 to 4.59
+- Glass hero text from 3.91 to 5.9
+- 14 copy fixes, and a stress test with worst-case data that found and fixed 3 breaks
+
+## What shipped vs what was designed
+
+Designed: about 91 screens, the full system, dark mode and a clickable prototype with 4 flows and 39 interactions. Delivered as a full Figma rebuild, which QuickPay's engineering team builds from. No usage numbers exist, so there are none here.

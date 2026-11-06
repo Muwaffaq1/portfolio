@@ -1,0 +1,26 @@
+{
+  "name": "Attik",
+  "summary": "Homepage, launch film and social reels for a furniture studio",
+  "industry": "Furniture",
+  "year": "’26",
+  "status": "client",
+  "tags": [
+    "Website",
+    "Launch film"
+  ],
+  "featured": true,
+  "order": 4,
+  "preview": {
+    "type": "video",
+    "src": "/work/attik.mp4",
+    "poster": "/work/attik.jpg",
+    "wide": true
+  },
+  "caseStudy": {
+    "role": "Design, build and launch films",
+    "timeline": "Oct 2026",
+    "tools": "Figma, HTML, HyperFrames",
+    "result": "A new homepage, a launch film and social reels"
+  },
+  "link": "https://attik-concept-by-muwaffaq.pages.dev"
+}

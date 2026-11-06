@@ -1,0 +1,218 @@
+{
+  "name": "Muwaffaq",
+  "role": "Product designer & design engineer",
+  "location": "Abuja",
+  "timezone": "Africa/Lagos",
+  "openToWork": true,
+  "lookingFor": "Senior product design roles, remote or in the Gulf",
+  "greetings": [
+    "Hello,",
+    "Hola,",
+    "Bonjour,",
+    "你好,",
+    "مرحبا،"
+  ],
+  "intro": [
+    "I build products I'd want to use myself. If I wouldn't open it twice, I don't ship it.",
+    "For 4+ years I have designed fintech and marketplace products, from a virtual wallet to a live bidding marketplace. I have designed and built **8 websites and apps**, set up **5 design systems**, made **4 launch films**, and shipped **2 live products**, including my own app, treeti: **72 people** signed up and **₦549,300** in interest-free loans recorded in its first weeks. Most recently I rebuilt **QuickPay**, a Nigerian money app: 105 messy screens became 91 on one token system with dark mode.",
+    "I take work from Figma to production code in Next.js, Astro and Tailwind. I use AI tools like Claude Code to move at the speed of a small team, and I review every screen myself before it ships."
+  ],
+  "theme": {
+    "texture": 0.08
+  },
+  "nuring": {
+    "company": "Nūring",
+    "role": "Lead UI Designer",
+    "tagline": "Grip has a signal.",
+    "summary": "Nūring builds a smart glove that reads grip to measure effort, recovery and accumulated load, starting with baseball. I design and build across the product: the athlete app, the design system and the web.",
+    "work": [
+      {
+        "name": "Athlete web app",
+        "line": "Redesigned and coded: I built the design system and the whole front end, then handed it to our backend engineers to connect the APIs",
+        "kind": "Design · Front end"
+      },
+      {
+        "name": "Engineering work",
+        "line": "Front-end and product engineering across Nūring's apps",
+        "kind": "Engineering"
+      },
+      {
+        "name": "Nūring design system",
+        "line": "Tokens, icons and components shared by every surface",
+        "kind": "Design system"
+      }
+    ]
+  },
+  "films": [
+    {
+      "name": "treeti",
+      "line": "Product launch film",
+      "kind": "4K"
+    },
+    {
+      "name": "Attik",
+      "line": "Launch film and social reels",
+      "kind": "Social"
+    },
+    {
+      "name": "Almutamir",
+      "line": "Before-and-after film",
+      "kind": "Case film"
+    }
+  ],
+  "ai": [
+    "I use Claude Code to build and test real apps, and Figma MCP to set up design systems and rename hundreds of layers at once.",
+    "AI defaults to generic layouts and misses edge cases, so I set the tokens first, check every contrast pair and stress-test screens with worst-case data."
+  ],
+  "openToWorkLabel": "Open to work",
+  "contact": {
+    "email": "yusufmuwaffaq17@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/muwaffaq-yusuf",
+    "github": "https://github.com/Muwaffaq1",
+    "x": "https://x.com/Muwaffaaq",
+    "resume": "/muwaffaq-yusuf-resume.pdf",
+    "call": "https://calendly.com/yusufmuwaffaq17/new-meeting-1",
+    "availability": "GMT+1 · overlaps with UK, EU and Gulf working hours",
+    "reply": "I reply within a day."
+  },
+  "experience": [
+    {
+      "role": "Lead UI Designer",
+      "company": "Nūring",
+      "when": "Jan 2025 – now",
+      "where": "Remote · Ontario, Canada",
+      "line": "Redesigned Nūring's web app and coded its front end on a design system I built (62 components, 39 colour tokens, 14 page templates), then worked with our backend engineers as they connected the APIs."
+    },
+    {
+      "role": "Product / UI Designer",
+      "company": "HoBeei",
+      "when": "Apr 2022 – Dec 2025",
+      "where": "Remote",
+      "line": "Sole designer on a gamified free-cycling marketplace: browse and listing flows, live bidding with every state, the Buzzes virtual wallet, and the design system engineering built from."
+    }
+  ],
+  "education": [
+    {
+      "what": "MSc Information Technology",
+      "where": "Nigerian Defence Academy, Kaduna",
+      "when": "2024 – 2026"
+    },
+    {
+      "what": "BSc Computer Science",
+      "where": "Ahmadu Bello University, Zaria",
+      "when": "2016 – 2021"
+    }
+  ],
+  "services": [
+    {
+      "name": "Website design and build",
+      "line": "Up to 8 pages with a design system, built to work on phones, tablets and desktops. Two rounds of changes.",
+      "price": ""
+    },
+    {
+      "name": "Product design and design systems",
+      "line": "Audits, redesigns and token-based systems in Figma, handed to your engineers with specs and documentation.",
+      "price": ""
+    },
+    {
+      "name": "Launch films",
+      "line": "Spotlights (15–20 s), product films (30–45 s) and launch films (up to 60 s), with licensed music and a 4K master.",
+      "price": ""
+    },
+    {
+      "name": "Launch and site care",
+      "line": "Domain setup, testing on every device, analytics, and three months of checks and fixes.",
+      "price": ""
+    }
+  ],
+  "process": [
+    "A 15-minute call to understand what you need",
+    "A written proposal with scope, timeline and price",
+    "Design in Figma, with your feedback at each step",
+    "Build, launch and hand over everything"
+  ],
+  "how": [
+    {
+      "step": "Understand",
+      "line": "Read the brief, talk to the people using it, and map every flow before drawing anything. Sarki Energy started as a 31-page sitemap from the client brief."
+    },
+    {
+      "step": "Research",
+      "line": "Study how the best products already solve the problem. For QuickPay I reviewed about 35 flows across 30+ apps."
+    },
+    {
+      "step": "System first",
+      "line": "Set the tokens and components before the screens, so every page stays consistent and dark mode or Arabic is a setting."
+    },
+    {
+      "step": "Design every state",
+      "line": "Loading, empty, error, pending and limit reached, not just the happy path. Then prototype the flows that matter."
+    },
+    {
+      "step": "Build and test",
+      "line": "Ship early and let real people shape it. treeti testers changed 8 flows within 10 days of launch."
+    },
+    {
+      "step": "Launch",
+      "line": "Announce it with a launch film, then keep improving from what people actually do."
+    }
+  ],
+  "life": [
+    {
+      "src": "/about/gym-flex.jpg",
+      "caption": "Gym most mornings. It keeps my head clear"
+    },
+    {
+      "src": "/about/cooking-1.jpg",
+      "caption": "Home-cooked: spaghetti, eggs and fried plantain"
+    },
+    {
+      "src": "/about/madinah.jpg",
+      "caption": "Madinah, on Umrah · Jan 2026"
+    },
+    {
+      "src": "/about/gym.jpg",
+      "caption": "Training day"
+    },
+    {
+      "src": "/about/cooking-2.jpg",
+      "caption": "Another one from my kitchen"
+    },
+    {
+      "src": "/about/doha.jpg",
+      "caption": "National Museum of Qatar, Doha · Feb 2026"
+    }
+  ],
+  "facts": [
+    {
+      "k": "Based in",
+      "v": "Abuja, Nigeria · GMT+1 · works remotely"
+    },
+    {
+      "k": "Experience",
+      "v": "4+ years in fintech and marketplaces"
+    },
+    {
+      "k": "Looking for",
+      "v": "Senior product design roles, remote or in the Gulf"
+    },
+    {
+      "k": "Ask me about",
+      "v": "Design systems, launch films, cooking"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Ship it, then improve it with real people",
+      "line": "treeti went live early, and testers changed eight flows in its first ten days."
+    },
+    {
+      "title": "Every state matters",
+      "line": "Loading, empty, failed and pending get the same care as the happy path."
+    },
+    {
+      "title": "If I wouldn’t use it, it isn’t finished",
+      "line": "I build products I would open twice myself."
+    }
+  ]
+}

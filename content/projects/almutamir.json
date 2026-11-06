@@ -1,0 +1,17 @@
+{
+  "name": "Almutamir",
+  "summary": "Hajj and Umrah booking, rebuilt",
+  "industry": "Travel",
+  "year": "’26",
+  "status": "client",
+  "tags": [
+    "Website"
+  ],
+  "featured": false,
+  "order": 6,
+  "preview": {
+    "type": "image",
+    "src": "/work/almutamir.jpg"
+  },
+  "link": "https://almutamir-site.yusufmuwaffaq17.workers.dev"
+}

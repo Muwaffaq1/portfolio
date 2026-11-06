@@ -1,0 +1,25 @@
+{
+  "name": "PharmaQuest",
+  "summary": "Gamified practice for the pharmacist qualifying exam, built for a pharmacist preparing for it",
+  "industry": "Education",
+  "year": "’26",
+  "status": "live",
+  "tags": [
+    "Built for a pharmacist"
+  ],
+  "featured": true,
+  "order": 3,
+  "preview": {
+    "type": "video",
+    "src": "/work/pharmaquest-game.mp4",
+    "poster": "/work/pharmaquest-game.jpg",
+    "frame": "phone"
+  },
+  "link": "https://pharmaquest.pages.dev",
+  "caseStudy": {
+    "role": "Product, design and build",
+    "timeline": "2026",
+    "tools": "React, Vite, Cloudflare Pages and D1",
+    "result": "Live, with 257 practice questions and cloud-synced progress"
+  }
+}

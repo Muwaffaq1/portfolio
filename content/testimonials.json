@@ -1,0 +1,30 @@
+[
+  {
+    "quote": "I looked into it, and it is absolutely amazing. Especially the private debt record, that is the most important for me.",
+    "name": "treeti user",
+    "role": "On the private debt record"
+  },
+  {
+    "quote": "AlhamduLillah. It's surpassed my expectations sef. Tell Muwaffaq JazakAllahu bi khair.",
+    "name": "PharmaQuest user",
+    "role": "Pharmacist preparing for the PEBC exam"
+  },
+  {
+    "quote": "Placeholder: a line from the Attik team about working with Muwaffaq on the new homepage and launch film.",
+    "name": "Attik",
+    "role": "Furniture studio, Abuja",
+    "placeholder": true
+  },
+  {
+    "quote": "Placeholder: a line from QuickPay about the redesign and the design system.",
+    "name": "QuickPay",
+    "role": "Wallet and bills app",
+    "placeholder": true
+  },
+  {
+    "quote": "Placeholder: a line from a Nūring or HoBeei colleague about working with Muwaffaq.",
+    "name": "Colleague",
+    "role": "Nūring or HoBeei",
+    "placeholder": true
+  }
+]

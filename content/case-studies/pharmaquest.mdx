@@ -1,0 +1,46 @@
+## Why it exists
+
+I built PharmaQuest for my friend's sister, a pharmacist preparing for the PEBC Pharmacist Qualifying Exam. That means working through hundreds of multiple-choice questions, mostly from PDFs and books. It's slow, and it's hard to tell what you've actually learned. She needed practice that felt like a short daily habit, brought back the questions she got wrong, and explained every answer.
+
+## What it does
+
+- **257 questions:** 96 official PEBC sample questions with answers from the official key, 151 written from the patient cases in *Applied Therapeutics* (12th ed.), and 10 from the PEBC references list.
+- **Every option explained,** with a short "Remember" line after each answer.
+- **Spaced repetition** brings missed questions back until they stick.
+- **A reason to come back:** daily runs, XP, levels, streaks, a mastery map, boss battles and badges.
+
+When I asked how it was going, she said:
+
+> "AlhamduLillah. It's surpassed my expectations sef. Tell Muwaffaq JazakAllahu bi khair."
+
+## The game layer
+
+Studying for a licensing exam is a long grind, so the app rewards showing up, not just getting answers right.
+
+<Screens items={[
+  { src: "/work/pharmaquest/correct.jpg", caption: "Every answer: right or wrong, the rationale and a line to remember" },
+  { src: "/work/pharmaquest/badge.jpg", caption: "Badges unlock mid-run, with the next tier to aim for" },
+  { src: "/work/pharmaquest/results.jpg", caption: "End of run: accuracy, best combo, XP and level-ups" },
+  { src: "/work/pharmaquest/home.jpg", caption: "Home: the streak, today's goal and practice modes" },
+  { src: "/work/pharmaquest/mastery.jpg", caption: "The mastery map: 24 topics that fill as answers stick" },
+  { src: "/work/pharmaquest/badges.jpg", caption: "41 badge tiers, from Bronze to Platinum" }
+]} />
+
+- **A daily goal of 15 questions.** Questions you're due to review come first.
+- **Streaks with freezes.** Every 7 days in a row earns a freeze, holding up to 2, so one missed day doesn't wipe out weeks of work.
+- **XP and levels.** 10 XP per correct answer plus combo bonuses, climbing nine titles from Pharmacy Student to Pharmacotherapy Legend.
+- **12 badge series, 41 tiers.** For habits, skill, knowledge and milestones, from Hot Hand (5 right in a row) to PEBC Ready (every official sample question).
+- **Revenge Round** brings back every question you missed.
+- **Boss Battle** unlocks after 30 answers: 20 questions, 3 lives and 75 seconds each.
+
+## Key decisions
+
+<Table head={["Decision", "Why", "What it cost"]} rows={[["Reward the habit, not just the score", "Passing depends on months of steady practice, so streaks and daily goals matter more than one good run", "More systems to balance so XP never feels cheap"], ["Check, then explain", "Feedback right after the answer is when people learn most", "Each question needs a written rationale for every option"], ["No account, just a sync code", "Signing up is the biggest reason people never start", "People must keep their code to restore progress on a new device"], ["The build fails on bad data", "One wrong answer key ruins trust in all of them", "Slower to add questions, because every one is validated"], ["Dark mode by default", "People study late at night", "Two themes to design and test"]]} />
+
+## How it's built
+
+React and Vite, deployed on Cloudflare Pages. Progress saves in the browser after every answer and syncs to a small Cloudflare database, so it follows you across devices. Settings include a read-only progress report and a backup download.
+
+## What shipped vs what was designed
+
+Shipped: the full practice app, live at pharmaquest.pages.dev. Still to do: the explanations and derived questions were written with AI help and haven't been reviewed by a pharmacist yet, so an in-app "Flag issue" button collects problems for review.
