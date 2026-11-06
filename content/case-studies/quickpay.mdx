@@ -43,6 +43,34 @@ Four moments carry the most weight in a money app, so I prototyped them in code 
 
 <MotionSpecs />
 
+## On iOS and Android
+
+The delivered design follows iOS: Face ID, the iOS status bar and the home indicator. A money app ships on both platforms, so I adapted the send flow to Android to show which parts stay QuickPay and which follow the platform. This adaptation was made for this portfolio; it isn't shipped work. Step through it:
+
+<PlatformFlow />
+
+The same on both: the tokens, the amount style (naira large, kobo small), every line of copy, every state from sending to offline, the in-app keypad and the motion timings. Chivo stays the type for amounts and content; the system font is used only where the platform draws its own parts, like navigation bars, sheet bars and system prompts.
+
+<Table head={["", "iOS", "Android"]} rows={[["Navigation", "Back chevron with the previous screen's name; swipe from the left edge", "Top app bar with a back arrow; system and predictive back"], ["Title", "Centred, SF Pro", "Left-aligned, Roboto"], ["Confirm", "Page sheet with a grabber and Cancel; the screen behind recedes", "Material 3 modal bottom sheet: drag handle, scrim, 28dp corners; back closes it"], ["Biometrics", "Face ID through LocalAuthentication; Use PIN instead", "BiometricPrompt from androidx.biometric, strong only; Use PIN as the negative button"], ["Success haptic", "UINotificationFeedbackGenerator, .success", "HapticFeedbackConstants.CONFIRM"], ["Press feedback", "Highlight and a slight scale", "Ripple from the touch point"], ["System bars", "Content padded inside the status bar and home indicator", "Edge to edge, padded by the window insets"], ["After success", "Done returns Home", "Back returns Home; the send stack is cleared, so it never lands on the PIN step"]]} />
+
+## Voice and error copy
+
+QuickPay talks about people's money, so every line has to be calm, exact and short. The copy below is from the delivered screens. I've written the rules behind it down as the guide a writer or engineer adding a new screen would follow.
+
+1. **Say whether money moved, first.** Every failure answers the question people actually have: "No money left your wallet." "No money was taken."
+2. **Name the cause in plain words.** "MTN didn't respond in time." "You entered the wrong PIN 5 times." Never a code, never blame.
+3. **Give a next step and a time.** "Try again in a moment." "Most checks finish in under 10 minutes." "PIN locked for 30 minutes."
+4. **Numbers, not adjectives.** Amounts in full naira, limits in naira ("Send and pay bills up to ₦50,000 a day"), times on the clock.
+5. **Calm, not cheerful.** No "Oops", no exclamation marks. Reassure with facts: "Your money is safe — nothing is sent until you're back online."
+
+<Table head={["Moment", "Not this", "QuickPay says"]} rows={[["A bill fails", "Oops! Something went wrong.", "Airtime purchase failed. MTN didn't respond in time. No money left your wallet — try again in a moment."], ["A card payment is declined", "Transaction declined.", "Netflix tried to charge ₦4,400 to your physical card, but it's frozen. Unfreeze it, then retry the payment in Netflix. No money was taken."], ["Too many wrong PINs", "Account locked. Contact support.", "PIN locked for 30 minutes. You entered the wrong PIN 5 times, so we paused logins to keep your money safe."], ["No connection", "No internet connection.", "You're offline. Check your mobile data or Wi-Fi. Your money is safe — nothing is sent until you're back online."], ["Identity check", "Your account is pending verification.", "We're checking your details. Most checks finish in under 10 minutes. It can take up to 24 hours at weekends."], ["Money on its way", "Processing…", "Sending ₦25,000 to Adaeze Okafor at GTBank. This usually takes a few seconds — you can leave this screen."]]} />
+
+Every error follows the same four parts, in this order:
+
+<Table head={["Part", "Rule", "Example"]} rows={[["Title", "What happened, in a few words", "Airtime purchase failed"], ["Cause", "Who or what, in plain words", "MTN didn't respond in time."], ["Money", "Whether money moved, on every failure", "No money left your wallet"], ["Next step", "One button that fixes it, one way out", "Try again · Contact support"]]} />
+
+Buttons start with a verb and name the fix: Unfreeze card, Reset PIN, Notify me when it's done. A way out is always there, worded as what it does: Not now, Back to Home.
+
 ## Quality, in numbers
 
 - Tertiary text contrast raised from 4.21 to 5.0

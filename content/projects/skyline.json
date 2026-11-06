@@ -12,5 +12,11 @@
   "preview": {
     "type": "image",
     "src": "/work/skyline.png"
+  },
+  "caseStudy": {
+    "role": "Design and build",
+    "timeline": "Oct 2026",
+    "tools": "React, Vite, Open-Meteo, Vitest",
+    "result": "One screen that answers now, next and later, with a demo for every weather"
   }
 }

@@ -1,0 +1,38 @@
+## The problem
+
+Weather data is everywhere. The problem is weather apps that show too much at once, bury the forecast behind screens and use charts you have to interpret. Skyline was built from a written brief with one goal: speed of comprehension. A successful visit can last three to five seconds: open it, see 24°C and rain likely around 10 AM, take an umbrella, close it.
+
+Everything follows one order: **now, next, later**. Now is the temperature, condition and high and low. Next is the coming hours. Later is the next five days. Anything outside that order has to earn its place.
+
+## One screen, read in seconds
+
+<Screens items={[
+  { src: "/work/skyline/day.jpg", caption: "Clear day: the temperature first, then one card that matters, here a UV warning" },
+  { src: "/work/skyline/rain.jpg", caption: "Rain: the brief says when it starts, and the rain hours are highlighted" },
+  { src: "/work/skyline/storm.jpg", caption: "Storm: the warning outranks everything else" },
+  { src: "/work/skyline/night.jpg", caption: "Night: the page turns to ink, with the best time to be outside" }
+]} />
+
+## Only the card that matters
+
+A rule engine picks which card to show, in priority order, so the screen never stacks five warnings:
+
+<Table head={["Priority", "Card", "Shown when"]} rows={[["1", "Storm or heavy rain", "A storm, or a 70% chance of rain within 3 hours"], ["2", "Rain window", "Two or more hours in a row at 50% or more: \"Rain likely 4–6 PM\""], ["3", "UV", "UV index 6 or higher"], ["4", "Wind", "Wind of 35 km/h or more"], ["5", "Temperature drop", "A drop of 5° or more within 3 hours"], ["6", "Best time to be outside", "The nicest window in the next 12 hours"], ["7", "Compared with yesterday", "2° or more warmer or cooler than yesterday at this hour"], ["8", "Calm", "Nothing else applies"]]} />
+
+A one-line brief under the city sums it up the same way: "Clear now, high of 29°."
+
+## Key decisions
+
+<Table head={["Decision", "Why", "What it cost"]} rows={[["One screen, no tabs", "The questions people ask a weather app fit on one scroll", "No radar, maps or detailed charts"], ["One forecast request, cached", "Opens instantly and still shows the last forecast offline", "Data can be up to one refresh old"], ["A demo mode for every weather", "Storms and snow are rare; every state has to be designable and testable on any day", "A second, synthetic data path to keep in step"], ["Location is used once and never stored on a server", "People shouldn't trade privacy for a forecast", "No sync between devices"]]} />
+
+## The restyle
+
+<Figure wide src="/work/skyline/before-after.jpg" caption="Left, the first version: blue gradients and frosted glass. Right, the restyle: ink on paper, a giant display numeral, mono labels and solid cards. The look takes cues from (Not Boring) Weather." />
+
+## Tested where it matters
+
+The rules people rely on have unit tests with Vitest: the card priorities, the rain window, the best time to be outside, the comparison with yesterday, the data clean-up and the sky logic. The code is public on [GitHub](https://github.com/Muwaffaq1/skyline).
+
+## What shipped vs what was designed
+
+Built and working as a web app with React, Vite and Open-Meteo, with a demo for every weather. It isn't published to the app stores, and there are no usage numbers.

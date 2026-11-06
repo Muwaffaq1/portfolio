@@ -1,0 +1,43 @@
+## The code you can read
+
+<Table head={["Repository", "What it is", "Built with"]} rows={[["[portfolio](https://github.com/Muwaffaq1/portfolio)", "This site", "Next.js 16, React 19, MDX, Motion, Cloudflare Pages"], ["[Treeti](https://github.com/Muwaffaq1/Treeti)", "My interest-free lending agreements app, live with real users", "Next.js, Supabase, Inngest, Resend, OpenNext on Cloudflare Workers"], ["[sarki-energy](https://github.com/Muwaffaq1/sarki-energy)", "A corporate site for a client, 26 page types", "Next.js 16, OpenNext on Cloudflare Workers"], ["[skyline](https://github.com/Muwaffaq1/skyline)", "A one-screen weather app", "React 19, Vite, TanStack Query, Zustand, Vitest"]]} />
+
+## Testing and CI: treeti
+
+treeti handles people's money agreements, so it has the strictest pipeline. A GitHub Actions workflow runs on every push and pull request:
+
+1. Lint and type-check
+2. 35 unit and integration test files with Vitest
+3. A production build
+4. 22 Playwright end-to-end specs in Chromium and WebKit, so Safari behaviour is tested too
+5. A separate job that builds for Cloudflare Workers and tests the Workers build
+
+Reports, screenshots and generated agreement PDFs are kept as build artifacts for a week, so a failure can be inspected without rerunning it.
+
+## This site
+
+- **Static, so it's fast and cheap to host.** Next.js renders every page to HTML at build time. Nothing runs on a server, and Cloudflare serves the pages from close to each visitor.
+- **Content is files, not a database.** Every project, case study and design system is a JSON or MDX file. `npm run new` scaffolds a project, and a case study appears as soon as its MDX file exists.
+- **One command to ship.** `npm run deploy` builds the site, runs a privacy check, then uploads to Cloudflare Pages with Wrangler. Pages keeps every deployment, so rolling back takes one click.
+- **A privacy gate before every deploy.** A script fails the deploy if the build contains raw phone photos (HEIC, MOV, DNG), camera-named files, or JPEGs that still carry GPS location. A personal photo can't go out by accident.
+- **Real product recordings, made by a script.** Playwright drives the real apps (treeti's demo mode, PharmaQuest's live site) through a flow, records it, and ffmpeg trims, speeds up and compresses each clip. Videos only play while they're on screen, so a page never decodes four at once.
+- **Sharp images from Figma.** Frames are exported at 4K through Figma's MCP server. The page shows a 1600px version, and the full file opens in a viewer.
+- **Checked like a product.** TypeScript throughout, axe on every main page in both themes, contrast measured for every colour token, and a mobile pass for safe areas, tap targets and sticky hover. The details are on the [accessibility page](/accessibility/).
+
+## PharmaQuest
+
+A practice app for the pharmacist qualifying exam, built for a pharmacist preparing for it.
+
+- **Stack:** React 19, Vite and TypeScript, deployed to Cloudflare Pages.
+- **Content with guard rails:** the questions are JSON files. A build script merges them, fills in the official answers from the answer key, and fails the build on bad data. That includes a correct answer that's noticeably longer than the wrong ones, because that gives the answer away.
+- **Cloud save without accounts:** progress saves in the browser after every answer and syncs to a Cloudflare D1 database through Pages Functions. Each learner gets a private sync code that restores their progress on any browser. There's also a read-only progress report link, and a backup file to download and restore.
+- **Schema changes are migrations,** applied with Wrangler, so the database can change without losing anyone's progress.
+- **Honest about what's unchecked:** the explanations were written with AI help and haven't been reviewed by a pharmacist yet. A Flag issue button in the app collects problems for review.
+
+## Working with engineers
+
+At Nūring I redesigned the web app and coded its front end on the design system I built, then worked with our backend engineers as they connected the APIs. On QuickPay I handed over a Figma file built for engineers: token names that match in design and code, 52 components with written descriptions, 690 layers renamed, and [motion specs](/work/quickpay/) with timings, springs and haptics for both platforms.
+
+## How I use AI
+
+I build with Claude Code and use Figma's MCP server for design system work. AI writes a lot of the first draft; I set the architecture, review every screen and every diff, and add the tests and checks that catch what it gets wrong.

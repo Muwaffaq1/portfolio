@@ -13,5 +13,11 @@
     "type": "image",
     "src": "/work/almutamir.jpg"
   },
-  "link": "https://almutamir-site.yusufmuwaffaq17.workers.dev"
+  "link": "https://almutamir-site.yusufmuwaffaq17.workers.dev",
+  "caseStudy": {
+    "role": "Redesign, design system and build",
+    "timeline": "Oct 2026",
+    "tools": "Next.js, Tailwind, Cloudflare",
+    "result": "Every page rebuilt, from the homepage to checkout, on one system"
+  }
 }

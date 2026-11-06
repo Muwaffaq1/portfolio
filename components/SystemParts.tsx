@@ -44,7 +44,8 @@ export function Swatches({ tokens }: { tokens: Token[] }) {
 // A simple table for case studies; the first column is the row's label.
 export function Table({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
-    <div className="table-wrap">
+    // Focusable so a table that scrolls sideways on a phone can be scrolled by keyboard too.
+    <div className="table-wrap" tabIndex={0} role="region" aria-label={`Table: ${head.filter(Boolean).join(", ")}`}>
       <table>
         {/* An empty header still gets a name for screen readers; the first cell of each row is its row header. */}
         <thead><tr>{head.map((h, i) => <th key={i} scope="col">{h || <span className="sr-only">Item</span>}</th>)}</tr></thead>

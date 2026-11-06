@@ -61,6 +61,7 @@ export default function Home() {
             {site.intro.map((p) => <p key={p}><Rich text={p} /></p>)}
           </div>
           <ContactLinks />
+          <p className="start-here">Hiring? Start here for <Link href="/for/product/">product design</Link>, <Link href="/for/front-end/">front-end</Link> or <Link href="/for/fintech/">fintech</Link> roles.</p>
         </div>
 
         <section id="work" aria-labelledby="w-h">
@@ -161,7 +162,7 @@ export default function Home() {
 
       <footer>
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>Designed and built by me · <Link href="/accessibility/">Accessibility</Link></span>
+        <span>Designed and built by me · <Link href="/engineering/">Engineering</Link> · <Link href="/accessibility/">Accessibility</Link></span>
       </footer>
     </div>
   );
