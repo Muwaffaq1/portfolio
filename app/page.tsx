@@ -138,8 +138,19 @@ export default function Home() {
 
         <section aria-labelledby="f-h">
           <div className="sh"><h2 id="f-h">Launch films</h2></div>
+          {/* Films with a video get a player (sound on, never autoplays); the rest stay as a list until they're uploaded. */}
+          {site.films.filter((f) => "video" in f && f.video).map((f) => (
+            <div key={f.name} className={"wide" in f && f.wide ? "film wide" : "film"}>
+              <video src={"video" in f ? f.video : undefined} poster={"poster" in f ? f.poster : undefined} controls playsInline preload="none" aria-label={`${f.name}: ${f.line}`} />
+              <div className="film-text">
+                <b>{f.name}</b>
+                <span className="d">{f.line}{"length" in f && f.length ? ` · ${f.length}` : ""}</span>
+                {"about" in f && f.about && <p>{f.about}</p>}
+              </div>
+            </div>
+          ))}
           <ul className="list">
-            {site.films.map((f) => (
+            {site.films.filter((f) => !("video" in f && f.video)).map((f) => (
               <li key={f.name}><span><span className="n">{f.name}</span><span className="d">{f.line}</span></span><span className="r">{f.kind}</span></li>
             ))}
           </ul>

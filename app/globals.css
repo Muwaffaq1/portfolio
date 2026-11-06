@@ -663,3 +663,12 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .for-body p { margin-bottom: 16px; }
 .table-wrap:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
 @media (max-width: 480px) { .pf-steps button { padding: 0 9px; font-size: 12px; } }
+/* Launch films: a vertical film plays in place, with its own controls and sound */
+.film { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; margin-bottom: 20px; }
+.film video { width: 100%; aspect-ratio: 9 / 16; border-radius: 16px; background: var(--raise); border: 1px solid var(--line); object-fit: cover; display: block; }
+.film-text { display: grid; gap: 4px; }
+.film-text p { margin: 8px 0 0; color: var(--muted); max-width: 40ch; }
+@media (max-width: 480px) { .film { grid-template-columns: 1fr; } .film video { max-width: 260px; } }
+.film.wide { grid-template-columns: 1fr; gap: 12px; }
+.film.wide video { aspect-ratio: 16 / 9; max-width: none; }
+.sys-film video { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 14px; border: 1px solid var(--line); background: #000; }

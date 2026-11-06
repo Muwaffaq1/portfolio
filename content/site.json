@@ -48,7 +48,21 @@
     {
       "name": "treeti",
       "line": "Product launch film",
-      "kind": "4K"
+      "kind": "4K",
+      "video": "/films/treeti.mp4",
+      "poster": "/films/treeti.jpg",
+      "length": "0:55",
+      "about": "A loan nobody wrote down, then treeti putting it in writing, in under a minute. Real app screens, a voiceover and music, made with HyperFrames and mastered in 4K."
+    },
+    {
+      "name": "Nūring",
+      "line": "Design system film",
+      "kind": "System film",
+      "video": "/films/nuring-system.mp4",
+      "poster": "/films/nuring-system.jpg",
+      "length": "0:42",
+      "wide": true,
+      "about": "One design system across the coach, athlete and guardian apps, shown with real screens from it. Read the full write-up on the Nūring design system page."
     },
     {
       "name": "Attik",
