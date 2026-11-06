@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import type { Preview, Project } from "@/lib/content";
+import { motionPaused, onMotionChange } from "@/lib/motion";
 
 function Media({ preview }: { preview: Preview }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -12,13 +13,19 @@ function Media({ preview }: { preview: Preview }) {
     if (!video) return;
     // Reduced motion: keep the still poster instead of the loop.
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Only play while on screen, so four loops never decode at once.
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) video.play().catch(() => {});
+    // Only play while on screen, so four loops never decode at once, and never while motion is paused.
+    let visible = false;
+    const sync = () => {
+      if (visible && !motionPaused()) video.play().catch(() => {});
       else video.pause();
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      sync();
     }, { threshold: 0.25 });
     observer.observe(video);
-    return () => observer.disconnect();
+    const off = onMotionChange(sync);
+    return () => { observer.disconnect(); off(); };
   }, []);
 
   if (preview.type === "image") return <img src={preview.src} alt="" />;

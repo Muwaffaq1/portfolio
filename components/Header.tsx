@@ -2,9 +2,16 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motionPaused, onMotionChange, setMotionPaused } from "@/lib/motion";
 
 export function Header({ name }: { name: string }) {
   const [light, setLight] = useState(false);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    setPaused(motionPaused());
+    return onMotionChange(() => setPaused(motionPaused()));
+  }, []);
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,6 +31,7 @@ export function Header({ name }: { name: string }) {
         last = y;
       });
     };
+    setScrolled(scrollY > 8); // a reload can restore a scrolled position before any scroll event
     addEventListener("scroll", onScroll, { passive: true });
     return () => { removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); };
   }, []);
@@ -37,6 +45,8 @@ export function Header({ name }: { name: string }) {
     const next = light ? "dark" : "light";
     const apply = () => {
       document.documentElement.dataset.theme = next;
+      // Recolour the phone's status bar and browser chrome to match.
+      document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]').forEach((m) => { m.content = next === "light" ? "#f4f3ef" : "#0f0f0e"; });
       setLight(!light);
     };
     try {
@@ -64,6 +74,9 @@ export function Header({ name }: { name: string }) {
         <Link href="/about/">About</Link>
         <Link href="/#contact">Contact</Link>
       </nav>
+      <button type="button" className="motion-btn" onClick={() => setMotionPaused(!paused)} aria-pressed={paused} aria-label={paused ? "Play moving content" : "Pause moving content"}>
+        {paused ? "Play" : "Pause"}
+      </button>
       <button type="button" onClick={toggle} aria-label="Switch light or dark">
         {light ? "Dark" : "Light"}
       </button>

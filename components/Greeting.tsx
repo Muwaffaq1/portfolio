@@ -1,16 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motionPaused, onMotionChange } from "@/lib/motion";
 
 // The greeting changes language every few seconds, and each change glitches for 240ms,
 // stepping like comic frames. The first word loads still. With reduced motion it stays on the first word.
 export function Greeting({ words }: { words: string[] }) {
   const [tick, setTick] = useState(0);
 
+  // Stops when reduced motion is on, or when someone presses Pause in the header.
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setInterval(() => setTick((t) => t + 1), 2800);
-    return () => clearInterval(id);
+    let id: ReturnType<typeof setInterval> | undefined;
+    const sync = () => {
+      clearInterval(id);
+      if (!motionPaused()) id = setInterval(() => setTick((t) => t + 1), 2800);
+    };
+    sync();
+    const off = onMotionChange(sync);
+    return () => { clearInterval(id); off(); };
   }, []);
 
   const word = words[tick % words.length];

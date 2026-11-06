@@ -52,7 +52,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 a { color: inherit; text-decoration-color: var(--faint); text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { a:hover { text-decoration-color: var(--ink); } }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
 .tnum { font-variant-numeric: tabular-nums; }
 
@@ -64,9 +64,9 @@ a:hover { text-decoration-color: var(--ink); }
 .av { width: 28px; height: 28px; border-radius: 50%; background: var(--sunk); display: grid; place-items: center; font: 500 12px var(--mono); }
 .top nav { display: flex; gap: 20px; }
 .top nav a { text-decoration: none; }
-.top nav a:hover { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .top nav a:hover { color: var(--ink); } }
 .top button { margin-left: auto; font: 400 12px var(--mono); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 999px; height: 30px; padding: 0 12px; cursor: pointer; }
-.top button:hover { color: var(--ink); border-color: var(--faint); }
+@media (hover: hover) and (pointer: fine) { .top button:hover { color: var(--ink); border-color: var(--faint); } }
 
 /* Hero */
 .hero { padding-block: 64px 8px; display: grid; gap: 20px; max-width: var(--measure); }
@@ -86,7 +86,7 @@ a:hover { text-decoration-color: var(--ink); }
 .intro strong { color: var(--ink); font-weight: 500; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; }
 .links a { height: 32px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-size: 13px; color: var(--ink); }
-.links a:hover { background: var(--raise); }
+@media (hover: hover) and (pointer: fine) { .links a:hover { background: var(--raise); } }
 
 /* Sections */
 section { padding-top: 88px; }
@@ -172,7 +172,7 @@ h2 { font: 400 12px/1 var(--mono); letter-spacing: .06em; color: var(--faint); m
 .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 16px; padding-top: 40px; }
 @media (max-width: 720px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 a.hint { text-decoration: none; }
-a.hint:hover { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { a.hint:hover { color: var(--ink); } }
 
 /* Nūring */
 .nuring { border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 16px; background: var(--raise); }
@@ -324,7 +324,7 @@ img.av { object-fit: cover; padding: 0; }
 .email-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .email-row a { font-size: 16px; color: var(--ink); }
 .email-row button { font: 400 12px var(--mono); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 999px; height: 28px; padding: 0 12px; cursor: pointer; }
-.email-row button:hover { color: var(--ink); border-color: var(--faint); }
+@media (hover: hover) and (pointer: fine) { .email-row button:hover { color: var(--ink); border-color: var(--faint); } }
 .contact-meta { margin: 0; display: grid; gap: 14px; align-content: start; border-left: 1px solid var(--line); padding-left: 24px; }
 .contact-meta dt { font: 400 11px var(--mono); color: var(--faint); text-transform: uppercase; letter-spacing: .05em; }
 .contact-meta dd { margin: 3px 0 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
@@ -367,7 +367,7 @@ footer { margin-top: 96px; padding-block: 24px 48px; border-top: 1px solid var(-
   .cards, .systems, .tiles { grid-template-columns: 1fr; }
   .list li { grid-template-columns: 1fr; }
   .r { text-align: left; }
-  .top { flex-wrap: wrap; height: auto; row-gap: 6px; padding: 12px 0 8px; }
+  .top { flex-wrap: wrap; height: auto; row-gap: 6px; padding-bottom: 8px; --top-pad: 12px; }
   .top nav { order: 3; width: 100%; gap: 18px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
   .top nav::-webkit-scrollbar { display: none; }
   .top nav a { white-space: nowrap; }
@@ -535,3 +535,32 @@ html { scroll-padding-top: 88px; }
 .shots:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 12px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .prose tbody th { font: inherit; font-weight: 400; text-transform: none; letter-spacing: normal; color: inherit; }
+/* Pause control: the header button stops everything that moves on its own */
+.top .motion-btn { margin-left: auto; }
+.top .motion-btn + button { margin-left: -16px; }
+[data-motion="paused"] .glitch .g-main, [data-motion="paused"] .glitch .g-a, [data-motion="paused"] .glitch .g-b { animation: none; }
+[data-motion="paused"] .glitch .g-a, [data-motion="paused"] .glitch .g-b { display: none; }
+[data-motion="paused"] .pulse::after, [data-motion="paused"] .pulse::before { animation: none; }
+
+/* Mobile: feel like an app, not a web page on a phone */
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+/* Controls: no 300ms double-tap wait, and a long-press doesn't select the label */
+button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: manipulation; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+/* The sticky header clears the notch in landscape and in standalone mode */
+.top { padding-top: calc(env(safe-area-inset-top, 0px) + var(--top-pad, 0px)); }
+/* Inner scrollers keep their own bounce without dragging the page (or triggering back-swipe) */
+.shots { overscroll-behavior-x: contain; }
+.viewer-body { overscroll-behavior: contain; }
+/* Fingers need bigger targets than a mouse pointer */
+@media (pointer: coarse) {
+  .top nav a { padding: 10px 0; }
+  .top button { height: 36px; padding: 0 14px; }
+  .links a { height: 40px; }
+}
+/* Press feedback on touch, since hover no longer gives any */
+.top nav a, a.hint { transition: opacity 120ms var(--ease-out); }
+.top nav a:active, a.hint:active { opacity: .6; }
+/* Small text links get a 44px-tall touch area on phones without moving the layout */
+@media (pointer: coarse) {
+  .cs-back, footer a, a.hint { display: inline-block; padding-block: 12px; margin-block: -12px; }
+}

@@ -20,12 +20,12 @@ I built this site myself, so I hold it to the same standard.
 - **Automated check:** I run axe on every main page, in both light and dark mode. The first run found 3 issues: a scrolling strip that couldn't be reached by keyboard, and two tables with an unnamed column. All three are fixed, and the latest run finds none. A check like this catches only part of what can go wrong, so I also test by hand.
 - **Keyboard:** everything works without a mouse. That includes the live QuickPay screen and its mode switch, the motion demos and the swipe row, and the full-size image viewer, which takes focus and closes with Escape. The sideways photo strip can be focused and scrolled with the arrow keys, and the sticky header comes back as soon as focus moves into it.
 - **Screen readers:** product videos are marked as decorative, because the title and summary beside them say what each project is. Every design system image uses its caption as its description. Tables have column and row headers, and the copies of the greeting used for its glitch effect are hidden, so the word is read once.
+- **Pausing motion:** the Pause button in the header stops everything that moves on its own: the changing greeting, the project videos and the glitch on the 404 page. The site remembers the choice on your next visit.
 - **Reduced motion:** with it turned on, the greeting stays on "Hello", videos show a still image, the header stops sliding, and the demos fade instead of moving.
-- **Touch and small screens:** hover effects only run on devices with a mouse or trackpad, so they never get stuck on a phone. The layout fits phone width without scrolling sideways.
+- **Touch and small screens:** hover effects only run on devices with a mouse or trackpad, so they never get stuck on a phone. On touch screens every link and button has a touch area at least 36px tall, and small text links get 44px. The layout fits phone width without scrolling sideways, and zoom is never turned off.
 
 ## What isn't done yet
 
-- The changing greeting and the looping videos have no pause button. They stop when reduced motion is on, but everyone should be able to pause them.
 - I haven't tested this site with someone who relies on a screen reader every day. That's the next step, because automated tools and my own checks can't replace it.
 
 If something here doesn't work for you, [email me](mailto:yusufmuwaffaq17@gmail.com) and I'll fix it.
