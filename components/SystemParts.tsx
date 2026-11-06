@@ -42,6 +42,21 @@ export function Swatches({ tokens }: { tokens: Token[] }) {
 }
 
 // A simple table for case studies; the first column is the row's label.
+// Table cells are plain strings from MDX; [text](url) inside one becomes a real link.
+function Cell({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (!m) return part;
+        const external = m[2].startsWith("http");
+        return <a key={i} href={m[2]} {...(external ? { target: "_blank", rel: "noreferrer" } : {})}>{m[1]}</a>;
+      })}
+    </>
+  );
+}
+
 export function Table({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
     // Focusable so a table that scrolls sideways on a phone can be scrolled by keyboard too.
@@ -51,7 +66,7 @@ export function Table({ head, rows }: { head: string[]; rows: string[][] }) {
         <thead><tr>{head.map((h, i) => <th key={i} scope="col">{h || <span className="sr-only">Item</span>}</th>)}</tr></thead>
         <tbody>
           {rows.map((r, i) => (
-            <tr key={i}>{r.map((c, j) => (j === 0 ? <th key={j} scope="row"><strong>{c}</strong></th> : <td key={j}>{c}</td>))}</tr>
+            <tr key={i}>{r.map((c, j) => (j === 0 ? <th key={j} scope="row"><strong><Cell text={c} /></strong></th> : <td key={j}><Cell text={c} /></td>))}</tr>
           ))}
         </tbody>
       </table>

@@ -39,7 +39,8 @@
       {
         "name": "Nūring design system",
         "line": "Tokens, icons and components shared by every surface",
-        "kind": "Design system"
+        "kind": "Design system",
+        "href": "/systems/nuring/"
       }
     ]
   },

@@ -102,11 +102,11 @@ export default function Home() {
               {site.nuring.work.map((w) => (
                 <li key={w.name}>
                   <span><span className="n">{w.name}</span><span className="d">{w.line}</span></span>
-                  <span className="r">{w.kind} · <Lock /></span>
+                  <span className="r">{w.kind} · {"href" in w && w.href ? <Link href={w.href}>Read the write-up →</Link> : <Lock />}</span>
                 </li>
               ))}
             </ul>
-            <p className="note">This work is confidential. I&apos;m happy to walk you through it on a call.</p>
+            <p className="note">The web app and engineering work are confidential. I&apos;m happy to walk you through them on a call.</p>
           </div>
         </section>
 
@@ -162,7 +162,7 @@ export default function Home() {
 
       <footer>
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>Designed and built by me · <Link href="/engineering/">Engineering</Link> · <Link href="/accessibility/">Accessibility</Link></span>
+        <span>Designed and built by me</span>
       </footer>
     </div>
   );

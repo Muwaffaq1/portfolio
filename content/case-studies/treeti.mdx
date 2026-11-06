@@ -8,6 +8,19 @@ I wanted lending to feel like a favour, not a contract: terms we both agreed to,
 
 People lend to family and friends all the time and settle the terms in a chat. Months later nobody agrees on the amount, the date or what was promised. Lending apps don't help: they move money, charge interest or score people. Nothing simply keeps an honest record that both sides agreed to.
 
+## How it works
+
+These are screens from treeti's built-in demo, which uses sample people and records.
+
+<Screens items={[
+  { src: "/work/treeti/overview.jpg", caption: "Overview: what you're owed and what you owe, with one clear next step" },
+  { src: "/work/treeti/new-agreement.jpg", caption: "A new agreement starts with who you're lending to. Interest-free from the start" },
+  { src: "/work/treeti/terms.jpg", caption: "Both people review the same terms, and nothing is active until both agree" },
+  { src: "/work/treeti/agreement.jpg", caption: "An active agreement: the confirmed balance, the due date and the next action" },
+  { src: "/work/treeti/repayment.jpg", caption: "A repayment only changes the balance once the other person confirms it" },
+  { src: "/work/treeti/debts.jpg", caption: "My debts: private records for loans agreed outside treeti, visible only to you" }
+]} />
+
 ## Key decisions
 
 <Table head={["Decision", "Why", "What it cost"]} rows={[["Record money, never move it", "Holding money turns a trust tool into a bank", "No payments built in. A repayment only counts once the other person confirms it."], ["Witnesses agree online, and aren't guarantors", "Asking people to be there in person meant most loans would never be witnessed", "Explicit wording, and no religious or legal claims"], ["Cut the extra codes", "Testers had to enter a fresh code for every approval. It felt like a bank, not a favour.", "Signed-in people confirm with one tap; extra checks only for risky moments"], ["Declare it interest-free, warn instead of block", "Launch feedback asked for protection against interest-based loans", "Both sides sign a no-interest line; words like \"fee\" show a warning"]]} />
