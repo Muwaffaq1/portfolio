@@ -46,3 +46,7 @@ photo-originals/
 # Internal notes, kept local
 CHECKLIST.md
 research/
+
+# Unfinished case study: kept on this computer, out of GitHub until its numbers are filled in
+content/projects/treeti-acceptance.json
+content/case-studies/treeti-acceptance.mdx

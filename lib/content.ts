@@ -31,10 +31,17 @@ export type Project = {
 const projectsDir = path.join(process.cwd(), "content/projects");
 const caseStudiesDir = path.join(process.cwd(), "content/case-studies");
 
+// A case study with an unfilled number (a table cell reading "TODO") is still a draft:
+// it stays out of the site until it's finished, then appears on its own.
+function isDraft(slug: string) {
+  const file = path.join(caseStudiesDir, `${slug}.mdx`);
+  return fs.existsSync(file) && /"TODO"/.test(fs.readFileSync(file, "utf8"));
+}
+
 export function getProjects(): Project[] {
   return fs
     .readdirSync(projectsDir)
-    .filter((file) => file.endsWith(".json"))
+    .filter((file) => file.endsWith(".json") && !isDraft(file.replace(/\.json$/, "")))
     .map((file) => {
       const slug = file.replace(/\.json$/, "");
       const data = JSON.parse(fs.readFileSync(path.join(projectsDir, file), "utf8"));
