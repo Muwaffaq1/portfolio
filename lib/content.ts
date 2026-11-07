@@ -26,6 +26,8 @@ export type Project = {
   link?: string;
   caseStudy?: { role: string; timeline: string; tools: string; result: string };
   hasCaseStudy: boolean;
+  // Set "hidden": true in a project's JSON to take it off the site without deleting it.
+  hidden?: boolean;
 };
 
 const projectsDir = path.join(process.cwd(), "content/projects");
@@ -48,6 +50,7 @@ export function getProjects(): Project[] {
       const hasCaseStudy = fs.existsSync(path.join(caseStudiesDir, `${slug}.mdx`));
       return { slug, ...data, hasCaseStudy } as Project;
     })
+    .filter((project) => !project.hidden)
     .sort((a, b) => a.order - b.order);
 }
 
