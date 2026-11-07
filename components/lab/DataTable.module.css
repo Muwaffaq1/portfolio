@@ -1,0 +1,75 @@
+.body { position: relative; flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 0 20px 18px; }
+.newBtn { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 8px; background: var(--w-ink); color: var(--w-bg); font-weight: 500; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+.search { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--w-line); color: var(--w-muted); width: 160px; }
+.search:focus-within { box-shadow: inset 0 0 0 1.5px var(--w-accent); }
+.search input { all: unset; flex: 1; min-width: 0; font-size: 13px; color: var(--w-ink); }
+.search input::placeholder { color: var(--w-muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { all: unset; display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 999px; font-size: 12.5px; color: var(--w-muted); box-shadow: inset 0 0 0 1px var(--w-line); cursor: pointer; transition: background 120ms ease, transform 120ms var(--ease-out); }
+.chips button:active { transform: scale(0.97); }
+.chips button[aria-pressed="true"] { background: #eef4ff; color: #0b4fc2; box-shadow: inset 0 0 0 1px #c9dcff; }
+.chips button:focus-visible, .colBtn:focus-visible { outline: 2px solid var(--w-accent); outline-offset: 2px; }
+.chips i { width: 7px; height: 7px; border-radius: 50%; }
+.dotPaid { background: #1f9d55; }
+.dotSent { background: #1f6feb; }
+.dotOverdue { background: #e5484d; }
+.dotDraft { background: #a1a1a6; }
+.colWrap { position: relative; margin-left: auto; }
+.colBtn { all: unset; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--w-line); cursor: pointer; font-size: 12.5px; }
+.menu { position: absolute; right: 0; top: 36px; z-index: 5; width: 160px; padding: 6px; border-radius: 10px; background: var(--w-raise); transform-origin: top right; box-shadow: 0 0 0 1px var(--w-line), 0 12px 28px -10px rgb(0 0 0 / .25); }
+.menu label { display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 8px; border-radius: 6px; cursor: pointer; }
+@media (hover: hover) and (pointer: fine) { .menu label:hover { background: var(--w-soft); } }
+
+.tableWrap { overflow-x: auto; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--w-line); }
+.table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+.table th { height: 36px; padding: 0 12px; text-align: start; font-weight: 500; font-size: 12px; color: var(--w-muted); background: var(--w-side); border-bottom: 1px solid var(--w-line); white-space: nowrap; }
+.table th:first-child { border-top-left-radius: 12px; }
+.table th:last-child { border-top-right-radius: 12px; }
+.table th button { all: unset; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; border-radius: 4px; }
+.table th button:focus-visible { outline: 2px solid var(--w-accent); outline-offset: 2px; }
+.sortIcon { opacity: 0; transition: opacity 120ms ease, rotate 160ms var(--ease-out); }
+.sortIcon[data-on="true"] { opacity: 1; }
+.sortIcon[data-dir="-1"] { rotate: 180deg; }
+@media (hover: hover) and (pointer: fine) { .table th button:hover .sortIcon { opacity: .6; } .table th button:hover .sortIcon[data-on="true"] { opacity: 1; } }
+.table td { height: 42px; padding: 0 12px; border-bottom: 1px solid var(--w-line); white-space: nowrap; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tbody tr { transition: background 120ms ease; }
+@media (hover: hover) and (pointer: fine) { .table tbody tr:hover { background: var(--w-soft); } }
+.table tbody tr[data-picked="true"] { background: #f2f7ff; }
+.check { width: 20px; }
+.check input, .menu input { width: 18px; height: 18px; margin: 0; accent-color: var(--w-accent); cursor: pointer; }
+.idCol { color: var(--w-muted); font-variant-numeric: tabular-nums; }
+.customer { font-weight: 500; }
+.amount { text-align: end; font-variant-numeric: tabular-nums; }
+.table th.amount { text-align: end; }
+.table th.amount button { flex-direction: row-reverse; }
+.due { color: var(--w-muted); }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+.bPaid { background: #e6f6ec; color: #116632; }
+.bSent { background: #e8f0fe; color: #0b4fc2; }
+.bOverdue { background: #fdeaea; color: #b42318; }
+.bDraft { background: #f0f0f2; color: #55555a; }
+.empty { text-align: center; color: var(--w-muted); height: 80px !important; }
+.empty button { all: unset; color: var(--w-accent); cursor: pointer; font-weight: 500; }
+.count { margin: 10px 2px 0; font-size: 12px; color: var(--w-muted); }
+
+/* Floating bulk bar: rises from the bottom when rows are picked, and leaves the same way */
+.bulk { position: absolute; left: 50%; bottom: 18px; translate: -50% 0; display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 14px; border-radius: 12px; background: #111113; color: #fff; box-shadow: 0 12px 32px -8px rgb(0 0 0 / .45); white-space: nowrap; z-index: 6; }
+.sel { margin-right: 8px; font-size: 13px; color: #c7c7cc; }
+.sel b { color: #fff; }
+.bulk button { all: unset; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 120ms ease, transform 120ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .bulk button:hover { background: #2a2a2e; } }
+.bulk button:active { transform: scale(0.97); }
+.bulk button:focus-visible { outline: 2px solid #4c8dff; outline-offset: 1px; }
+.clear { padding: 0 8px !important; color: #c7c7cc; border-left: 1px solid #2c2c30 !important; border-radius: 0 8px 8px 0 !important; }
+.note { position: absolute; left: 0; right: 0; bottom: 64px; margin: 0; text-align: center; font-size: 12.5px; color: var(--w-pos); pointer-events: none; }
+
+@container (max-width: 620px) {
+  .body { padding: 0 14px 14px; }
+  .search { width: 100%; }
+  .colWrap { margin-left: 0; }
+  .due, .idCol { display: none; }
+  .bulk { left: 14px; right: 14px; translate: none; justify-content: space-between; }
+  .sel { margin-right: auto; }
+}

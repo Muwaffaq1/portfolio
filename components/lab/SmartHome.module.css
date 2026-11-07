@@ -1,46 +1,46 @@
-.screen { position: absolute; inset: 0; overflow: hidden; isolation: isolate; color: #000; font-family: var(--q-font); padding: 56px 16px 28px; display: grid; grid-template-rows: auto auto auto 1fr; gap: 12px; background: #f2f2f7; }
+.screen { position: absolute; inset: 0; overflow: hidden; isolation: isolate; font-family: var(--q-font); padding: 56px 16px 28px; display: grid; grid-template-rows: auto auto auto 1fr; gap: 12px; background: #000; color: #fff; color-scheme: dark; }
 /* Warm light from the room's lamp, scaled by the brightness slider */
-.lamp { position: absolute; z-index: -1; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, #ffe3a3, transparent 65%); opacity: calc(var(--bright) * .7); transition: opacity 300ms ease; }
+.lamp { position: absolute; z-index: -1; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, #8a6420, transparent 65%); opacity: calc(var(--bright) * .55); transition: opacity 300ms ease; }
 .head { display: flex; justify-content: space-between; align-items: end; }
-.head p { margin: 0; font-size: 15px; color: #6e6e73; }
+.head p { margin: 0; font-size: 15px; color: #98989d; }
 .head h2 { margin: 0; font-size: 34px !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
-.headBtn { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: #fff; margin-bottom: 4px; }
+.headBtn { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: #1c1c1e; margin-bottom: 4px; }
 
-.dialCard, .tile { background: #fff; }
+.dialCard, .tile { background: #1c1c1e; }
 .dialCard { position: relative; border-radius: 22px; display: grid; place-items: center; padding: 6px 0 2px; }
 .dial { width: 236px; height: 236px; touch-action: none; cursor: grab; border-radius: 50%; }
 .dial:focus-visible { outline: 2px solid var(--tone); outline-offset: 4px; }
-.track { fill: none; stroke: #ececf0; stroke-width: 14; stroke-linecap: round; }
+.track { fill: none; stroke: #2c2c2e; stroke-width: 14; stroke-linecap: round; }
 .fill { fill: none; stroke-width: 14; stroke-linecap: round; }
-.tick { stroke: #d1d1d6; stroke-width: 1.5; stroke-linecap: round; }
-.tickOn { stroke: #6e6e73; stroke-width: 1.5; stroke-linecap: round; }
+.tick { stroke: #3a3a3c; stroke-width: 1.5; stroke-linecap: round; }
+.tickOn { stroke: #98989d; stroke-width: 1.5; stroke-linecap: round; }
 .knob { fill: #fff; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .25)) drop-shadow(0 4px 8px rgb(0 0 0 / .12)); }
 .center { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; text-align: center; pointer-events: none; }
-.k { font-size: 13px; color: #6e6e73; }
+.k { font-size: 13px; color: #98989d; }
 .value { position: relative; height: 76px; display: grid; place-items: center; overflow: hidden; }
 .value b { font-size: 64px; font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
-.sub { font-size: 13px; color: #6e6e73; }
+.sub { font-size: 13px; color: #98989d; }
 
 .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 10px; }
 .tile { border-radius: 20px; padding: 12px; display: grid; gap: 10px; align-content: start; }
 .toggle { all: unset; display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 14px; }
 .toggle > span:last-child { display: grid; }
 .toggle b { font-size: 15px; font-weight: 600; }
-.toggle > span:last-child span { font-size: 13px; color: #6e6e73; }
+.toggle > span:last-child span { font-size: 13px; color: #98989d; }
 .toggle:focus-visible, .scene:focus-visible { outline: 2px solid #0a84ff; outline-offset: 2px; }
-.bulb, .fan { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #6e6e73; background: #f2f2f7; transition: background 250ms ease, color 250ms ease; }
+.bulb, .fan { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #98989d; background: #2c2c2e; transition: background 250ms ease, color 250ms ease; }
 .screen[data-lights="true"] .bulb { background: #ffd60a; color: #4a3b00; }
 .toggle[aria-pressed="true"] .fan { background: #0a84ff; color: #fff; }
 .spin { animation: spin .9s linear infinite; animation-play-state: var(--lab-play); }
 @keyframes spin { to { rotate: 360deg; } }
 .range { -webkit-appearance: none; appearance: none; width: 100%; height: 32px; background: transparent; margin: 0; cursor: pointer; }
-.range::-webkit-slider-runnable-track { height: 32px; border-radius: 10px; background: linear-gradient(90deg, #ffd60a var(--p), #ececf0 0); }
-.range::-moz-range-track { height: 32px; border-radius: 10px; background: linear-gradient(90deg, #ffd60a var(--p), #ececf0 0); }
+.range::-webkit-slider-runnable-track { height: 32px; border-radius: 10px; background: linear-gradient(90deg, #ffd60a var(--p), #2c2c2e 0); }
+.range::-moz-range-track { height: 32px; border-radius: 10px; background: linear-gradient(90deg, #ffd60a var(--p), #2c2c2e 0); }
 .range::-webkit-slider-thumb { -webkit-appearance: none; width: 4px; height: 18px; margin-top: 7px; border-radius: 4px; background: rgb(0 0 0 / .35); }
 .range::-moz-range-thumb { width: 4px; height: 18px; border: 0; border-radius: 4px; background: rgb(0 0 0 / .35); }
 .range:disabled { opacity: .4; cursor: default; }
 .range:focus-visible { outline: 2px solid #0a84ff; outline-offset: 2px; border-radius: 10px; }
 .scenes { align-self: end; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.scene { all: unset; height: 64px; border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 4px; font-size: 12px; font-weight: 600; cursor: pointer; background: #fff; color: #3c3c43; transition: transform 140ms var(--ease-out), background 200ms ease, color 200ms ease; }
+.scene { all: unset; height: 64px; border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 4px; font-size: 12px; font-weight: 600; cursor: pointer; background: #1c1c1e; color: #c7c7cc; transition: transform 140ms var(--ease-out), background 200ms ease, color 200ms ease; }
 .scene:active { transform: scale(0.96); }
-.scene[aria-checked="true"] { background: #000; color: #fff; }
+.scene[aria-checked="true"] { background: #fff; color: #000; }

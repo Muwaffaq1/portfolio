@@ -1,0 +1,43 @@
+.body { flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 0 20px 18px; }
+.navBtns { display: inline-flex; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--w-line); }
+.navBtns span { width: 30px; height: 30px; display: grid; place-items: center; color: var(--w-muted); }
+.navBtns span + span { border-left: 1px solid var(--w-line); }
+.today { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--w-line); font-weight: 500; }
+.hint { margin: 0 0 10px; font-size: 12px; color: var(--w-muted); }
+.cal { border-radius: 12px; box-shadow: inset 0 0 0 1px var(--w-line); background: var(--w-raise); overflow: hidden; }
+.head { display: grid; grid-template-columns: 48px repeat(var(--days), 1fr); height: 40px; align-items: center; border-bottom: 1px solid var(--w-line); font-size: 12px; color: var(--w-muted); }
+.head b { margin-left: 2px; color: var(--w-ink); font-weight: 600; }
+.isToday b { display: inline-grid; place-items: center; min-width: 22px; height: 22px; border-radius: 50%; background: #ff5c4d; color: #fff; }
+.scroll { display: grid; grid-template-columns: 48px 1fr; }
+.gutter { display: grid; align-content: start; }
+.gutter span { font-size: 10.5px; color: var(--w-muted); text-align: end; padding-right: 8px; translate: 0 -7px; }
+.gutter span:first-child { visibility: hidden; }
+.grid { position: relative; }
+.col { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--w-line); }
+.row { position: absolute; left: 0; right: 0; border-top: 1px solid var(--w-line); }
+.row:first-of-type { border-top: 0; }
+.now { position: absolute; height: 2px; background: #ff5c4d; z-index: 3; pointer-events: none; }
+.now i { position: absolute; left: -4px; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: #ff5c4d; }
+
+/* Events: a tinted fill with a solid left bar; they settle into their slot on a short ease-out */
+.ev { position: absolute; z-index: 2; box-sizing: border-box; display: grid; align-content: start; gap: 1px; padding: 5px 7px 6px 9px; border-radius: 7px; overflow: hidden; cursor: grab; font-size: 11.5px; line-height: 1.3; -webkit-user-select: none; user-select: none; touch-action: none;
+  background: color-mix(in srgb, var(--tone) 22%, var(--w-raise)); color: color-mix(in srgb, var(--tone) 30%, #fff); box-shadow: inset 3px 0 0 var(--tone);
+  transition: top 160ms cubic-bezier(0.23, 1, 0.32, 1), left 160ms cubic-bezier(0.23, 1, 0.32, 1), height 160ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 160ms ease, scale 160ms ease; }
+.ev b { font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ev span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* While dragging it lifts: a little larger, with a shadow, and follows the snap without lag */
+.ev[data-drag="true"] { z-index: 4; cursor: grabbing; scale: 1.03; transition-duration: 70ms; box-shadow: inset 3px 0 0 var(--tone), 0 10px 24px -6px rgb(0 0 0 / .6), 0 0 0 1px color-mix(in srgb, var(--tone) 60%, transparent); }
+.ev:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+.handle { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; cursor: ns-resize; }
+.handle::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 18px; height: 3px; translate: -50% 0; border-radius: 3px; background: currentColor; opacity: 0; transition: opacity 120ms ease; }
+@media (hover: hover) and (pointer: fine) { .ev:hover .handle::after { opacity: .5; } }
+.blue { --tone: #4c8dff; }
+.green { --tone: #34c77b; }
+.amber { --tone: #f2a93b; }
+.rose { --tone: #ff6b81; }
+
+@container (max-width: 620px) {
+  .body { padding: 0 14px 14px; }
+}
+/* Under an hour there is room for one line: title, then the start time beside it */
+.short { grid-template-columns: auto 1fr; align-items: baseline; column-gap: 5px; padding-block: 4px; }

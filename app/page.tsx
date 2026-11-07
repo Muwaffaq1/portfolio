@@ -42,7 +42,7 @@ function Card({ project }: { project: Project }) {
 }
 
 // Six experiments chosen to show range: mobile, web, motion, fintech and culture.
-const featuredLab = ["live-activity", "card-stack", "command-palette", "flashcards", "prayer-times", "music-scrubber"].map((slug) => lab.find((p) => p.slug === slug)!);
+const featuredLab = ["money-dashboard", "card-stack", "spring-tuner", "swipe-to-pay", "week-calendar", "prayer-times"].map((slug) => lab.find((p) => p.slug === slug)!);
 
 export default function Home() {
   const projects = getProjects();

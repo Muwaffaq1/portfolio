@@ -144,7 +144,7 @@ h2 { font: 400 12px/1 var(--mono); letter-spacing: .06em; color: var(--faint); m
 .flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0 28px; }
 .flow-step { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; background: var(--raise); position: relative; }
 .flow-step + .flow-step::before { content: "→"; position: absolute; left: -11px; top: 14px; color: var(--faint); font-size: 12px; }
-.flow-label { font: 400 11px var(--mono); color: var(--faint); text-transform: uppercase; letter-spacing: .05em; }
+.flow-label { font: 400 12px var(--mono); color: var(--faint); text-transform: uppercase; letter-spacing: .05em; }
 .flow-token, .swatch { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 8px; align-items: center; font-size: 12px; }
 .flow-token i, .swatch i { width: 14px; height: 14px; border-radius: 4px; grid-row: span 2; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
 .flow-token code, .swatch code { font: 400 12px var(--mono); color: var(--ink); overflow-wrap: anywhere; }
@@ -178,7 +178,7 @@ a.hint { text-decoration: none; }
 .nuring { border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 16px; background: var(--raise); }
 .nuring-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .nuring-head b { font-size: 16px; font-weight: 500; }
-.now-tag { font: 400 11px var(--mono); color: var(--live); border: 1px solid color-mix(in srgb, var(--live) 35%, transparent); border-radius: 999px; padding: 3px 9px; }
+.now-tag { font: 400 12px var(--mono); color: var(--live); border: 1px solid color-mix(in srgb, var(--live) 35%, transparent); border-radius: 999px; padding: 3px 9px; }
 .nuring p { margin: 0; color: var(--muted); max-width: var(--measure); }
 .nuring em { color: var(--ink); }
 .note { font-size: 12px; color: var(--faint); margin: 0; }
@@ -511,7 +511,7 @@ html { scroll-padding-top: 88px; }
 .fig-stage { all: unset; box-sizing: border-box; position: relative; display: block; width: 100%; cursor: zoom-in; padding: clamp(12px, 3vw, 28px); border-radius: 18px; background: var(--raise); border: 1px solid var(--line); }
 .fig-stage img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 12px 32px -12px rgba(0,0,0,.35); }
 .fig-stage:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-.fig-hint { position: absolute; right: 14px; bottom: 14px; font: 400 11px var(--mono); color: var(--ink); background: color-mix(in srgb, var(--bg) 80%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; opacity: 0; transform: translateY(4px); transition: opacity 160ms ease, transform 200ms var(--ease-out); }
+.fig-hint { position: absolute; right: 14px; bottom: 14px; font: 400 12px var(--mono); color: var(--ink); background: color-mix(in srgb, var(--bg) 80%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; opacity: 0; transform: translateY(4px); transition: opacity 160ms ease, transform 200ms var(--ease-out); }
 .fig-stage:focus-visible .fig-hint { opacity: 1; transform: none; }
 @media (hover: hover) and (pointer: fine) { .fig-stage:hover .fig-hint { opacity: 1; transform: none; } }
 @media (hover: none) { .fig-hint { opacity: 1; transform: none; } }
@@ -757,7 +757,7 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 
 /* ---------- Playground lab: one experiment per page ---------- */
 .lab-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
-.lab-tags span { font: 400 11px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
+.lab-tags span { font: 400 12px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
 .lab-stage { margin: 28px 0 8px; border-radius: 24px; border: 1px solid var(--line); background: var(--stage); padding: clamp(16px, 4vw, 40px); display: grid; place-items: center; min-height: 420px; overflow: hidden; }
 .lab-phone { width: min(360px, 100%); padding: 10px; border-radius: 52px; background: linear-gradient(150deg, #3a3a38, #0c0c0b 55%, #262624); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 30px 60px -28px rgba(0,0,0,.7); }
 .lab-screen { position: relative; height: 720px; border-radius: 42px; overflow: hidden; background: #fff; isolation: isolate; }
@@ -765,10 +765,10 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .lab-browser { width: 100%; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 30px 60px -28px rgba(0,0,0,.6); }
 .lab-browser-bar { height: 34px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #ecebe7; }
 .lab-browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d4d2cc; }
-.lab-browser-body { position: relative; min-height: 460px; }
+.lab-browser-body { position: relative; min-height: 520px; }
 .lab-how { margin-top: 28px; }
 .lab-pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 40px; font-size: 14px; }
-.lab-pager a { color: var(--muted); text-decoration: none; }
+.lab-pager a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; }
 @media (hover: hover) and (pointer: fine) { .lab-pager a:hover { color: var(--ink); } }
 /* Every lab loop reads this: paused by the header's Pause button or by reduced motion */
 :root { --lab-play: running; }
@@ -795,7 +795,7 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .lab-card-text { display: grid; gap: 3px; }
 .lab-card-text b { font-size: 14px; font-weight: 500; }
 .lab-card-text > span { font-size: 13px; color: var(--muted); line-height: 1.45; }
-.lab-card-text .lab-card-tags { font: 400 11px var(--mono); color: var(--faint); }
+.lab-card-text .lab-card-tags { font: 400 12px var(--mono); color: var(--faint); }
 
 /* ---------- Lab kit: depth, light and material shared by every experiment ---------- */
 :root {
@@ -867,3 +867,7 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 /* The site gives every section top padding; experiments set their own spacing */
 :where(.lab-stage) section { padding-top: 0; }
 @media (max-width: 420px) { .lab-status { padding-inline: 26px 22px; font-size: 15px; } .lab-island { width: 104px; height: 31px; } }
+/* Dark experiments get a dark window bar, so the frame matches the app inside it */
+.lab-browser.is-dark { background: #0e0e10; box-shadow: 0 0 0 1px #000, 0 1px 2px rgb(0 0 0 / .1), 0 24px 48px -28px rgb(0 0 0 / .45); }
+.lab-browser.is-dark .lab-browser-bar { background: #18181b; box-shadow: inset 0 -1px 0 #000; }
+.lab-browser.is-dark .lab-browser-bar i { background: #3a3a3e; }

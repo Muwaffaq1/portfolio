@@ -3,7 +3,6 @@ import type { ComponentType } from "react";
 
 // One code-split chunk per experiment, so each page only loads the piece it shows.
 export const pieces: Record<string, ComponentType> = {
-  "live-activity": dynamic(() => import("./LiveActivity")),
   "swipe-to-pay": dynamic(() => import("./SwipeToPay")),
   "card-stack": dynamic(() => import("./CardStack")),
   "bottom-sheet": dynamic(() => import("./BottomSheet")),
@@ -15,4 +14,10 @@ export const pieces: Record<string, ComponentType> = {
   "music-scrubber": dynamic(() => import("./MusicScrubber")),
   "prayer-times": dynamic(() => import("./PrayerTimes")),
   "smart-home": dynamic(() => import("./SmartHome")),
+  "money-dashboard": dynamic(() => import("./MoneyDashboard")),
+  "data-table": dynamic(() => import("./DataTable")),
+  "week-calendar": dynamic(() => import("./WeekCalendar")),
+  "spring-tuner": dynamic(() => import("./SpringTuner")),
+  "card-to-detail": dynamic(() => import("./CardToDetail")),
+  "button-states": dynamic(() => import("./ButtonStates")),
 };
