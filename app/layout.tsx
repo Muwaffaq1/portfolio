@@ -8,7 +8,7 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 const chivo = Chivo({ variable: "--font-chivo", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "600", "700"] });
 
-const description = "I design, build and launch products I'd want to use. Websites, design systems, products built with AI, and launch films.";
+const description = "Product designer and design engineer in Abuja. I design and build fintech and marketplace products, from the first sketch to production code.";
 
 // Paints under the notch (content is padded back with env(safe-area-inset-*)), and gives the
 // browser chrome the page colour in each theme. Zoom is never disabled.

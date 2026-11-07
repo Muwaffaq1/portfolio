@@ -69,7 +69,7 @@ export function Header({ name }: { name: string }) {
       </Link>
       <nav>
         <Link href="/#work">Work</Link>
-        <Link href="/#systems">Systems</Link>
+        <Link href="/systems/">Systems</Link>
         <Link href="/playground/">Playground</Link>
         <Link href="/about/">About</Link>
         <Link href="/#contact">Contact</Link>

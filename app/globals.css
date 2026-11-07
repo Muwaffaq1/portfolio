@@ -653,8 +653,6 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 }
 @media (min-width: 641px) and (max-width: 780px) { .pf-phone { zoom: .7; } }
 /* Start here pages */
-.start-here { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
-.start-here a { color: var(--ink); }
 .for-switch { margin: 4px 0 8px; flex-wrap: wrap; }
 .for-switch a { font: 500 13px var(--sans); color: var(--muted); text-decoration: none; height: 30px; padding: 0 14px; border-radius: 999px; display: inline-flex; align-items: center; touch-action: manipulation; }
 .for-switch a[aria-current="page"] { color: var(--ink); background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,.2); }
@@ -871,3 +869,15 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .lab-browser.is-dark { background: #0e0e10; box-shadow: 0 0 0 1px #000, 0 1px 2px rgb(0 0 0 / .1), 0 24px 48px -28px rgb(0 0 0 / .45); }
 .lab-browser.is-dark .lab-browser-bar { background: #18181b; box-shadow: inset 0 -1px 0 #000; }
 .lab-browser.is-dark .lab-browser-bar i { background: #3a3a3e; }
+/* A vertical film (9:16) sits centred at phone size instead of being letterboxed */
+.sys-film.tall video { aspect-ratio: 9 / 16; max-width: 320px; margin-inline: auto; object-fit: cover; }
+.sys-film.tall figcaption { text-align: center; max-width: 52ch; margin-inline: auto; }
+/* More work: a compact list under the three featured tiles */
+.more-work { margin-top: 28px; }
+.more-work li > a { display: grid; gap: 2px; color: inherit; text-decoration: none; min-width: 0; }
+@media (hover: hover) and (pointer: fine) { .more-work li > a:hover .n { text-decoration: underline; text-underline-offset: 3px; } }
+.more-work li > a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
+.exp-note { margin-top: 16px; }
+.contact-alt { margin-top: 14px; font-size: 14px; }
+/* On phones the grid is two columns, so the home page shows two experiments instead of leaving one orphaned */
+@media (max-width: 720px) { .home-lab li:nth-child(3) { display: none; } }

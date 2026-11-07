@@ -27,7 +27,7 @@ export default async function SystemArticle({ params }: PageProps<"/systems/[slu
       <Header name={site.name} />
       <main>
         <div className="cs-head">
-          <Link className="cs-back" href="/#systems">← Design systems</Link>
+          <Link className="cs-back" href="/systems/">← Design systems</Link>
           <h1 className="cs-title">{system.name} design system</h1>
           <p className="cs-sum">{system.summary}</p>
         </div>
@@ -44,7 +44,7 @@ export default async function SystemArticle({ params }: PageProps<"/systems/[slu
         </dl>
         <article className="prose"><Body /></article>
       </main>
-      <footer><Link href="/#systems">← Design systems</Link><Link href="/#contact">Get in touch →</Link></footer>
+      <footer><Link href="/systems/">← Design systems</Link><Link href="/#contact">Get in touch →</Link></footer>
     </div>
   );
 }

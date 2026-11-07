@@ -13,9 +13,8 @@
     "مرحبا،"
   ],
   "intro": [
-    "I build products I'd want to use myself. If I wouldn't open it twice, I don't ship it.",
-    "For 4+ years I have designed fintech and marketplace products, from a virtual wallet to a live bidding marketplace. I have designed and built **8 websites and apps**, set up **5 design systems**, made **4 launch films**, and shipped **2 live products**, including my own app, treeti: **72 people** signed up and **₦549,300** in interest-free loans recorded in its first weeks. Most recently I rebuilt **QuickPay**, a Nigerian money app: 105 messy screens became 91 on one token system with dark mode.",
-    "I take work from Figma to production code in Next.js, Astro and Tailwind. I use AI tools like Claude Code to move at the speed of a small team, and I review every screen myself before it ships."
+    "I design and build fintech and marketplace products, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
+    "My own app, **treeti**, has **72 people** recording interest-free loans on it. Most recently I rebuilt **QuickPay**, a Nigerian money app: **105** inconsistent screens became **91** on one token system."
   ],
   "theme": {
     "texture": 0.08

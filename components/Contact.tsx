@@ -18,10 +18,10 @@ export function contactLinks() {
   ].filter(Boolean) as { label: string; href: string; download?: boolean }[];
 }
 
-export function ContactLinks() {
+export function ContactLinks({ only }: { only?: string[] } = {}) {
   return (
     <div className="links">
-      {contactLinks().map((l) => (
+      {contactLinks().filter((l) => !only || only.includes(l.label)).map((l) => (
         <a key={l.label} href={l.href} {...(l.download ? { download: "" } : { target: l.href.startsWith("http") ? "_blank" : undefined, rel: "noreferrer" })}>{l.label}</a>
       ))}
     </div>
@@ -64,6 +64,7 @@ export function ContactSection() {
           <p className="d">{site.lookingFor}. {c.reply}</p>
           {c.email && <CopyEmail email={c.email} />}
           <ContactLinks />
+          <p className="d contact-alt">Hiring me for a project instead? <a href="/services/">See how I work with businesses →</a></p>
         </div>
         <dl className="contact-meta">
           <div><dt>Based in</dt><dd>{site.location}, Nigeria</dd></div>

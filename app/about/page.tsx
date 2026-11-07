@@ -53,6 +53,11 @@ export default function About() {
           </ol>
         </section>
 
+        <section aria-labelledby="ai-h">
+          <div className="sh"><h2 id="ai-h">Where AI fits</h2></div>
+          <ul className="ai">{site.ai.map((line) => <li key={line}>{line}</li>)}</ul>
+        </section>
+
         <section aria-labelledby="ex-h">
           <div className="sh"><h2 id="ex-h">Experience</h2><span className="hint">{site.experience.length} roles</span></div>
           <Experience detail />

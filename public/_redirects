@@ -1,9 +1,10 @@
 # Removed pages: send old links to the closest page that still exists
-/engineering/ /for/front-end/ 301
-/engineering /for/front-end/ 301
-/accessibility/ /for/front-end/ 301
-/accessibility /for/front-end/ 301
+/engineering/ / 301
+/engineering / 301
+/accessibility/ / 301
+/accessibility / 301
 /playground/live-activity /playground/ 301
 /playground/live-activity/ /playground/ 301
 /playground/prayer-times /playground/ 301
 /playground/prayer-times/ /playground/ 301
+/for/* / 301
