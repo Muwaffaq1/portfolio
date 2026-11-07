@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { Shot } from "@/components/Shot";
 import { LabGrid } from "@/components/lab/LabGrid";
 import { lab } from "@/lib/lab";
-import { playground, site } from "@/lib/content";
+import { site } from "@/lib/content";
 
 export const metadata = {
   title: `Playground — ${site.name}`,
-  description: "Small experiments in mobile, web and motion, most of them live. Plus a concept from Figma.",
+  description: "Small experiments in mobile, web and motion, most of them live.",
 };
 
 export default function Playground() {
@@ -24,13 +23,6 @@ export default function Playground() {
 
         <section aria-label="Experiments" className="lab-index">
           <LabGrid items={lab} />
-        </section>
-
-        <section aria-labelledby="sc-h" style={{ marginTop: 64 }}>
-          <div className="sh"><h2 id="sc-h">Concepts</h2><span className="hint">From Figma</span></div>
-          <div className="gallery">
-            {playground.filter((s) => !s.live).map((s) => <Shot key={s.src} item={s} />)}
-          </div>
         </section>
       </main>
       <footer><Link href="/">← Home</Link><Link href="/#contact">Get in touch →</Link></footer>
