@@ -1,7 +1,7 @@
 {
   "name": "Nūring",
   "summary": "A dark, data-first system for athletes, coaches and guardians reading grip signals",
-  "cover": "/systems/nuring/triage.jpg",
+  "cover": "/systems/nuring/triage.webp",
   "order": 2,
   "facts": { "role": "System design, Figma build", "timeline": "Oct 2026", "tools": "Figma variables, Figma MCP", "scope": "Web app · athlete, staff, guardian, coach" },
   "stats": [

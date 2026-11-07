@@ -18,7 +18,7 @@ export default function Playground() {
         <div className="cs-head">
           <Link className="cs-back" href="/">← Home</Link>
           <h1 className="cs-title">Playground</h1>
-          <p className="cs-sum">{lab.length} small experiments in mobile, web and motion, each built to answer one question. {live} of them are live, so open one and try it.</p>
+          <p className="cs-sum">{lab.length} small experiments in mobile, web and motion, each built to answer one question. {live === lab.length ? "All of them are live" : `${live} of them are live`}, so open one and try it.</p>
         </div>
 
         <section aria-label="Experiments" className="lab-index">

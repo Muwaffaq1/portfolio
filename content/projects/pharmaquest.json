@@ -12,7 +12,7 @@
   "preview": {
     "type": "video",
     "src": "/work/pharmaquest-game.mp4",
-    "poster": "/work/pharmaquest-game.jpg",
+    "poster": "/work/pharmaquest-game.webp",
     "frame": "phone"
   },
   "link": "https://pharmaquest.pages.dev",

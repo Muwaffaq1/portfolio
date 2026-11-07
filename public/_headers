@@ -1,0 +1,11 @@
+# Build files have a content hash in their name, so they never change: cache them for a year.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Folders that hold only images and video (no pages): cache for a day, then refresh in the background.
+/playground/lab/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/playground/stays/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/films/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

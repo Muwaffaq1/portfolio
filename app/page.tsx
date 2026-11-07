@@ -69,7 +69,7 @@ export default function Home() {
             {featuredLab.map((p) => (
               <li key={p.slug}>
                 <Link href={`/playground/${p.slug}/`} className="lab-card">
-                  <span className="lab-thumb"><img src={`/playground/lab/${p.slug}.jpg`} alt="" loading="lazy" /></span>
+                  <span className="lab-thumb"><img src={`/playground/lab/${p.slug}.webp`} alt="" loading="lazy" /></span>
                   <span className="lab-card-text"><b>{p.title}</b><span>{p.question}</span><span className="lab-card-tags">{p.kind}{p.live ? " · Live" : ""}</span></span>
                 </Link>
               </li>

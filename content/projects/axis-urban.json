@@ -13,7 +13,7 @@
   "preview": {
     "type": "video",
     "src": "/work/axis.mp4",
-    "poster": "/work/axis.jpg",
+    "poster": "/work/axis.webp",
     "wide": true
   },
   "link": "https://axisurban.framer.website",

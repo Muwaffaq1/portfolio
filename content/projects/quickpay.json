@@ -13,7 +13,7 @@
   "preview": {
     "type": "video",
     "src": "/work/quickpay.mp4",
-    "poster": "/work/quickpay.png",
+    "poster": "/work/quickpay.webp",
     "frame": "phone"
   },
   "caseStudy": {

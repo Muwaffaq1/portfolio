@@ -1,7 +1,7 @@
 {
   "name": "QuickPay",
   "summary": "A token system that turned 105 inconsistent screens into one app, in light and dark",
-  "cover": "/systems/quickpay/palette.png",
+  "cover": "/systems/quickpay/palette.webp",
   "order": 1,
   "facts": { "role": "Audit, system and redesign", "timeline": "Nov 2026", "tools": "Figma variables, Figma MCP, Mobbin", "scope": "Mobile app · light and dark" },
   "stats": [

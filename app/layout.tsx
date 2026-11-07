@@ -5,8 +5,9 @@ import "./globals.css";
 
 const sans = Schibsted_Grotesk({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
-const chivo = Chivo({ variable: "--font-chivo", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "600", "700"] });
+// Chivo and Arabic appear on only a few screens, so they load when used instead of being preloaded on every page.
+const chivo = Chivo({ variable: "--font-chivo", subsets: ["latin"], weight: ["400", "500", "600", "700"], preload: false });
+const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "600", "700"], preload: false });
 
 const description = "Product designer and design engineer in Abuja. I design products and build them, from the first sketch to production code.";
 

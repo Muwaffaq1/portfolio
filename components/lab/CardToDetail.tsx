@@ -9,10 +9,10 @@ import { tap, useStill } from "./util";
 type Stay = { id: string; name: string; place: string; price: string; nights: string; about: string; photo: string; alt: string };
 // Photos from Unsplash (Unsplash License): Cosmin Gurau, Rémi Jacquaint, Filip Zrnzević, Zoltan Tasi.
 const stays: Stay[] = [
-  { id: "a", name: "Mill House", place: "Lakeside", price: "₦68,000", nights: "per night", photo: "/playground/stays/lake.jpg", alt: "A wooden house and an old mill on a still lake at sunset", about: "Two rooms over the water, with a deck that catches the evening light. A rowing boat waits at the end of the garden." },
-  { id: "b", name: "Dune House", place: "Desert edge", price: "₦42,000", nights: "per night", photo: "/playground/stays/desert.jpg", alt: "A small stone house alone on pale sand under a clear sky", about: "A stone house where the sand begins, cool inside all afternoon. Breakfast is brought to the door at seven." },
-  { id: "c", name: "Hill Cabin", place: "Highlands", price: "₦95,000", nights: "per night", photo: "/playground/stays/hill.jpg", alt: "A wooden cabin on a green hillside, with forest and low cloud behind it", about: "High on the hill, where mornings start in the clouds. A path from the porch runs down through the forest." },
-  { id: "d", name: "Beach Hut", place: "On the coast", price: "₦77,000", nights: "per night", photo: "/playground/stays/beach.jpg", alt: "A teal wooden beach hut beside a fishing boat under a stormy sky", about: "A wooden hut a few steps from the shore, with an outdoor shower and the sound of the sea at night." },
+  { id: "a", name: "Mill House", place: "Lakeside", price: "₦68,000", nights: "per night", photo: "/playground/stays/lake.webp", alt: "A wooden house and an old mill on a still lake at sunset", about: "Two rooms over the water, with a deck that catches the evening light. A rowing boat waits at the end of the garden." },
+  { id: "b", name: "Dune House", place: "Desert edge", price: "₦42,000", nights: "per night", photo: "/playground/stays/desert.webp", alt: "A small stone house alone on pale sand under a clear sky", about: "A stone house where the sand begins, cool inside all afternoon. Breakfast is brought to the door at seven." },
+  { id: "c", name: "Hill Cabin", place: "Highlands", price: "₦95,000", nights: "per night", photo: "/playground/stays/hill.webp", alt: "A wooden cabin on a green hillside, with forest and low cloud behind it", about: "High on the hill, where mornings start in the clouds. A path from the porch runs down through the forest." },
+  { id: "d", name: "Beach Hut", place: "On the coast", price: "₦77,000", nights: "per night", photo: "/playground/stays/beach.webp", alt: "A teal wooden beach hut beside a fishing boat under a stormy sky", about: "A wooden hut a few steps from the shore, with an outdoor shower and the sound of the sea at night." },
 ];
 
 function Photo({ st, alt }: { st: Stay; alt?: boolean }) {

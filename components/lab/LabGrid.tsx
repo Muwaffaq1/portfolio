@@ -22,7 +22,7 @@ export function LabGrid({ items }: { items: LabPiece[] }) {
         {shown.map((p) => (
           <li key={p.slug}>
             <Link href={`/playground/${p.slug}/`} className="lab-card">
-              <span className="lab-thumb"><img src={`/playground/lab/${p.slug}.jpg`} alt="" loading="lazy" /></span>
+              <span className="lab-thumb"><img src={`/playground/lab/${p.slug}.webp`} alt="" loading="lazy" /></span>
               <span className="lab-card-text">
                 <b>{p.title}</b>
                 <span>{p.question}</span>

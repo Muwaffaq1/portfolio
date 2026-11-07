@@ -49,7 +49,7 @@
       "line": "Product launch film",
       "kind": "4K",
       "video": "/films/treeti.mp4",
-      "poster": "/films/treeti.jpg",
+      "poster": "/films/treeti.webp",
       "length": "0:55",
       "about": "A loan nobody wrote down, then treeti putting it in writing, in under a minute. Real app screens, a voiceover and music, made with HyperFrames and mastered in 4K."
     },
@@ -58,7 +58,7 @@
       "line": "Design system film",
       "kind": "System film",
       "video": "/films/nuring-system.mp4",
-      "poster": "/films/nuring-system.jpg",
+      "poster": "/films/nuring-system.webp",
       "length": "0:42",
       "wide": true,
       "about": "One design system across the coach, athlete and guardian apps, shown with real screens from it. Read the full write-up on the Nūring design system page."
@@ -173,27 +173,27 @@
   ],
   "life": [
     {
-      "src": "/about/gym-flex.jpg",
+      "src": "/about/gym-flex.webp",
       "caption": "Gym most mornings. It keeps my head clear"
     },
     {
-      "src": "/about/cooking-1.jpg",
+      "src": "/about/cooking-1.webp",
       "caption": "Home-cooked: spaghetti, eggs and fried plantain"
     },
     {
-      "src": "/about/madinah.jpg",
+      "src": "/about/madinah.webp",
       "caption": "Madinah, on Umrah · Jan 2026"
     },
     {
-      "src": "/about/gym.jpg",
+      "src": "/about/gym.webp",
       "caption": "Training day"
     },
     {
-      "src": "/about/cooking-2.jpg",
+      "src": "/about/cooking-2.webp",
       "caption": "Another one from my kitchen"
     },
     {
-      "src": "/about/doha.jpg",
+      "src": "/about/doha.webp",
       "caption": "National Museum of Qatar, Doha · Feb 2026"
     }
   ],

@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 // A Figma frame presented on a stage. The page shows a 1600px render (sharp on retina at column width);
 // clicking opens the full 4K export in a viewer, where a second click shows it at full size.
 export function ZoomFigure({ src, caption, wide }: { src: string; caption: string; wide?: boolean }) {
-  const full = src.replace(/\.(png|jpe?g)$/, "@full.$1");
+  const full = src.replace(/\.(png|jpe?g|webp)$/, "@full.$1");
   const dialog = useRef<HTMLDialogElement>(null);
   const [zoomed, setZoomed] = useState(false);
 

@@ -29,7 +29,7 @@ function Media({ preview }: { preview: Preview }) {
   }, []);
 
   if (preview.type === "image") return <img src={preview.src} alt="" />;
-  return <video ref={ref} src={preview.src} poster={preview.poster} muted loop playsInline preload="metadata" />;
+  return <video ref={ref} src={preview.src} poster={preview.poster} muted loop playsInline preload="none" />;
 }
 
 function Stage({ preview }: { preview?: Preview }) {
