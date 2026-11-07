@@ -26,7 +26,8 @@ export default function About() {
             <h1 className="cs-title">About me</h1>
             <p className="cs-sum">{site.role} in {site.location}, Nigeria. Designing products for 4+ years.</p>
             <div className="links" style={{ marginTop: 6 }}>
-              <a href={site.contact.resume} download>Download résumé</a>
+              <a href={site.contact.resume} download>Résumé (product designer)</a>
+              <a href="/muwaffaq-yusuf-resume-design-engineer.pdf" download>Résumé (design engineer)</a>
               <a href={site.contact.call} target="_blank" rel="noreferrer">Book a call</a>
             </div>
           </div>

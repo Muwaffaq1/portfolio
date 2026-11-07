@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Muwaffaq Yusuf — Résumé (design engineer)</title>
+<!-- Source for public/muwaffaq-yusuf-resume-design-engineer.pdf. Rebuild with: node scripts/resume.cjs -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 15mm 16mm 14mm; }
+  :root { --ink: #171716; --muted: #57554f; --faint: #6b6963; --line: #dcdad3; --live: #1c7644; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; color: var(--ink); font: 400 9.6pt/1.5 "Schibsted Grotesk", system-ui, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .mono, h2, .when, .tag { font-family: "Geist Mono", ui-monospace, monospace; }
+
+  header { display: grid; grid-template-columns: 1fr auto; gap: 4mm 10mm; align-items: end; padding-bottom: 5mm; border-bottom: 1px solid var(--ink); }
+  h1 { margin: 0; font-size: 24pt; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+  .role { margin: 2.2mm 0 0; font-size: 11pt; color: var(--muted); }
+  .contact { margin: 0; padding: 0; list-style: none; text-align: right; font-size: 8.6pt; line-height: 1.65; color: var(--muted); }
+  .contact b { color: var(--ink); font-weight: 500; }
+
+  section { margin-top: 5.5mm; }
+  h2 { margin: 0 0 2.6mm; font-size: 7.6pt; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+  .summary { margin: 0; font-size: 10pt; line-height: 1.55; }
+  .summary strong, li strong { font-weight: 600; }
+
+  .job { margin-bottom: 4.6mm; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+  .job-head h3 { margin: 0; font-size: 10.5pt; font-weight: 600; }
+  .job-head h3 span { font-weight: 400; color: var(--muted); }
+  .when { font-size: 8pt; color: var(--muted); white-space: nowrap; }
+  .about { margin: .8mm 0 1.6mm; color: var(--muted); }
+  ul { margin: 0; padding-left: 4mm; }
+  li { margin: 0 0 1.1mm; padding-left: .5mm; }
+  li::marker { color: var(--faint); }
+
+  .work { display: grid; gap: 3.4mm; }
+  .proj { break-inside: avoid; }
+  .proj-head { display: flex; align-items: baseline; gap: 2.5mm; flex-wrap: wrap; }
+  .proj-head h3 { margin: 0; font-size: 10pt; font-weight: 600; }
+  .tag { font-size: 7.2pt; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: .2mm 1.8mm; }
+  .tag.live { color: var(--live); border-color: color-mix(in srgb, var(--live) 40%, white); }
+  .proj-head .url { margin-left: auto; font-size: 8pt; color: var(--faint); }
+  .proj p { margin: .8mm 0 0; }
+
+  .skills { display: grid; grid-template-columns: 30mm 1fr; gap: 1.6mm 5mm; margin: 0; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--muted); }
+  .edu { display: grid; gap: 1.6mm; }
+  .edu div { display: flex; justify-content: space-between; gap: 6mm; }
+  .edu span { color: var(--muted); }
+  .page-break { break-before: page; }
+  footer { margin-top: 6mm; padding-top: 3mm; border-top: 1px solid var(--line); font-size: 8pt; color: var(--faint); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Muwaffaq Yusuf</h1>
+    <p class="role">Design engineer · I design products and build them</p>
+  </div>
+  <ul class="contact">
+    <li>Abuja, Nigeria · GMT+1 · Remote</li>
+    <li><a href="mailto:yusufmuwaffaq17@gmail.com"><b>yusufmuwaffaq17@gmail.com</b></a></li>
+    <li><a href="https://muwaffaq.pages.dev"><b>muwaffaq.pages.dev</b></a></li>
+    <li><a href="https://www.linkedin.com/in/yusuf-muwaffaq">linkedin.com/in/yusuf-muwaffaq</a> · <a href="https://github.com/Muwaffaq1">github.com/Muwaffaq1</a></li>
+  </ul>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">Design engineer with <strong>4+ years</strong> designing products and building them in code. I take work from Figma to production in <strong>Next.js, React, TypeScript and Tailwind</strong>, build design systems as tokens and components, and ship with accessibility and motion done properly. I have shipped <strong>2 live products</strong> I designed and built, including my own lending app, treeti: <strong>72 people</strong> signed up in its first three weeks. I also coded the front end of Nūring&rsquo;s web app on the design system I built.</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="job">
+    <div class="job-head"><h3>Lead Designer <span>· Nūring</span></h3><span class="when">Jan 2025 – Present · Remote (Ontario, Canada)</span></div>
+    <p class="about">Nūring makes a smart glove that reads grip to measure an athlete's effort, recovery and load, starting with baseball.</p>
+    <ul>
+      <li>Redesigned the web app for athletes, coaches and guardians and <strong>coded its whole front end</strong>, then worked with the backend engineers as they connected the APIs.</li>
+      <li>Built the design system the code runs on: <strong>62 components, 39 colour tokens and 14 full-page templates</strong>, shared by every surface of the product.</li>
+      <li>Turned grip signals into clear screens: a five-band score scale measured against each player's own baseline, with status colours that always come with a word.</li>
+      <li>Prototyped interactions in Framer and wrote the specs engineering builds from.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head"><h3>Product / UI Designer <span>· HoBeei</span></h3><span class="when">Apr 2022 – Dec 2025 · Remote</span></div>
+    <p class="about">UI designer on a gamified free-cycling marketplace with a virtual currency and live bidding. I turned the founder&rsquo;s product concepts and sketches into the full UI.</p>
+    <ul>
+      <li>Designed live bidding and the virtual wallet with <strong>every state</strong>: active, won and lost, loading, empty and error.</li>
+      <li>Built the Figma design system engineering worked from, and carried specs and assets through to shipped builds.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Selected builds</h2>
+  <div class="work">
+    <div class="proj">
+      <div class="proj-head"><h3>treeti</h3><span class="tag live">Live · my own product</span><a class="url" href="https://usetreeti.xyz">usetreeti.xyz</a></div>
+      <p>Interest-free lending records between family and friends, with witnesses, repayments and reminders. Designed and built end to end in <strong>Next.js and Supabase</strong>. Launched 14 October 2026: <strong>72 sign-ups, 23 agreements and ₦549,300 recorded</strong> in three weeks; tester feedback simplified 8 flows within 10 days.</p>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><h3>Portfolio and Playground</h3><span class="tag live">Live</span><a class="url" href="https://muwaffaq.pages.dev/playground/">muwaffaq.pages.dev</a></div>
+      <p>My site, built in <strong>Next.js, React and TypeScript</strong> on Cloudflare. It includes <strong>16 interactive UI experiments</strong> in mobile, web and motion: a dashboard whose chart reshapes between ranges, a drag-to-reschedule calendar, a data table with bulk actions, a spring tuner and shared-element transitions. Every piece works with the keyboard and screen readers, meets WCAG AA contrast, and respects reduced motion.</p>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<section>
+  <h2>Selected builds, continued</h2>
+  <div class="work">
+    <div class="proj">
+      <div class="proj-head"><h3>PharmaQuest</h3><span class="tag live">Live</span><a class="url" href="https://pharmaquest.pages.dev">pharmaquest.pages.dev</a></div>
+      <p>Gamified practice for the Canadian pharmacist qualifying exam (PEBC). <strong>257 questions</strong> with a rationale for every option, spaced repetition, streaks, XP and 12 badge series. Designed and built in <strong>React, Vite and Tailwind</strong>, with cloud save, on Cloudflare Pages.</p>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><h3>Sarki Energy</h3><span class="tag">Client · corporate site</span><a class="url" href="https://muwaffaq.pages.dev/work/sarki-energy/">Case study</a></div>
+      <p>Mapped the brief into <strong>31 page types</strong> before designing, then shipped 26 in <strong>Next.js on Cloudflare</strong>, including a station locator and working enquiry and quote forms.</p>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><h3>QuickPay design system</h3><span class="tag">Client · fintech</span><a class="url" href="https://muwaffaq.pages.dev/systems/quickpay/">Write-up</a></div>
+      <p>Rebuilt <strong>105 inconsistent screens</strong> as about 91 on one token system: 120+ variables in light and dark and 52 documented components, ready for engineers. Raised contrast to WCAG AA and specified motion with springs and haptics. A live demo of one component in light, dark and Arabic (right to left) runs on my site.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Front end</dt><dd>TypeScript, React, Next.js, Astro, Vite, Tailwind, modern CSS (container queries, CSS modules), Motion for React, Supabase, Cloudflare Pages and Workers</dd>
+    <dt>Quality</dt><dd>Accessibility to WCAG AA (keyboard, screen readers, contrast, reduced motion), responsive and mobile-first layouts, image and font performance, Playwright for checks</dd>
+    <dt>Design</dt><dd>Design systems and tokens, Figma (variables, components, Dev Mode), Framer, every-state design, motion specs, prototyping</dd>
+    <dt>Tools</dt><dd>Git and GitHub, Claude Code and Figma MCP, HyperFrames for launch films</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu">
+    <div><strong>MSc Information Technology</strong><span>Nigerian Defence Academy, Kaduna · 2024 – 2026</span></div>
+    <div><strong>BSc Computer Science</strong><span>Ahmadu Bello University, Zaria · 2016 – 2021</span></div>
+  </div>
+</section>
+
+<footer>Live builds, the Playground and case studies: <a href="https://muwaffaq.pages.dev"><b>muwaffaq.pages.dev</b></a></footer>
+</body>
+</html>
