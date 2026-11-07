@@ -1,0 +1,25 @@
+{
+  "name": "treeti: getting borrowers to yes",
+  "summary": "7 of 23 agreements were stuck waiting for the borrower. A funnel, a diagnosis and a fix",
+  "industry": "Fintech",
+  "year": "’26",
+  "status": "in-progress",
+  "tags": [
+    "Own product",
+    "Funnel"
+  ],
+  "featured": false,
+  "order": 8,
+  "preview": {
+    "type": "image",
+    "src": "/work/treeti.webp",
+    "frame": "phone"
+  },
+  "link": "https://usetreeti.xyz",
+  "caseStudy": {
+    "role": "Product, design and build",
+    "timeline": "Nov 2026 – now",
+    "tools": "PostHog, Figma, Next.js",
+    "result": "In progress: funnel mapped, fix designed, results after four weeks"
+  }
+}

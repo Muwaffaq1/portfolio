@@ -21,3 +21,19 @@ if (bad.length) {
   process.exit(1);
 }
 console.log("Photo check passed.");
+
+// Stops a deploy while a case study still has unfilled numbers (a table cell reading TODO).
+const todo = [];
+(function walk(dir) {
+  for (const name of fs.readdirSync(dir)) {
+    const file = path.join(dir, name);
+    if (fs.statSync(file).isDirectory()) { walk(file); continue; }
+    if (name.endsWith(".html") && />\s*TODO\s*</.test(fs.readFileSync(file, "utf8"))) todo.push(file);
+  }
+})(path.join(__dirname, "../out"));
+
+if (todo.length) {
+  console.error("Deploy stopped. These pages still show TODO placeholders:\n" + todo.join("\n"));
+  process.exit(1);
+}
+console.log("Placeholder check passed.");
