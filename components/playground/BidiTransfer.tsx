@@ -7,8 +7,8 @@ import { useState } from "react";
 type Lang = "en" | "ar";
 
 const copy = {
-  en: { title: "Review transfer", step: "Step 2 of 3", to: "To", name: "Sara Al Mansoori", bank: "Emirates NBD", amount: "Amount", fee: "Fee", free: "Free", arrives: "Arrives", instantly: "Instantly", ref: "Reference", refValue: "Rent · November", date: "Date", today: "Today,", button: "Send", currency: "AED" },
-  ar: { title: "مراجعة التحويل", step: "الخطوة 2 من 3", to: "إلى", name: "سارة المنصوري", bank: "بنك الإمارات دبي الوطني", amount: "المبلغ", fee: "الرسوم", free: "مجانًا", arrives: "الوصول", instantly: "فورًا", ref: "المرجع", refValue: "الإيجار · نوفمبر", date: "التاريخ", today: "اليوم،", button: "إرسال", currency: "درهم" },
+  en: { title: "Review transfer", step: "Step 2 of 3", to: "To", name: "Oshoke", bank: "Emirates NBD", amount: "Amount", fee: "Fee", free: "Free", arrives: "Arrives", instantly: "Instantly", ref: "Reference", refValue: "Rent · November", date: "Date", today: "Today,", button: "Send", currency: "AED" },
+  ar: { title: "مراجعة التحويل", step: "الخطوة 2 من 3", to: "إلى", name: "أوشوكي", bank: "بنك الإمارات دبي الوطني", amount: "المبلغ", fee: "الرسوم", free: "مجانًا", arrives: "الوصول", instantly: "فورًا", ref: "المرجع", refValue: "الإيجار · نوفمبر", date: "التاريخ", today: "اليوم،", button: "إرسال", currency: "درهم" },
 };
 
 const rules = [
@@ -37,7 +37,7 @@ function Screen({ lang, hl }: { lang: Lang; hl: number | null }) {
       <span className="bd-step">{t.step}</span>
 
       <div className={"bd-to" + h(1)}>
-        <span className="bd-avatar" aria-hidden="true">{lang === "ar" ? "س" : "SM"}</span>
+        <span className="bd-avatar" aria-hidden="true">{lang === "ar" ? "أ" : "O"}</span>
         <span className="bd-to-text">
           <span className="bd-k">{t.to}</span>
           <b>{t.name}</b>

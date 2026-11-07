@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import s from "./ToastStack.module.css";
+import { Icon } from "./icons";
 import { tap, useStill } from "./util";
 
 type Kind = "success" | "error" | "undo";
@@ -66,12 +67,12 @@ export default function ToastStack() {
               dragElastic={0.6}
               onDragEnd={(_, info) => { if (Math.abs(info.offset.x) > 90 || Math.abs(info.velocity.x) > 500) remove(t.id); }}
             >
-              <span className={s.icon} aria-hidden="true">{t.kind === "success" ? "✓" : t.kind === "error" ? "!" : "↺"}</span>
+              <span className={s.icon} aria-hidden="true"><Icon name={t.kind === "success" ? "check" : t.kind === "error" ? "alert" : "archive"} size={16} stroke={2.2} /></span>
               <span className={s.text}><b>{t.title}</b><span>{t.body}</span></span>
               {t.kind === "undo" ? (
                 <button type="button" className={s.action} onClick={() => remove(t.id)}>Undo</button>
               ) : (
-                <button type="button" className={s.close} onClick={() => remove(t.id)} aria-label={`Dismiss: ${t.title}`}>×</button>
+                <button type="button" className={s.close} onClick={() => remove(t.id)} aria-label={`Dismiss: ${t.title}`}><Icon name="close" size={14} stroke={2.2} /></button>
               )}
             </motion.li>
           ))}

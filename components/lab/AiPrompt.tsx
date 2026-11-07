@@ -3,12 +3,13 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import s from "./AiPrompt.module.css";
+import { Icon, type IconName } from "./icons";
 import { useStill } from "./util";
 
 const answers: Record<string, string> = {
   "Plan a weekend in Lagos": "Saturday: start at Nike Art Gallery in Lekki before the crowds, then lunch at a buka on Admiralty Way. Spend the afternoon at Tarkwa Bay; boats leave from Tarzan Jetty. Sunday: brunch on Victoria Island, a walk across Lekki–Ikoyi Link Bridge at sunset, and an early night before Monday traffic.",
   "Summarise this week's spending": "You spent ₦86,400 this week, 12% less than last week. Food was the biggest category at ₦41,000, mostly delivery on Tuesday and Thursday. Transport dropped by ₦9,000. If next week looks like this one, you'll finish the month ₦22,000 under budget.",
-  "Write a polite payment reminder": "Hi Tunde, I hope your week is going well. A quick reminder that the ₦150,000 from 2 October is due this Friday. If anything has changed, just let me know and we can agree a new date. Thank you!",
+  "Write a polite payment reminder": "Hi Oshoke, I hope your week is going well. A quick reminder that the ₦150,000 from 2 October is due this Friday. If anything has changed, just let me know and we can agree a new date. Thank you!",
 };
 const fallback = "Here's a first pass. I'd start by listing what has to happen, pick the one thing that unblocks the rest, and do that first. Tell me more about the goal and I can make this specific.";
 
@@ -47,14 +48,15 @@ export default function AiPrompt() {
     <div className={s.app}>
       {!asked ? (
         <div className={s.hero}>
-          <span className={s.mark} aria-hidden="true">✦</span>
-          <h2>What should we work on?</h2>
+          <span className={s.mark} aria-hidden="true"><Icon name="sparkle" size={22} /></span>
+          <h2>What&apos;s on your mind, Oshoke?</h2>
+          <p>Pick a starting point or ask your own.</p>
         </div>
       ) : (
         <div className={s.thread}>
           <p className={s.user}>{asked}</p>
           <div className={s.reply}>
-            <span className={s.avatar} aria-hidden="true">✦</span>
+            <span className={s.avatar} aria-hidden="true"><Icon name="sparkle" size={16} /></span>
             <AnimatePresence mode="wait" initial={false}>
               {phase === "thinking" ? (
                 <motion.span key="t" className={s.thinking} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>Thinking</motion.span>
@@ -74,17 +76,17 @@ export default function AiPrompt() {
         <label className="sr-only" htmlFor="ai-q">Ask anything</label>
         <textarea id="ai-q" className={s.input} rows={2} value={input} placeholder="Ask anything" onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(input); } }} />
         <div className={s.boxRow}>
-          <span className={s.model}>Margin · Fast</span>
+          <span className={s.tools} aria-hidden="true"><Icon name="paperclip" size={18} /><Icon name="globe" size={18} /><span className={s.model}>Margin · Fast</span></span>
           {phase === "thinking" || phase === "streaming" ? (
             <button type="button" className={s.send} onClick={stop} aria-label="Stop answering"><span className={s.stopIcon} /></button>
           ) : (
-            <button type="submit" className={s.send} disabled={!input.trim()} aria-label="Send">↑</button>
+            <button type="submit" className={s.send} disabled={!input.trim()} aria-label="Send"><Icon name="arrowUp" size={18} stroke={2.2} /></button>
           )}
         </div>
       </form>
       {!asked && (
         <div className={s.chips}>
-          {Object.keys(answers).map((q) => <button key={q} type="button" onClick={() => ask(q)}>{q}</button>)}
+          {Object.keys(answers).map((q, i) => <button key={q} type="button" onClick={() => ask(q)}><Icon name={(["pin", "receipt", "message"] as IconName[])[i]} size={17} className={s.chipIcon} /><span>{q}</span><Icon name="chevron" size={16} className={s.chipChev} /></button>)}
         </div>
       )}
       {asked && phase === "done" && <button type="button" className={s.newChat} onClick={() => { setAsked(null); setPhase("idle"); }}>New question</button>}

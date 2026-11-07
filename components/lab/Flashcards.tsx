@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValue, useTransform, animate } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./Flashcards.module.css";
+import { Icon } from "./icons";
 import { tap, useStill } from "./util";
 
 const words = [
@@ -14,7 +15,7 @@ const words = [
   { ar: "بيت", tr: "bayt", en: "house" },
 ];
 
-function Card({ word, onDone, still }: { word: (typeof words)[number]; onDone: (knew: boolean) => void; still: boolean }) {
+function Card({ word, onDone, still, cmd }: { word: (typeof words)[number]; onDone: (knew: boolean) => void; still: boolean; cmd: { knew: boolean; n: number } | null }) {
   const [flipped, setFlipped] = useState(false);
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-14, 14]);
@@ -26,6 +27,9 @@ function Card({ word, onDone, still }: { word: (typeof words)[number]; onDone: (
     animate(x, knew ? 420 : -420, still ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 30, velocity });
     setTimeout(() => onDone(knew), still ? 0 : 180);
   };
+  // The buttons below the deck send the same fling as a swipe.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (cmd) fling(cmd.knew); }, [cmd]);
 
   return (
     <motion.div
@@ -66,15 +70,18 @@ function Card({ word, onDone, still }: { word: (typeof words)[number]; onDone: (
 export default function Flashcards() {
   const [i, setI] = useState(0);
   const [known, setKnown] = useState(0);
+  const [cmd, setCmd] = useState<{ knew: boolean; n: number } | null>(null);
   const still = useStill();
   const done = i >= words.length;
 
   return (
     <div className={s.screen}>
       <header className={s.head}>
-        <p>Arabic · Everyday words</p>
-        <div className={s.progress} aria-label={`${Math.min(i, words.length)} of ${words.length} done`} role="img"><i style={{ width: `${(Math.min(i, words.length) / words.length) * 100}%` }} /></div>
+        <span className={s.close} aria-hidden="true"><Icon name="close" size={20} stroke={2.2} /></span>
+        <div className={s.progress} aria-label={`${Math.min(i, words.length)} of ${words.length} done`} role="img"><i style={{ width: `${(Math.max(0.04, Math.min(i, words.length) / words.length)) * 100}%` }} /></div>
+        <span className={`${s.count} tnum`} aria-hidden="true">{Math.min(i + 1, words.length)}/{words.length}</span>
       </header>
+      <p className={s.topic}>Arabic · Everyday words</p>
       <div className={s.deck}>
         {!done && words[i + 1] && <div className={`${s.card} ${s.under}`} aria-hidden="true" />}
         <AnimatePresence mode="popLayout">
@@ -85,11 +92,14 @@ export default function Flashcards() {
               <button type="button" onClick={() => { setI(0); setKnown(0); }}>Start over</button>
             </motion.div>
           ) : (
-            <Card key={i} word={words[i]} still={still} onDone={(k) => { if (k) setKnown((n) => n + 1); setI((n) => n + 1); }} />
+            <Card key={i} word={words[i]} still={still} cmd={cmd} onDone={(k) => { setCmd(null); if (k) setKnown((n) => n + 1); setI((n) => n + 1); }} />
           )}
         </AnimatePresence>
       </div>
-      <p className={s.hint}>Swipe right if you knew it, left to see it again.</p>
+      <div className={s.answers}>
+        <button type="button" className={s.againBtn} disabled={done} onClick={() => setCmd({ knew: false, n: Date.now() })}><Icon name="undo" size={18} stroke={2} /> Again</button>
+        <button type="button" className={s.knewBtn} disabled={done} onClick={() => setCmd({ knew: true, n: Date.now() })}><Icon name="check" size={18} stroke={2.4} /> Knew it</button>
+      </div>
     </div>
   );
 }

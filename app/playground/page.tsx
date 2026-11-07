@@ -7,7 +7,7 @@ import { playground, site } from "@/lib/content";
 
 export const metadata = {
   title: `Playground — ${site.name}`,
-  description: "Small experiments in mobile, web and motion, most of them live. Plus screens from my projects and concepts.",
+  description: "Small experiments in mobile, web and motion, most of them live. Plus a concept from Figma.",
 };
 
 export default function Playground() {
@@ -27,7 +27,7 @@ export default function Playground() {
         </section>
 
         <section aria-labelledby="sc-h" style={{ marginTop: 64 }}>
-          <div className="sh"><h2 id="sc-h">Screens</h2><span className="hint">From projects and concepts</span></div>
+          <div className="sh"><h2 id="sc-h">Concepts</h2><span className="hint">From Figma</span></div>
           <div className="gallery">
             {playground.filter((s) => !s.live).map((s) => <Shot key={s.src} item={s} />)}
           </div>

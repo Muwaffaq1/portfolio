@@ -796,3 +796,74 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .lab-card-text b { font-size: 14px; font-weight: 500; }
 .lab-card-text > span { font-size: 13px; color: var(--muted); line-height: 1.45; }
 .lab-card-text .lab-card-tags { font: 400 11px var(--mono); color: var(--faint); }
+
+/* ---------- Lab kit: depth, light and material shared by every experiment ---------- */
+:root {
+  /* Layered shadows (Josh Comeau's method): each layer doubles, light from above */
+  --sh-1: 0 1px 1px rgb(0 0 0 / .08), 0 2px 2px rgb(0 0 0 / .06);
+  --sh-2: 0 1px 1px rgb(0 0 0 / .06), 0 2px 2px rgb(0 0 0 / .06), 0 4px 4px rgb(0 0 0 / .06), 0 8px 8px rgb(0 0 0 / .06);
+  --sh-3: 0 1px 1px rgb(0 0 0 / .05), 0 2px 2px rgb(0 0 0 / .05), 0 4px 4px rgb(0 0 0 / .05), 0 8px 8px rgb(0 0 0 / .05), 0 16px 16px rgb(0 0 0 / .05), 0 32px 32px rgb(0 0 0 / .05);
+  /* A bright top edge where light catches a surface, and a darker bottom edge */
+  --edge-light: inset 0 1px 0 rgb(255 255 255 / .7), inset 0 -1px 0 rgb(0 0 0 / .04);
+  --edge-dark: inset 0 1px 0 rgb(255 255 255 / .12), inset 0 -1px 0 rgb(0 0 0 / .4);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --studio: #0c0c0b;
+  --studio-light: rgb(255 255 255 / .09);
+}
+:root[data-theme="light"] { --studio: #dedbd4; --studio-light: rgb(255 255 255 / .9); }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --studio: #dedbd4; --studio-light: rgb(255 255 255 / .9); } }
+
+/* The studio: a spotlight from above, a soft floor, and fine grain */
+.lab-stage { position: relative; isolation: isolate; background:
+  radial-gradient(60% 55% at 50% -8%, var(--studio-light), transparent 70%),
+  radial-gradient(70% 40% at 50% 112%, rgb(0 0 0 / .35), transparent 70%),
+  var(--studio); border-color: color-mix(in srgb, var(--line) 70%, transparent); padding-block: clamp(28px, 6vw, 56px); }
+.lab-stage::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--grain); opacity: .14; mix-blend-mode: overlay; pointer-events: none; border-radius: inherit; }
+
+/* The phone: titanium band, side buttons, a contact shadow on the floor */
+.lab-phone { position: relative; padding: 11px; border-radius: 58px;
+  background: linear-gradient(145deg, #6a6a66 0%, #1d1d1b 14%, #2e2e2b 48%, #141413 86%, #575753 100%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .22), inset 0 0 0 3px #0b0b0a, var(--sh-3), 0 60px 90px -40px rgb(0 0 0 / .75); }
+.lab-phone::before { content: ""; position: absolute; left: -3px; top: 150px; width: 3px; height: 62px; border-radius: 3px 0 0 3px; background: linear-gradient(#3a3a37, #1a1a19); box-shadow: 0 86px 0 #2a2a27, 0 -52px 0 -18px #2a2a27; }
+.lab-phone::after { content: ""; position: absolute; right: -3px; top: 210px; width: 3px; height: 92px; border-radius: 0 3px 3px 0; background: linear-gradient(#3a3a37, #1a1a19); }
+.lab-screen { border-radius: 47px; box-shadow: 0 0 0 1px #000; }
+/* A faint glass glare across the screen, above the app */
+.lab-screen::after { content: ""; position: absolute; inset: 0; z-index: 60; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(118deg, rgb(255 255 255 / .09) 0%, rgb(255 255 255 / .02) 28%, transparent 42%); }
+.lab-status { position: absolute; z-index: 55; inset: 0 0 auto 0; height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 6px 30px 0 34px; font: 600 15px/1 var(--sans); letter-spacing: -0.01em; pointer-events: none; }
+.lab-status[data-tone="dark"] { color: #fff; }
+.lab-status[data-tone="light"] { color: #111; }
+.lab-status .icons { display: flex; gap: 5px; align-items: center; }
+.lab-island { position: absolute; z-index: 56; top: 11px; left: 50%; translate: -50% 0; width: 118px; height: 34px; border-radius: 20px; background: #000; pointer-events: none; }
+
+/* Browser frame: same lighting language */
+.lab-browser { box-shadow: 0 0 0 1px rgb(0 0 0 / .1), var(--sh-3), 0 50px 80px -40px rgb(0 0 0 / .6); }
+.lab-browser-bar { background: linear-gradient(#f3f2ef, #e7e5e0); box-shadow: inset 0 -1px 0 rgb(0 0 0 / .06); }
+
+/* ---------- Quiet canvas (after Noman's presentation): light, airy, precise ---------- */
+:root {
+  --q-canvas: #f3f3f1; --q-surface: #ffffff; --q-line: #e7e7e4; --q-ink: #1b1b1a; --q-muted: #6b6b68; --q-faint: #9a9a96;
+  --q-shadow: 0 1px 2px rgb(0 0 0 / .04), 0 4px 12px -4px rgb(0 0 0 / .06), 0 16px 32px -16px rgb(0 0 0 / .1);
+  --q-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", var(--sans);
+}
+/* The stage is a soft grey frame with a faint dot grid, in both site themes, like a design canvas */
+.lab-stage { background: radial-gradient(circle, #d9d9d5 1px, transparent 1.2px) 0 0 / 18px 18px, var(--q-canvas) !important; border: 1px solid #e9e9e6; border-radius: 20px; }
+.lab-stage::after { display: none; }
+/* A slim, light device: thin bezel, hairline edge, soft floor shadow. The UI is the star, not the hardware. */
+/* Like a screen on Mobbin: no hardware, just the screen, a hairline edge and a soft floor shadow */
+.lab-phone { width: min(375px, 100%); padding: 0; border-radius: 44px; background: none; box-shadow: 0 1px 2px rgb(0 0 0 / .05), 0 30px 60px -30px rgb(0 0 0 / .28); }
+.lab-phone::before, .lab-phone::after { display: none; }
+.lab-screen { height: 760px; border-radius: 44px; box-shadow: 0 0 0 1px rgb(0 0 0 / .07); -webkit-font-smoothing: antialiased; }
+@media (max-width: 420px) { .lab-screen { height: 680px; } }
+.lab-status { font-family: var(--q-font); font-size: 16px; padding-inline: 34px 30px; }
+.lab-screen::after { display: none; }
+.lab-browser { border-radius: 12px; box-shadow: 0 0 0 1px #e4e4e1, 0 1px 2px rgb(0 0 0 / .04), 0 24px 48px -28px rgb(0 0 0 / .25); }
+.lab-browser-bar { background: #fafaf9; box-shadow: inset 0 -1px 0 #ececea; height: 32px; }
+.lab-browser-bar i { width: 9px; height: 9px; background: #e3e3e0; }
+.lab-thumb { background: var(--q-canvas); }
+/* Inside the stage the site's own colour tokens switch to light values, so every piece reads correctly on the canvas */
+.lab-stage { --ink: #1b1b1a; --muted: #6b6b68; --faint: #8a8a86; --raise: #ffffff; --sunk: #ececea; --line: #e5e5e2; --bg: #f3f3f1; color: var(--ink); color-scheme: light; }
+.lab-stage .pg-notes, .lab-stage .pg-review { color: var(--muted); }
+/* The site gives every section top padding; experiments set their own spacing */
+:where(.lab-stage) section { padding-top: 0; }
+@media (max-width: 420px) { .lab-status { padding-inline: 26px 22px; font-size: 15px; } .lab-island { width: 104px; height: 31px; } }

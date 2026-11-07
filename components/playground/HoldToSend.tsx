@@ -23,7 +23,7 @@ export function HoldToSend() {
     timer.current = setTimeout(() => {
       try { navigator.vibrate?.(20); } catch {}
       setState("sent");
-      setHint("₦25,000 is on its way to Adaeze.");
+      setHint("₦25,000 is on its way to Oshoke.");
     }, HOLD_MS);
   }
 
@@ -45,7 +45,7 @@ export function HoldToSend() {
       <div className="hts-card">
         <span className="hts-k">You're sending</span>
         <b className="hts-amt">₦25,000<small>.00</small></b>
-        <span className="hts-to">to Adaeze Okafor · GTBank ·· 4821</span>
+        <span className="hts-to">to Oshoke · GTBank ·· 4821</span>
       </div>
       {state === "sent" ? (
         <button type="button" className="hts-btn sent" onClick={reset}>
@@ -56,7 +56,7 @@ export function HoldToSend() {
         <button
           type="button"
           className={state === "holding" ? "hts-btn holding" : "hts-btn"}
-          aria-label="Send ₦25,000 to Adaeze Okafor. Press and hold for one and a half seconds."
+          aria-label="Send ₦25,000 to Oshoke. Press and hold for one and a half seconds."
           aria-describedby="hts-hint"
           onPointerDown={(e) => { e.currentTarget.setPointerCapture?.(e.pointerId); start(); }}
           onPointerUp={cancel}

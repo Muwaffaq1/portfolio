@@ -3,15 +3,16 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import s from "./PrayerTimes.module.css";
+import { Icon, type IconName } from "./icons";
 
 // Sample times for Abuja in early November (not live).
 const prayers = [
-  { name: "Fajr", ar: "الفجر", time: "05:07" },
-  { name: "Sunrise", ar: "الشروق", time: "06:20" },
-  { name: "Dhuhr", ar: "الظهر", time: "12:05" },
-  { name: "Asr", ar: "العصر", time: "15:24" },
-  { name: "Maghrib", ar: "المغرب", time: "17:53" },
-  { name: "Isha", ar: "العشاء", time: "19:04" },
+  { name: "Fajr", ar: "الفجر", time: "05:07", icon: "moon" as IconName },
+  { name: "Sunrise", ar: "الشروق", time: "06:20", icon: "sunrise" as IconName },
+  { name: "Dhuhr", ar: "الظهر", time: "12:05", icon: "sun" as IconName },
+  { name: "Asr", ar: "العصر", time: "15:24", icon: "sun" as IconName },
+  { name: "Maghrib", ar: "المغرب", time: "17:53", icon: "sunset" as IconName },
+  { name: "Isha", ar: "العشاء", time: "19:04", icon: "moon" as IconName },
 ];
 const mins = (hhmm: string) => { const [h, m] = hhmm.split(":").map(Number); return h * 60 + m; };
 
@@ -61,12 +62,20 @@ export default function PrayerTimes() {
 
   return (
     <div className={s.screen}>
-      <header className={s.head}><p>Abuja · Sample times</p><h2>Prayer times</h2></header>
+      <div className={s.sky} aria-hidden="true">
+        <span className={s.stars} /><span className={`${s.stars} ${s.stars2}`} />
+        <span className={s.moon} />
+        <svg className={s.skyline} viewBox="0 0 360 120" preserveAspectRatio="xMidYMax slice">
+          <path d="M0 120 V92 H40 V84 H70 V92 H96 V70 H100 V40 L102 34 L104 40 V70 H108 V92 H128 C 128 64, 150 50, 168 46 C 172 38, 176 38, 180 30 C 184 38, 188 38, 192 46 C 210 50, 232 64, 232 92 H252 V70 H256 V40 L258 34 L260 40 V70 H264 V92 H300 V80 H330 V92 H360 V120 Z" />
+        </svg>
+      </div>
+      <header className={s.head}><div><p><Icon name="pin" size={13} /> Abuja · Sample times</p><h2>Prayer times</h2></div><span className={s.headBtn} aria-hidden="true"><Icon name="calendar" size={18} /></span></header>
 
       <div className={s.next}>
         <svg viewBox="0 0 150 150" className={s.ring} aria-hidden="true">
+          <defs><linearGradient id="pt-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffe29a" /><stop offset="1" stopColor="#e9a23b" /></linearGradient></defs>
           <circle cx="75" cy="75" r={R} className={s.track} />
-          <circle cx="75" cy="75" r={R} className={s.fill} strokeDasharray={C} strokeDashoffset={C * (1 - progress)} />
+          <circle cx="75" cy="75" r={R} className={s.fill} stroke="url(#pt-g)" strokeDasharray={C} strokeDashoffset={C * (1 - progress)} />
         </svg>
         <div className={s.nextText} aria-live="off">
           <span>Next</span>
@@ -78,8 +87,8 @@ export default function PrayerTimes() {
       <ul className={s.list}>
         {prayers.map((p) => (
           <li key={p.name} className={p.name === next.name ? s.current : p.name === "Sunrise" ? s.muted : undefined}>
-            <span><b>{p.name}</b><span lang="ar" dir="rtl" className={s.ar}>{p.ar}</span></span>
-            <span className="tnum">{p.time}</span>
+            <span><Icon name={p.icon} size={18} className={s.pIcon} /><b>{p.name}</b><span lang="ar" dir="rtl" className={s.ar}>{p.ar}</span></span>
+            <span className={s.right}><span className="tnum">{p.time}</span><Icon name="bell" size={16} className={s.bell} /></span>
           </li>
         ))}
       </ul>
@@ -106,7 +115,7 @@ export default function PrayerTimes() {
           <motion.div className={s.dial} style={{ rotate: dial }} aria-hidden="true">
             <span className={s.n}>N</span><span className={s.e}>E</span><span className={s.s}>S</span><span className={s.w}>W</span>
           </motion.div>
-          <motion.div className={s.arrow} style={{ rotate: arrow }} aria-hidden="true"><i /><b>🕋</b></motion.div>
+          <motion.div className={s.arrow} style={{ rotate: arrow }} aria-hidden="true"><i /><b><svg viewBox="0 0 20 20" width="18" height="18"><path d="M4 6l6-2.5L16 6v9l-6 2.5L4 15z" fill="#0b0b0c" stroke="#e9b95a" strokeWidth="1" strokeLinejoin="round" /><path d="M4 8.5l6 2.5 6-2.5" fill="none" stroke="#e9b95a" strokeWidth="1.4" /></svg></b></motion.div>
         </div>
         <div className={s.compassText}><b className="tnum">{Math.round(QIBLA)}°</b><span>Qibla from north. Drag the compass to turn it.</span></div>
       </div>
