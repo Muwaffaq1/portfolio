@@ -14,14 +14,14 @@
   ],
   "intro": [
     "I design products and build them, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
-    "I lead UI design at **Nūring**, a sports-tech company that reads grip to measure effort. Alongside it, I've just launched my own app, **treeti**, for recording interest-free loans: **72 people** have joined since October. I also rebuilt **QuickPay**, a money app, on one token system."
+    "I lead design at **Nūring**, a sports-tech company that reads grip to measure effort. Alongside it, I've just launched my own app, **treeti**, for recording interest-free loans: **72 people** have joined since October. I also rebuilt **QuickPay**, a money app, on one token system."
   ],
   "theme": {
     "texture": 0.08
   },
   "nuring": {
     "company": "Nūring",
-    "role": "Lead UI Designer",
+    "role": "Lead Designer",
     "tagline": "Grip has a signal.",
     "summary": "Nūring builds a smart glove that reads grip to measure effort, recovery and accumulated load, starting with baseball. I design and build across the product: the athlete app, the design system and the web.",
     "work": [
@@ -91,7 +91,7 @@
   },
   "experience": [
     {
-      "role": "Lead UI Designer",
+      "role": "Lead Designer",
       "company": "Nūring",
       "when": "Jan 2025 – now",
       "where": "Remote · Ontario, Canada",

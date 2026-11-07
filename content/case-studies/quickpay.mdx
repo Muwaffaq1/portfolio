@@ -43,16 +43,6 @@ Four moments carry the most weight in a money app, so I prototyped them in code 
 
 <MotionSpecs />
 
-## On iOS and Android
-
-The delivered design follows iOS: Face ID, the iOS status bar and the home indicator. A money app ships on both platforms, so I adapted the send flow to Android to show which parts stay QuickPay and which follow the platform. This adaptation was made for this portfolio; it isn't shipped work. Step through it:
-
-<PlatformFlow />
-
-The same on both: the tokens, the amount style (naira large, kobo small), every line of copy, every state from sending to offline, the in-app keypad and the motion timings. Chivo stays the type for amounts and content; the system font is used only where the platform draws its own parts, like navigation bars, sheet bars and system prompts.
-
-<Table head={["", "iOS", "Android"]} rows={[["Navigation", "Back chevron with the previous screen's name; swipe from the left edge", "Top app bar with a back arrow; system and predictive back"], ["Title", "Centred, SF Pro", "Left-aligned, Roboto"], ["Confirm", "Page sheet with a grabber and Cancel; the screen behind recedes", "Material 3 modal bottom sheet: drag handle, scrim, 28dp corners; back closes it"], ["Biometrics", "Face ID through LocalAuthentication; Use PIN instead", "BiometricPrompt from androidx.biometric, strong only; Use PIN as the negative button"], ["Success haptic", "UINotificationFeedbackGenerator, .success", "HapticFeedbackConstants.CONFIRM"], ["Press feedback", "Highlight and a slight scale", "Ripple from the touch point"], ["System bars", "Content padded inside the status bar and home indicator", "Edge to edge, padded by the window insets"], ["After success", "Done returns Home", "Back returns Home; the send stack is cleared, so it never lands on the PIN step"]]} />
-
 ## Voice and error copy
 
 QuickPay talks about people's money, so every line has to be calm, exact and short. The copy below is from the delivered screens. I've written the rules behind it down as the guide a writer or engineer adding a new screen would follow.
