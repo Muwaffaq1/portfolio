@@ -12,7 +12,6 @@ export const pieces: Record<string, ComponentType> = {
   flashcards: dynamic(() => import("./Flashcards")),
   "ai-prompt": dynamic(() => import("./AiPrompt")),
   "music-scrubber": dynamic(() => import("./MusicScrubber")),
-  "prayer-times": dynamic(() => import("./PrayerTimes")),
   "smart-home": dynamic(() => import("./SmartHome")),
   "money-dashboard": dynamic(() => import("./MoneyDashboard")),
   "data-table": dynamic(() => import("./DataTable")),

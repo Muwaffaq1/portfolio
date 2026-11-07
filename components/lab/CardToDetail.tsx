@@ -6,28 +6,18 @@ import s from "./CardToDetail.module.css";
 import { Icon } from "./icons";
 import { tap, useStill } from "./util";
 
-type Stay = { id: string; name: string; place: string; price: string; nights: string; about: string; sky: [string, string]; land: [string, string]; sun: string };
+type Stay = { id: string; name: string; place: string; price: string; nights: string; about: string; photo: string; alt: string };
+// Photos from Unsplash (Unsplash License): Cosmin Gurau, Rémi Jacquaint, Filip Zrnzević, Zoltan Tasi.
 const stays: Stay[] = [
-  { id: "a", name: "Lake House", place: "Jabi, Abuja", price: "₦68,000", nights: "per night", about: "Two rooms over the water, with a deck that catches the evening light. Boats leave from the jetty at the end of the garden.", sky: ["#2a3b5c", "#e88a5a"], land: ["#2e4a3c", "#16261d"], sun: "#ffcf8a" },
-  { id: "b", name: "Dune Cabin", place: "Kano", price: "₦42,000", nights: "per night", about: "A clay cabin at the edge of the city, cool inside all afternoon. Breakfast is brought to the door at seven.", sky: ["#4b2d1c", "#f0b26b"], land: ["#a8622f", "#5a2f15"], sun: "#ffe2a8" },
-  { id: "c", name: "Hill Retreat", place: "Obudu", price: "₦95,000", nights: "per night", about: "High on the plateau, where mornings start in the clouds. A path from the porch leads to the canopy walk.", sky: ["#1d2a3a", "#7fa6c9"], land: ["#2f5a46", "#132a20"], sun: "#e9f2ff" },
-  { id: "d", name: "Beach Hut", place: "Lekki, Lagos", price: "₦77,000", nights: "per night", about: "A wooden hut a short walk from the sand, with a hammock, an outdoor shower and the sound of the sea at night.", sky: ["#1b2f4a", "#f39a74"], land: ["#2d6f8f", "#123649"], sun: "#ffd7a3" },
+  { id: "a", name: "Mill House", place: "Lakeside", price: "₦68,000", nights: "per night", photo: "/playground/stays/lake.jpg", alt: "A wooden house and an old mill on a still lake at sunset", about: "Two rooms over the water, with a deck that catches the evening light. A rowing boat waits at the end of the garden." },
+  { id: "b", name: "Dune House", place: "Desert edge", price: "₦42,000", nights: "per night", photo: "/playground/stays/desert.jpg", alt: "A small stone house alone on pale sand under a clear sky", about: "A stone house where the sand begins, cool inside all afternoon. Breakfast is brought to the door at seven." },
+  { id: "c", name: "Hill Cabin", place: "Highlands", price: "₦95,000", nights: "per night", photo: "/playground/stays/hill.jpg", alt: "A wooden cabin on a green hillside, with forest and low cloud behind it", about: "High on the hill, where mornings start in the clouds. A path from the porch runs down through the forest." },
+  { id: "d", name: "Beach Hut", place: "On the coast", price: "₦77,000", nights: "per night", photo: "/playground/stays/beach.jpg", alt: "A teal wooden beach hut beside a fishing boat under a stormy sky", about: "A wooden hut a few steps from the shore, with an outdoor shower and the sound of the sea at night." },
 ];
 
-function Art({ st }: { st: Stay }) {
-  return (
-    <svg viewBox="0 0 160 110" preserveAspectRatio="xMidYMid slice" className={s.art} aria-hidden="true">
-      <defs>
-        <linearGradient id={`sky-${st.id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={st.sky[0]} /><stop offset="1" stopColor={st.sky[1]} /></linearGradient>
-        <linearGradient id={`land-${st.id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={st.land[0]} /><stop offset="1" stopColor={st.land[1]} /></linearGradient>
-      </defs>
-      <rect width="160" height="110" fill={`url(#sky-${st.id})`} />
-      <circle cx="112" cy="58" r="16" fill={st.sun} opacity=".9" />
-      <path d="M0 74 Q30 58 60 70 T120 64 T160 70 V110 H0z" fill={`url(#land-${st.id})`} opacity=".75" />
-      <path d="M0 86 Q40 74 80 84 T160 80 V110 H0z" fill={`url(#land-${st.id})`} />
-      <rect x="34" y="70" width="22" height="14" fill="#1a120c" opacity=".7" /><path d="M31 71 L45 62 L59 71z" fill="#1a120c" opacity=".7" />
-    </svg>
-  );
+function Photo({ st, alt }: { st: Stay; alt?: boolean }) {
+  // `layout` lets Motion correct the photo's scale while its frame changes shape, so it never stretches mid-flight.
+  return <motion.img layout src={st.photo} alt={alt ? st.alt : ""} width={1200} height={750} className={s.art} draggable={false} />;
 }
 
 export default function CardToDetail() {
@@ -61,7 +51,7 @@ export default function CardToDetail() {
                 onClick={(e) => { lastCard.current = e.currentTarget; setOpen(st); tap(8); }}
                 aria-label={`${st.name}, ${st.place}, ${st.price} ${st.nights}. Open`}
               >
-                <motion.span layoutId={`img-${st.id}`} className={s.imgWrap} style={{ borderRadius: 12 }}><Art st={st} /></motion.span>
+                <motion.span layoutId={`img-${st.id}`} className={s.imgWrap} style={{ borderRadius: 12 }}><Photo st={st} /></motion.span>
                 <span className={s.meta}>
                   <motion.b layoutId={`name-${st.id}`} className={s.name}>{st.name}</motion.b>
                   <motion.span layoutId={`place-${st.id}`} className={s.place}>{st.place}</motion.span>
@@ -77,7 +67,7 @@ export default function CardToDetail() {
             <>
               <motion.div key="dim" className={s.dim} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: still ? 0 : 0.2 }} onClick={() => setOpen(null)} aria-hidden="true" />
               <motion.div key="detail" layoutId={`card-${open.id}`} className={s.detail} style={{ borderRadius: 20 }} role="dialog" aria-modal="true" aria-label={open.name}>
-                <motion.span layoutId={`img-${open.id}`} className={s.hero} style={{ borderRadius: 14 }}><Art st={open} /></motion.span>
+                <motion.span layoutId={`img-${open.id}`} className={s.hero} style={{ borderRadius: 14 }}><Photo st={open} alt /></motion.span>
                 <div className={s.detailBody}>
                   <div className={s.detailTop}>
                     <div>

@@ -9,7 +9,7 @@ export const dynamicParams = false;
 
 // About 70% of the Playground is dark. Dark phone screens get a white status bar,
 // and dark web pieces get a dark window bar.
-const darkScreens = new Set(["card-stack", "swipe-to-pay", "music-scrubber", "prayer-times", "smart-home", "command-palette", "ai-prompt", "money-dashboard", "week-calendar", "spring-tuner", "card-to-detail", "button-states"]);
+const darkScreens = new Set(["card-stack", "swipe-to-pay", "music-scrubber", "smart-home", "command-palette", "ai-prompt", "money-dashboard", "week-calendar", "spring-tuner", "card-to-detail", "button-states"]);
 // Live Activity draws its own island, because the island is the experiment.
 const ownIsland = new Set<string>();
 

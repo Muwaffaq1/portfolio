@@ -40,11 +40,6 @@ export const lab: LabPiece[] = [
     notes: ["The bar is the song's waveform. Drag anywhere on it to scrub.", "Play and pause swap with a quick scale and fade.", "The played part lights up as it goes."],
   },
   {
-    slug: "prayer-times", title: "Prayer times", kind: "Mobile", frame: "phone", live: true,
-    question: "What does someone need in the minute before the next prayer?",
-    notes: ["A ring counts down to the next prayer, and the list marks where you are in the day.", "Drag the compass to turn it. The arrow always points to the qibla, worked out from Abuja's position.", "The times are a sample day for Abuja, not live times."],
-  },
-  {
     slug: "smart-home", title: "Smart home", kind: "Mobile", frame: "phone", live: true,
     question: "Can a room's controls fit on one screen without menus?",
     notes: ["Drag the dial around its arc to set the temperature. The arc runs from cool blue to warm amber, and the room\u2019s light follows it.", "The tiles are frosted glass, and the lamp in the corner brightens with the lights slider.", "Every control works by keyboard: arrows on the dial, Space on the tiles."],
@@ -92,7 +87,7 @@ export const lab: LabPiece[] = [
   {
     slug: "card-to-detail", title: "Card to detail", kind: "Motion", frame: "stage", live: true,
     question: "Can opening a page feel like picking up the card you tapped?",
-    notes: ["Tap a stay. The card grows into the page, and its picture, name and price travel to their new places instead of disappearing.", "Text that only lives on the detail fades in after the move, and leaves first on the way back, so nothing overlaps mid-flight.", "Close with the button, a tap outside or Escape, and it shrinks back into the card it came from. Focus goes back there too."],
+    notes: ["Tap a stay. The card grows into the page, and its picture, name and price travel to their new places instead of disappearing.", "Text that only lives on the detail fades in after the move, and leaves first on the way back, so nothing overlaps mid-flight.", "Close with the button, a tap outside or Escape, and it shrinks back into the card it came from. Focus goes back there too.", "Photos from Unsplash by Cosmin Gurau, Rémi Jacquaint, Filip Zrnzević and Zoltan Tasi."],
   },
   {
     slug: "button-states", title: "Button states", kind: "Motion", frame: "stage", live: true,
