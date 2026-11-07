@@ -39,7 +39,7 @@ export default function About() {
         </dl>
 
         <div className="prose" style={{ marginTop: 32 }}>
-          <p>I studied computer science, so I&apos;ve always cared how things work as much as how they look. Most of my career has been in fintech and marketplaces: a live bidding marketplace with its own virtual wallet at HoBeei, and now Nūring.</p>
+          <p>I studied computer science, so I&apos;ve always cared how things work as much as how they look. I&apos;ve worked across marketplaces, fintech and sports tech: a live bidding marketplace with its own virtual wallet at HoBeei, money apps like QuickPay and treeti, and now Nūring&apos;s grip-sensing glove.</p>
           <p>I work best close to the product. I design in Figma, build in code, and make the launch film at the end, which means fewer handoffs and fewer things lost between them. I hold a simple rule: if I wouldn&apos;t want to use it, it isn&apos;t finished.</p>
           <p>Away from the screen, I&apos;m usually at the gym or in the kitchen. I train most mornings, and I love cooking for friends and family. Both reward the same things good design does: showing up every day, and getting the small details right.</p>
         </div>

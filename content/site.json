@@ -13,8 +13,8 @@
     "مرحبا،"
   ],
   "intro": [
-    "I design and build fintech and marketplace products, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
-    "My own app, **treeti**, has **72 people** recording interest-free loans on it. Most recently I rebuilt **QuickPay**, a Nigerian money app: **105** inconsistent screens became **91** on one token system."
+    "I design products and build them, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
+    "Right now I lead UI design at **Nūring**, a sports-tech company that reads grip to measure effort. Before that I built my own app, **treeti**, which **72 people** use to record interest-free loans, and rebuilt **QuickPay**, a money app, on one token system."
   ],
   "theme": {
     "texture": 0.08
@@ -204,7 +204,7 @@
     },
     {
       "k": "Experience",
-      "v": "4+ years in fintech and marketplaces"
+      "v": "4+ years across sports tech, fintech and marketplaces"
     },
     {
       "k": "Looking for",
