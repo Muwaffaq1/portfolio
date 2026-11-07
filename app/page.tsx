@@ -7,11 +7,11 @@ import { Services } from "@/components/Services";
 import { Header } from "@/components/Header";
 import { LocalTime } from "@/components/LocalTime";
 import { Lock } from "@/components/Lock";
-import { Shot } from "@/components/Shot";
+import { lab } from "@/lib/lab";
 import { ModeDemo } from "@/components/ModeDemo";
 import { Rich } from "@/components/Rich";
 import { WorkTile } from "@/components/WorkTile";
-import { getProjects, getSystems, playground, site, statusLabel, type Project } from "@/lib/content";
+import { getProjects, getSystems, site, statusLabel, type Project } from "@/lib/content";
 
 function status(project: Project) {
   return project.status ? statusLabel[project.status] : undefined;
@@ -40,6 +40,9 @@ function Card({ project }: { project: Project }) {
     <Link className="card" href={href}>{inner}</Link>
   );
 }
+
+// Six experiments chosen to show range: mobile, web, motion, fintech and culture.
+const featuredLab = ["live-activity", "card-stack", "command-palette", "flashcards", "prayer-times", "dashboard-reveal"].map((slug) => lab.find((p) => p.slug === slug)!);
 
 export default function Home() {
   const projects = getProjects();
@@ -80,10 +83,17 @@ export default function Home() {
         </section>
 
         <section id="playground" aria-labelledby="p-h">
-          <div className="sh"><h2 id="p-h">Playground</h2><Link className="hint" href="/playground/">See all explorations →</Link></div>
-          <div className="shots" tabIndex={0} role="region" aria-label="Playground explorations, scroll sideways">
-            {playground.slice(0, 6).map((s) => <Shot key={s.src} item={s} />)}
-          </div>
+          <div className="sh"><h2 id="p-h">Playground</h2><Link className="hint" href="/playground/">See all {lab.length} experiments →</Link></div>
+          <ul className="lab-grid">
+            {featuredLab.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/playground/${p.slug}/`} className="lab-card">
+                  <span className="lab-thumb"><img src={`/playground/lab/${p.slug}.jpg`} alt="" loading="lazy" /></span>
+                  <span className="lab-card-text"><b>{p.title}</b><span>{p.question}</span><span className="lab-card-tags">{p.kind}{p.live ? " · Live" : ""}</span></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="nuring" aria-labelledby="nu-h">

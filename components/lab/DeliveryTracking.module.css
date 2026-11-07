@@ -1,0 +1,32 @@
+.screen { position: absolute; inset: 0; background: #eef0ea; color: #1c1f1a; font-family: var(--sans); display: grid; grid-template-rows: 1fr auto; }
+.map { position: relative; overflow: hidden; }
+.map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.road { fill: none; stroke: #fff; stroke-width: 16; stroke-linecap: round; }
+.roadSm { fill: none; stroke: #fff; stroke-width: 8; }
+.routeBase { fill: none; stroke: #c5cbbf; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 2 9; }
+.route { fill: none; stroke: #e8590c; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0.38; }
+.start { fill: #1c1f1a; }
+.homeRing { fill: rgba(232, 89, 12, .18); }
+.home { fill: #e8590c; }
+.rider { animation: bob 1.6s ease-in-out infinite alternate; animation-play-state: var(--lab-play); }
+@keyframes bob { from { translate: 0 -2px; } to { translate: 0 2px; } }
+.riderBg { fill: #fff; filter: drop-shadow(0 4px 6px rgba(0,0,0,.25)); }
+.riderIcon { font-size: 15px; }
+.sheet { background: #fff; border-radius: 26px 26px 0 0; padding: 20px 18px 24px; display: grid; gap: 16px; box-shadow: 0 -10px 30px -16px rgba(0,0,0,.3); }
+.etaRow { display: flex; justify-content: space-between; align-items: center; }
+.k { margin: 0; font-size: 13px; color: #6b7066; }
+.eta { margin: 0; font-size: 20px; font-weight: 600; }
+.eta b { font-size: 46px; letter-spacing: -0.03em; }
+.chip { font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #e6f4ea; color: #1f6b3a; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.steps li { display: grid; gap: 6px; font-size: 11.5px; color: #6b7066; }
+.steps i { height: 6px; border-radius: 6px; background: #e3e6df; }
+.done i { background: #e8590c; }
+.steps .done { color: #1c1f1a; }
+.now i { background: linear-gradient(90deg, #e8590c 55%, #e3e6df 55%); }
+.steps .now { color: #c2410c; font-weight: 700; }
+.rider2 { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding-top: 4px; border-top: 1px solid #eef0ea; padding: 14px 0 0; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: #ffe0cc; color: #6b2700; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+.rider2 b { display: block; font-size: 14px; }
+.rider2 div span { font-size: 12px; color: #6b7066; }
+.call { font-size: 13px; font-weight: 700; padding: 9px 14px; border-radius: 999px; background: #1c1f1a; color: #fff !important; }

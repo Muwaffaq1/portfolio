@@ -1,0 +1,26 @@
+.screen { position: absolute; inset: 0; background: #0f5e4a; color: #f2efe6; font-family: var(--sans); padding: 64px 20px 26px; display: grid; grid-template-rows: auto 1fr auto; }
+.head p { margin: 0 0 10px; font-size: 14px; color: #bfe0d4; }
+.progress { height: 6px; border-radius: 6px; background: rgba(255,255,255,.18); overflow: hidden; }
+.progress i { display: block; height: 100%; background: #f5c75a; border-radius: 6px; transition: width 300ms var(--ease-out); }
+.deck { position: relative; display: grid; place-items: center; }
+.card { position: absolute; width: 100%; height: 400px; border-radius: 28px; background: #f7f3ea; color: #13261f; box-shadow: 0 30px 50px -28px rgba(0,0,0,.7); touch-action: pan-y; cursor: grab; perspective: 1000px; }
+.under { scale: 0.94; translate: 0 18px; opacity: .55; }
+.flip { all: unset; display: block; width: 100%; height: 100%; cursor: pointer; border-radius: 28px; }
+.flip:focus-visible { outline: 3px solid #f5c75a; outline-offset: 4px; }
+.inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; }
+.front, .back { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 28px; }
+.back { transform: rotateY(180deg); background: #fffdf7; }
+.ar { font: 600 76px/1.4 var(--font-arabic), serif; }
+.cue { font-size: 13px; color: #6c7c74; }
+.en { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; }
+.tr { font-size: 17px; color: #4c6158; font-style: italic; }
+.arSmall { font: 500 26px/1.4 var(--font-arabic), serif; color: #0f5e4a; }
+.stamp { position: absolute; top: 24px; z-index: 2; padding: 6px 12px; border-radius: 10px; font-weight: 700; font-size: 14px; border: 2px solid; pointer-events: none; }
+.knew { left: 22px; color: #157a52; border-color: #157a52; rotate: -8deg; }
+.again { right: 22px; color: #b5402a; border-color: #b5402a; rotate: 8deg; }
+.summary { width: 100%; height: 400px; border-radius: 28px; background: #f7f3ea; color: #13261f; display: grid; place-content: center; justify-items: center; gap: 6px; }
+.summary b { font-size: 56px; letter-spacing: -0.03em; }
+.summary span { font-size: 15px; color: #4c6158; }
+.summary button { all: unset; margin-top: 14px; padding: 12px 20px; border-radius: 999px; background: #0f5e4a; color: #fff; font-weight: 600; cursor: pointer; }
+.summary button:focus-visible { outline: 2px solid #0f5e4a; outline-offset: 3px; }
+.hint { margin: 0; text-align: center; font-size: 13px; color: #bfe0d4; }

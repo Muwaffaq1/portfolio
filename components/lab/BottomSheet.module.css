@@ -1,0 +1,29 @@
+.screen { position: absolute; inset: 0; overflow: hidden; font-family: var(--sans); color: #1b1d1f; background: #e8ece6; }
+.map { position: absolute; inset: 0; background: #e8ece6; }
+.map svg { width: 100%; height: 100%; }
+.road { fill: none; stroke: #fff; stroke-width: 14; stroke-linecap: round; }
+.roadSm { fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round; opacity: .9; }
+.lake { fill: #b9d7e8; }
+.pin { position: absolute; left: calc(55% - 14px); top: calc(45% - 34px); width: 28px; height: 28px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: #e5484d; box-shadow: 0 6px 14px -4px rgba(0,0,0,.4); }
+.pin::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: #fff; }
+.dim { position: absolute; inset: 0; background: #000; }
+.sheet { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: #fff; border-radius: 28px 28px 0 0; padding: 0 20px 20px; box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25); touch-action: none; }
+.handle { all: unset; display: grid; place-items: center; width: 100%; height: 28px; cursor: grab; }
+.handle i { width: 40px; height: 5px; border-radius: 5px; background: #d4d6d8; }
+.handle:focus-visible i { outline: 2px solid #1b1d1f; outline-offset: 3px; }
+.title { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.title h2 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+.title p { margin: 2px 0 0; font-size: 13px; color: #6a6e73; }
+.rating { font-size: 13px; font-weight: 600; background: #f1f3f4; padding: 4px 9px; border-radius: 999px; }
+.actions { display: flex; gap: 8px; margin: 16px 0; }
+.actions span { flex: 1; height: 40px; border-radius: 999px; background: #f1f3f4; display: grid; place-items: center; font-size: 14px; font-weight: 600; }
+.actions .primary { background: #1b6ef3; color: #fff; }
+.photos { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; height: 110px; }
+.photos i { border-radius: 14px; background: linear-gradient(160deg, #9cc9a0, #3f7d5a); }
+.photos i:nth-child(2) { background: linear-gradient(160deg, #b9d7e8, #4b86a8); }
+.photos i:nth-child(3) { background: linear-gradient(160deg, #f2c48d, #c47a3a); }
+.sheet h3 { margin: 18px 0 6px; font-size: 15px; }
+.about { margin: 0; font-size: 14px; line-height: 1.55; color: #44484c; }
+.bars { display: flex; align-items: end; gap: 6px; height: 70px; }
+.bars i { flex: 1; border-radius: 4px; background: #c9dafb; }
+.bars i:nth-child(6) { background: #1b6ef3; }

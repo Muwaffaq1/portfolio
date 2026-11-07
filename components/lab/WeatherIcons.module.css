@@ -1,0 +1,39 @@
+.grid { width: min(560px, 100%); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-family: var(--sans); }
+@media (max-width: 480px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+.cell { margin: 0; display: grid; gap: 8px; }
+.box { aspect-ratio: 1; border-radius: 20px; background: linear-gradient(160deg, #4f8ff7, #2a5bd7); display: grid; place-items: center; }
+.box svg { width: 62%; height: 62%; overflow: visible; }
+.box * { animation-play-state: var(--lab-play) !important; }
+.cell figcaption { font: 400 11px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+
+.rays { stroke: #ffd36b; stroke-width: 3.5; stroke-linecap: round; transform-origin: 32px 32px; animation: turn 12s linear infinite; }
+.sunCore { fill: #ffd36b; }
+@keyframes turn { to { rotate: 360deg; } }
+
+.cloud { fill: #fff; }
+.cloudBack { fill: rgba(255,255,255,.55); }
+.cloudDark { fill: #dfe6f5; }
+.drift { animation: drift 4s ease-in-out infinite alternate; }
+.drift2 { animation: drift 5s ease-in-out infinite alternate-reverse; }
+@keyframes drift { from { translate: -3px 0; } to { translate: 3px 0; } }
+
+.drops { stroke: #cfe3ff; stroke-width: 3; stroke-linecap: round; }
+.drops line { animation: fall 900ms linear infinite; }
+.drops line:nth-child(2) { animation-delay: 300ms; }
+.drops line:nth-child(3) { animation-delay: 600ms; }
+@keyframes fall { 0% { translate: 0 -4px; opacity: 0; } 30% { opacity: 1; } 100% { translate: -2px 8px; opacity: 0; } }
+
+.bolt { fill: #ffd36b; animation: flash 2.4s steps(1) infinite; }
+@keyframes flash { 0%, 70%, 80%, 100% { opacity: 1; } 72%, 78% { opacity: .2; } }
+
+.flakes { fill: #fff; }
+.flakes circle { animation: float 2.2s ease-in-out infinite; }
+.flakes circle:nth-child(2) { animation-delay: -.7s; }
+.flakes circle:nth-child(3) { animation-delay: -1.4s; }
+@keyframes float { 0% { translate: 0 -4px; opacity: 0; } 30% { opacity: 1; } 100% { translate: 3px 8px; opacity: 0; } }
+
+.wind { fill: none; stroke: #fff; stroke-width: 3.5; stroke-linecap: round; }
+.wind path { animation: gust 2.4s ease-in-out infinite alternate; }
+.wind path:nth-child(2) { animation-delay: -.8s; }
+.wind path:nth-child(3) { animation-delay: -1.6s; }
+@keyframes gust { from { translate: -4px 0; } to { translate: 4px 0; } }

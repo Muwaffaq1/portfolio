@@ -1,0 +1,17 @@
+.screen { position: absolute; inset: 0; background: linear-gradient(180deg, #3a2414 0%, #140d08 70%); color: #fff3e6; font-family: var(--sans); padding: 70px 26px 34px; display: grid; grid-template-rows: auto auto auto auto 1fr; gap: 14px; }
+.art { position: relative; width: min(100%, 270px); justify-self: center; aspect-ratio: 1; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #ffb35c 0%, #e8692e 55%, #7a2f17 100%); box-shadow: 0 30px 50px -25px rgba(0,0,0,.8); }
+.sun { position: absolute; left: 50%; top: 34%; width: 38%; aspect-ratio: 1; translate: -50% 0; border-radius: 50%; background: #ffe4b5; opacity: .9; }
+.hill { position: absolute; inset: 62% -10% -10% -10%; background: #4a1e0e; border-radius: 50% 50% 0 0; }
+.meta h2 { margin: 6px 0 0; font-size: 24px; letter-spacing: -0.01em; }
+.meta p { margin: 2px 0 0; font-size: 15px; color: #d8b99a; }
+.wave { display: flex; align-items: center; gap: 2px; height: 54px; cursor: pointer; touch-action: none; border-radius: 8px; }
+.wave:focus-visible { outline: 2px solid #ffb35c; outline-offset: 4px; }
+.wave i { flex: 1; border-radius: 2px; background: rgba(255,243,230,.28); transition: background 120ms linear; }
+.wave i.played { background: #ffb35c; }
+.times { display: flex; justify-content: space-between; font-size: 12px; color: #d8b99a; margin-top: -6px; }
+.controls { display: flex; align-items: center; justify-content: center; gap: 34px; align-self: center; }
+.play { all: unset; width: 72px; height: 72px; border-radius: 50%; background: #fff3e6; color: #140d08; display: grid; place-items: center; cursor: pointer; transition: transform 140ms var(--ease-out); }
+.play:active { transform: scale(0.94); }
+.play:focus-visible, .small:focus-visible { outline: 2px solid #ffb35c; outline-offset: 3px; }
+.icon { display: grid; place-items: center; }
+.small { all: unset; font-size: 14px; font-weight: 600; color: #fff3e6; cursor: pointer; padding: 8px; border-radius: 10px; }

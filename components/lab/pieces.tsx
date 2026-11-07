@@ -1,0 +1,38 @@
+import dynamic from "next/dynamic";
+import type { ComponentType } from "react";
+
+// One code-split chunk per experiment, so each page only loads the piece it shows.
+export const pieces: Record<string, ComponentType> = {
+  "hold-to-send": dynamic(() => import("../playground/HoldToSend").then((m) => m.HoldToSend)),
+  "english-arabic": dynamic(() => import("../playground/BidiTransfer").then((m) => m.BidiTransfer)),
+  "live-activity": dynamic(() => import("./LiveActivity")),
+  "swipe-to-pay": dynamic(() => import("./SwipeToPay")),
+  "card-stack": dynamic(() => import("./CardStack")),
+  "bottom-sheet": dynamic(() => import("./BottomSheet")),
+  "rolling-amount": dynamic(() => import("./RollingAmount")),
+  "budget-slider": dynamic(() => import("./BudgetSlider")),
+  "morph-button": dynamic(() => import("./MorphButton")),
+  "toast-stack": dynamic(() => import("./ToastStack")),
+  "command-palette": dynamic(() => import("./CommandPalette")),
+  dock: dynamic(() => import("./Dock")),
+  "colour-tabs": dynamic(() => import("./ColourTabs")),
+  "wireframe-final": dynamic(() => import("./WireframeFinal")),
+  reorder: dynamic(() => import("./ReorderList")),
+  "expanding-cards": dynamic(() => import("./ExpandingCards")),
+  flashcards: dynamic(() => import("./Flashcards")),
+  "ai-prompt": dynamic(() => import("./AiPrompt")),
+  "music-scrubber": dynamic(() => import("./MusicScrubber")),
+  "habit-heatmap": dynamic(() => import("./HabitHeatmap")),
+  "text-decode": dynamic(() => import("./TextDecode")),
+  "prayer-times": dynamic(() => import("./PrayerTimes")),
+  loaders: dynamic(() => import("./Loaders")),
+  "weather-icons": dynamic(() => import("./WeatherIcons")),
+  aurora: dynamic(() => import("./Aurora")),
+  "dashboard-reveal": dynamic(() => import("./DashboardReveal")),
+  "boarding-pass": dynamic(() => import("./BoardingPass")),
+  "sleep-summary": dynamic(() => import("./SleepSummary")),
+  "match-day": dynamic(() => import("./MatchDay")),
+  "delivery-tracking": dynamic(() => import("./DeliveryTracking")),
+  "ai-landing": dynamic(() => import("./AiLanding")),
+  "smart-home": dynamic(() => import("./SmartHome")),
+};

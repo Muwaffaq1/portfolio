@@ -1,0 +1,28 @@
+.screen { position: absolute; inset: 0; background: #f6f3ee; color: #1e1b16; font-family: var(--sans); display: grid; grid-template-rows: 1fr auto auto; padding: 64px 20px 36px; gap: 14px; }
+.top { display: grid; justify-items: center; align-content: start; text-align: center; }
+.logo { width: 56px; height: 56px; border-radius: 18px; background: #2f1d12; color: #f4c99b; display: grid; place-items: center; font: 700 24px/1 var(--sans); margin-bottom: 14px; }
+.k { margin: 0; font-size: 13px; color: #665f53; }
+.merchant { margin: 2px 0 0; font-size: 20px; }
+.amount { margin: 10px 0 18px; font-size: 48px; font-weight: 600; letter-spacing: -0.03em; }
+.amount small { font-size: .45em; color: #665f53; }
+.rows { width: 100%; margin: 0; background: #fff; border-radius: 18px; padding: 4px 16px; text-align: start; }
+.rows div { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid #f0ece5; font-size: 14px; }
+.rows div:first-child { border-top: 0; }
+.rows dt { color: #665f53; }
+.rows dd { margin: 0; font-weight: 500; }
+.track { position: relative; height: 64px; border-radius: 32px; background: #2f1d12; overflow: hidden; touch-action: pan-y; }
+.track[data-paid="true"] { background: #1f7a43; transition: background 240ms ease; }
+.fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, rgba(244,201,155,.15), rgba(244,201,155,.35)); border-radius: 32px; }
+.track[data-paid="true"] .fill { background: transparent; }
+.label { position: absolute; inset: 0; display: grid; place-items: center; color: #f4c99b; font-size: 15px; font-weight: 600; padding-left: 40px; pointer-events: none;
+  background: linear-gradient(90deg, #f4c99b 0%, #fff6ec 50%, #f4c99b 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shine 2.4s linear infinite; animation-play-state: var(--lab-play); }
+@keyframes shine { to { background-position: -200% 0; } }
+.done { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 15px; padding-right: 40px; }
+.knob { all: unset; position: absolute; top: 4px; left: 4px; width: 56px; height: 56px; border-radius: 50%; background: #f4c99b; color: #2f1d12; display: grid; place-items: center; cursor: grab; touch-action: none; box-shadow: 0 6px 16px -6px rgba(0,0,0,.5); }
+.knob:active { cursor: grabbing; }
+.knob:focus-visible { outline: 2px solid #f4c99b; outline-offset: 3px; }
+.track[data-paid="true"] .knob { background: #fff; color: #1f7a43; }
+.reset { all: unset; justify-self: center; font-size: 14px; font-weight: 600; color: #2f1d12; cursor: pointer; padding: 6px 10px; }
+.reset:focus-visible { outline: 2px solid #2f1d12; border-radius: 8px; }
+.resetSlot { display: grid; justify-items: center; min-height: 30px; }

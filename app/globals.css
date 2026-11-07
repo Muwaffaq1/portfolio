@@ -754,3 +754,45 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .live-tag { color: var(--live) !important; }
 @media (hover: hover) and (pointer: fine) { .shot a:hover .mock { border-color: var(--faint); } }
 .bd-num { white-space: nowrap; }
+
+/* ---------- Playground lab: one experiment per page ---------- */
+.lab-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.lab-tags span { font: 400 11px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
+.lab-stage { margin: 28px 0 8px; border-radius: 24px; border: 1px solid var(--line); background: var(--stage); padding: clamp(16px, 4vw, 40px); display: grid; place-items: center; min-height: 420px; overflow: hidden; }
+.lab-phone { width: min(360px, 100%); padding: 10px; border-radius: 52px; background: linear-gradient(150deg, #3a3a38, #0c0c0b 55%, #262624); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 30px 60px -28px rgba(0,0,0,.7); }
+.lab-screen { position: relative; height: 720px; border-radius: 42px; overflow: hidden; background: #fff; isolation: isolate; }
+@media (max-width: 420px) { .lab-screen { height: 640px; } }
+.lab-browser { width: 100%; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 30px 60px -28px rgba(0,0,0,.6); }
+.lab-browser-bar { height: 34px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #ecebe7; }
+.lab-browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d4d2cc; }
+.lab-browser-body { position: relative; min-height: 460px; }
+.lab-how { margin-top: 28px; }
+.lab-pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 40px; font-size: 14px; }
+.lab-pager a { color: var(--muted); text-decoration: none; }
+@media (hover: hover) and (pointer: fine) { .lab-pager a:hover { color: var(--ink); } }
+/* Every lab loop reads this: paused by the header's Pause button or by reduced motion */
+:root { --lab-play: running; }
+[data-motion="paused"] { --lab-play: paused; }
+@media (prefers-reduced-motion: reduce) { :root { --lab-play: paused; } }
+/* Headings inside an experiment belong to that experiment, not to the site's section-label style */
+.lab-stage :is(h1, h2, h3) { font-family: inherit; text-transform: none; letter-spacing: normal; color: inherit; line-height: 1.2; font-weight: 600; }
+/* Playground index: filter chips and a grid of experiments */
+.lab-index { margin-top: 28px; }
+.lab-filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.lab-filters button { all: unset; display: inline-flex; gap: 6px; align-items: center; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: 13px; cursor: pointer; transition: transform 140ms var(--ease-out); }
+.lab-filters button span { color: var(--faint); font-size: 12px; }
+.lab-filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.lab-filters button[aria-pressed="true"] span { color: var(--bg); opacity: .7; }
+.lab-filters button:active { transform: scale(0.97); }
+.lab-filters button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.lab-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 16px; }
+@media (max-width: 720px) { .lab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lab-card { display: grid; gap: 10px; color: inherit; text-decoration: none; }
+.lab-thumb { display: block; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--stage); }
+.lab-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block; transition: transform 300ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .lab-card:hover .lab-thumb img { transform: scale(1.03); } .lab-card:hover b { text-decoration: underline; text-underline-offset: 3px; } }
+.lab-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 16px; }
+.lab-card-text { display: grid; gap: 3px; }
+.lab-card-text b { font-size: 14px; font-weight: 500; }
+.lab-card-text > span { font-size: 13px; color: var(--muted); line-height: 1.45; }
+.lab-card-text .lab-card-tags { font: 400 11px var(--mono); color: var(--faint); }

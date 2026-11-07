@@ -1,0 +1,28 @@
+.screen { position: absolute; inset: 0; background: linear-gradient(180deg, #0b1630 0%, #070d1c 70%); color: #e8eefc; font-family: var(--sans); padding: 60px 20px 20px; display: grid; grid-template-rows: auto auto auto auto 1fr; gap: 16px; }
+.head p { margin: 0; font-size: 13px; color: #8d9ac0; }
+.head h2 { margin: 2px 0 0; font-size: 28px; letter-spacing: -0.02em; }
+.scoreRow { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: center; }
+.ringWrap { position: relative; width: 140px; height: 140px; }
+.ring { width: 100%; height: 100%; rotate: -90deg; }
+.track { fill: none; stroke: rgba(255,255,255,.08); stroke-width: 10; }
+.fill { fill: none; stroke: #4cc9a8; stroke-width: 10; stroke-linecap: round; }
+.score { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; }
+.score b { font-size: 44px; letter-spacing: -0.03em; line-height: 1; }
+.score span { font-size: 13px; color: #4cc9a8; font-weight: 600; }
+.facts { margin: 0; display: grid; gap: 8px; }
+.facts div { display: flex; justify-content: space-between; font-size: 14px; }
+.facts dt { color: #8d9ac0; }
+.facts dd { margin: 0; font-weight: 600; }
+.chart { padding: 12px; border-radius: 18px; background: rgba(255,255,255,.04); }
+.chart svg { width: 100%; height: 110px; display: block; }
+.grid { stroke: rgba(255,255,255,.06); stroke-width: 1; }
+.path { fill: none; stroke: #8ecae6; stroke-width: 2.5; stroke-linejoin: round; }
+.axis { display: flex; justify-content: space-between; font-size: 11px; color: #8d9ac0; margin-top: 6px; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.stages li { display: grid; grid-template-columns: 74px 1fr 64px; gap: 10px; align-items: center; font-size: 13px; }
+.stages li > span:first-child { display: flex; align-items: center; gap: 8px; color: #c4cde6; }
+.dot { width: 8px; height: 8px; border-radius: 2px; }
+.bar { height: 8px; border-radius: 8px; background: rgba(255,255,255,.07); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 8px; }
+.stages b { text-align: end; }
+.note { align-self: end; margin: 0; font-size: 11px; color: #6c789c; text-align: center; }

@@ -1,0 +1,22 @@
+.screen { position: absolute; inset: 0; background: radial-gradient(120% 70% at 30% 10%, #2c4a7a 0%, transparent 60%), radial-gradient(90% 60% at 90% 80%, #7a3a2c 0%, transparent 60%), #0b0f1a; color: #fff; font-family: var(--sans); display: grid; justify-items: center; align-content: start; }
+.date { margin: 92px 0 0; font-size: 17px; font-weight: 500; opacity: .85; }
+.time { margin: 0; font-size: 92px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+.island { all: unset; box-sizing: border-box; position: absolute; top: 12px; left: 50%; translate: -50% 0; background: #000; color: #fff; cursor: pointer; overflow: hidden; min-width: 128px; min-height: 36px; display: grid; place-items: center; box-shadow: 0 10px 30px -12px rgba(0,0,0,.8); }
+.island[data-open="true"] { width: calc(100% - 20px); }
+.island:focus-visible { outline: 2px solid #8ab4ff; outline-offset: 3px; }
+.closed { display: flex; align-items: center; gap: 8px; padding: 0 14px; font-size: 13px; font-weight: 600; }
+.dot { width: 18px; height: 18px; border-radius: 50%; background: conic-gradient(#ff8a3d 0 70%, #3a3a3a 0); }
+.open { display: grid; gap: 14px; width: 100%; padding: 18px 18px 16px; text-align: start; }
+.row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: #ff8a3d; color: #1a0d03; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+.who { display: grid; }
+.who b { font-size: 15px; }
+.who span { font-size: 12px; color: #a6a6a6; }
+.eta { display: grid; justify-items: end; line-height: 1; }
+.eta b { font-size: 30px; color: #ff8a3d; }
+.eta span { font-size: 11px; color: #a6a6a6; }
+.track { height: 5px; border-radius: 5px; background: #2a2a2a; overflow: hidden; }
+.track i { display: block; height: 100%; background: #ff8a3d; transform-origin: left; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.actions span { height: 38px; border-radius: 999px; background: #1f1f1f; display: grid; place-items: center; font-size: 13px; font-weight: 600; }
+.hint { position: absolute; bottom: 40px; margin: 0; font-size: 13px; opacity: .6; }
