@@ -7,6 +7,7 @@ import { Services } from "@/components/Services";
 import { Header } from "@/components/Header";
 import { LocalTime } from "@/components/LocalTime";
 import { Lock } from "@/components/Lock";
+import { Shot } from "@/components/Shot";
 import { ModeDemo } from "@/components/ModeDemo";
 import { Rich } from "@/components/Rich";
 import { WorkTile } from "@/components/WorkTile";
@@ -81,12 +82,7 @@ export default function Home() {
         <section id="playground" aria-labelledby="p-h">
           <div className="sh"><h2 id="p-h">Playground</h2><Link className="hint" href="/playground/">See all explorations →</Link></div>
           <div className="shots" tabIndex={0} role="region" aria-label="Playground explorations, scroll sideways">
-            {playground.slice(0, 6).map((s) => (
-              <figure key={s.src} className="shot">
-                <img src={s.src} alt={`${s.title}, ${s.project}`} loading="lazy" />
-                <figcaption><b>{s.title}</b><span>{s.project}</span></figcaption>
-              </figure>
-            ))}
+            {playground.slice(0, 6).map((s) => <Shot key={s.src} item={s} />)}
           </div>
         </section>
 

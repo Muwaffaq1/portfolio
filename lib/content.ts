@@ -79,6 +79,9 @@ export function getSystems(): DesignSystem[] {
 }
 
 // Playground shots: add an image to public/playground and a line to content/playground.json.
-export { default as playground } from "@/content/playground.json";
+import playgroundData from "@/content/playground.json";
+// href: where the card links (a live experiment on /playground). live: a captured experiment, shown without a phone frame.
+export type PlaygroundItem = { src: string; title: string; project: string; href?: string; live?: boolean };
+export const playground = playgroundData as PlaygroundItem[];
 
 export { site };
