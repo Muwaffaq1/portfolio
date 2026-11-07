@@ -68,7 +68,6 @@ export function ContactSection() {
         <dl className="contact-meta">
           <div><dt>Based in</dt><dd>{site.location}, Nigeria</dd></div>
           <div><dt>Hours</dt><dd>{c.availability}</dd></div>
-          <div><dt>Status</dt><dd>{site.openToWork ? <><span className="pulse" aria-hidden="true" /> Open to work</> : "Not looking right now"}</dd></div>
         </dl>
       </div>
     </section>
