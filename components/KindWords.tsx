@@ -12,8 +12,9 @@ export function KindWords() {
     <section id="kind-words" aria-labelledby="k-h">
       <div className="sh"><h2 id="k-h">Kind words</h2></div>
       <div className="quotes">
-        {quotes.map((q) => (
-          <figure key={q.name} className={q.placeholder ? "quote placeholder" : "quote"}>
+        {/* The first quote is the featured one: it runs full width, so a long quote never stretches a short one beside it */}
+        {quotes.map((q, i) => (
+          <figure key={q.name} className={["quote", i === 0 && "featured", q.placeholder && "placeholder"].filter(Boolean).join(" ")}>
             <blockquote>{q.quote}</blockquote>
             <figcaption><b>{q.name}</b> {q.role}</figcaption>
           </figure>

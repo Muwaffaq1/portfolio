@@ -1,5 +1,10 @@
 [
   {
+    "quote": "Muwaffaq’s work shattered our team’s expectations every single time. Whatever he delivered came back refined, full of depth, nuance, and with a clear understanding of the visual language we were trying to communicate at Nūring. He shattered our expectations so consistently that his standards became the company's standards. His dedication to his craft fostered a stronger sense of excellence in our team.",
+    "name": "Ridwan",
+    "role": "Chief Medical Officer, Nūring"
+  },
+  {
     "quote": "I looked into it, and it is absolutely amazing. Especially the private debt record, that is the most important for me.",
     "name": "treeti user",
     "role": "On the private debt record"
@@ -19,12 +24,6 @@
     "quote": "Placeholder: a line from QuickPay about the redesign and the design system.",
     "name": "QuickPay",
     "role": "Wallet and bills app",
-    "placeholder": true
-  },
-  {
-    "quote": "Placeholder: a line from a Nūring or HoBeei colleague about working with Muwaffaq.",
-    "name": "Colleague",
-    "role": "Nūring or HoBeei",
     "placeholder": true
   }
 ]
