@@ -61,10 +61,10 @@ export function ContactSection() {
       <div className="contact">
         <div className="contact-main">
           <p className="contact-title">Let&apos;s build something people want to use.</p>
-          <p className="d">{site.lookingFor}. {c.reply}</p>
+          <p className="d">Have a role, a project or just an idea? Send me a note. {c.reply}</p>
           {c.email && <CopyEmail email={c.email} />}
           <ContactLinks />
-          <p className="d contact-alt">Hiring me for a project instead? <a href="/services/">See how I work with businesses →</a></p>
+          <p className="d contact-alt">Working on a project? <a href="/services/">See how I work with businesses →</a></p>
         </div>
         <dl className="contact-meta">
           <div><dt>Based in</dt><dd>{site.location}, Nigeria</dd></div>

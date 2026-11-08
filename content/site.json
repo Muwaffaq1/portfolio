@@ -3,8 +3,6 @@
   "role": "Product designer & design engineer",
   "location": "Abuja",
   "timezone": "Africa/Lagos",
-  "openToWork": true,
-  "lookingFor": "Senior product design roles, remote or in the Gulf",
   "greetings": [
     "Hello,",
     "Hola,",
@@ -14,7 +12,7 @@
   ],
   "intro": [
     "I design products and build them, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
-    "I lead design at **Nūring**, a sports-tech company that reads grip to measure effort. Alongside it, I've just launched my own app, **treeti**, for recording interest-free loans: **72 people** have joined since October. I also rebuilt **QuickPay**, a money app, on one token system."
+    "In 4+ years I've designed and built **more than 8 websites and apps** and set up **5 design systems**. I lead design at **Nūring**, a sports-tech company that reads grip to measure effort, and I launched my own app, **treeti**, which helps friends and family put the money they lend each other in writing: **more than 70 people** signed up in its first three weeks."
   ],
   "theme": {
     "texture": 0.08
@@ -78,7 +76,6 @@
     "I use Claude Code to build and test real apps, and Figma MCP to set up design systems and rename hundreds of layers at once.",
     "AI defaults to generic layouts and misses edge cases, so I set the tokens first, check every contrast pair and stress-test screens with worst-case data."
   ],
-  "openToWorkLabel": "Open to work",
   "contact": {
     "email": "yusufmuwaffaq17@gmail.com",
     "linkedin": "https://www.linkedin.com/in/yusuf-muwaffaq",
@@ -205,10 +202,6 @@
     {
       "k": "Experience",
       "v": "4+ years across sports tech, fintech and marketplaces"
-    },
-    {
-      "k": "Looking for",
-      "v": "Senior product design roles, remote or in the Gulf"
     },
     {
       "k": "Ask me about",
