@@ -12,7 +12,7 @@
   ],
   "intro": [
     "I design products and build them, from the first sketch to production code. If I wouldn't open it twice, I don't ship it.",
-    "In 4+ years I've designed and built **more than 8 websites and apps** and set up **5 design systems**. I lead design at **Nūring**, a sports-tech company that reads grip to measure effort, and I launched my own app, **treeti**, which helps friends and family put the money they lend each other in writing: **more than 70 people** signed up in its first three weeks."
+    "In 4+ years I've designed and built **more than 8 websites and apps** and set up **[5 design systems](/systems/)**. I lead design at **Nūring**, a sports-tech company that reads grip to measure effort, and I launched my own app, **treeti**, which helps friends and family put the money they lend each other in writing: **more than 70 people** signed up in its first three weeks."
   ],
   "theme": {
     "texture": 0.08
@@ -123,6 +123,16 @@
     {
       "name": "Product design and design systems",
       "line": "Audits, redesigns and token-based systems in Figma, handed to your engineers with specs and documentation.",
+      "price": ""
+    },
+    {
+      "name": "Redesigns",
+      "line": "A fresh look and smoother flows for an existing website or app, without starting from scratch.",
+      "price": ""
+    },
+    {
+      "name": "Polish for AI-built products",
+      "line": "Built with Lovable, Bolt, v0 or Cursor? I turn the generic, AI-made look into a considered design with a real design system, consistent spacing and type, and copy that sounds like you.",
       "price": ""
     },
     {

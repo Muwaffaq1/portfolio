@@ -780,3 +780,12 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .contact-alt { margin-top: 14px; font-size: 14px; }
 /* On phones the grid is two columns, so the home page shows two experiments instead of leaving one orphaned */
 @media (max-width: 720px) { .home-lab li:nth-child(3) { display: none; } }
+.services-note { margin: 20px 0 0; }
+.services-note a { color: var(--ink); }
+/* A link inside the intro reads as part of the sentence, with a quiet underline that darkens on hover */
+.intro a { color: inherit; text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; transition: text-decoration-color 150ms ease; }
+@media (hover: hover) and (pointer: fine) { .intro a:hover { text-decoration-color: var(--ink); } }
+.intro a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 2px; }
+/* The menu always fits: on very small phones, "Design systems" shortens to "Systems" */
+.nav-short { display: none; }
+@media (max-width: 359px) { .nav-long { display: none; } .nav-short { display: inline; } }

@@ -30,6 +30,7 @@ export default function Services() {
               </li>
             ))}
           </ul>
+          <p className="lead services-note">For redesigns, I start with an audit: what to keep, what to fix and what to rebuild, the same way I approached <Link href="/work/quickpay/">QuickPay&apos;s 105 screens</Link>.</p>
           <ol className="steps-row">
             {site.process.map((step, i) => (
               <li key={step}><span className="tnum">{String(i + 1).padStart(2, "0")}</span>{step}</li>
