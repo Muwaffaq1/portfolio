@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motionPaused, onMotionChange, setMotionPaused } from "@/lib/motion";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export function Header({ name }: { name: string }) {
   const [light, setLight] = useState(false);
@@ -62,6 +63,7 @@ export function Header({ name }: { name: string }) {
   }
 
   return (
+    <>
     <header className={`top${hidden ? " away" : ""}${scrolled ? " stuck" : ""}`} onFocus={() => setHidden(false)}>
       <Link className="me" href="/">
         <img className="av" src="/me.jpg" alt="" width={28} height={28} />
@@ -69,7 +71,7 @@ export function Header({ name }: { name: string }) {
       </Link>
       <nav>
         <Link href="/#work">Work</Link>
-        <Link href="/systems/" aria-label="Design systems"><span className="nav-long">Design systems</span><span className="nav-short" aria-hidden="true">Systems</span></Link>
+        <Link href="/systems/">Design systems</Link>
         <Link href="/playground/">Playground</Link>
         <Link href="/about/">About</Link>
         <Link href="/#contact">Contact</Link>
@@ -81,5 +83,8 @@ export function Header({ name }: { name: string }) {
         {light ? "Dark" : "Light"}
       </button>
     </header>
+    {/* On phones the menu lives in a floating pill instead (outside the header, which moves when it hides) */}
+    <MobileMenu hidden={hidden} light={light} onTheme={toggle} paused={paused} onPause={() => setMotionPaused(!paused)} />
+    </>
   );
 }

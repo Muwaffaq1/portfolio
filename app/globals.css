@@ -786,6 +786,10 @@ button, .links a, .top nav a, .top .me, .seg button, .ms-act { touch-action: man
 .intro a { color: inherit; text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; transition: text-decoration-color 150ms ease; }
 @media (hover: hover) and (pointer: fine) { .intro a:hover { text-decoration-color: var(--ink); } }
 .intro a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 2px; }
-/* The menu always fits: on very small phones, "Design systems" shortens to "Systems" */
-.nav-short { display: none; }
-@media (max-width: 359px) { .nav-long { display: none; } .nav-short { display: inline; } }
+/* Phones: the header shows only the name; pages and the Pause and Dark switches move into the floating menu */
+@media (max-width: 480px) {
+  .top nav, .top button { display: none; }
+  .top { height: 60px; flex-wrap: nowrap; padding-bottom: 0; }
+  /* Room at the bottom so the floating menu never covers the last line */
+  footer { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+}
