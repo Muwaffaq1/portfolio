@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     description,
     url: "/",
     siteName: site.name,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name}, ${site.role}` }],
+    images: [{ url: "/og.png?v=2", width: 1200, height: 630, alt: `${site.name}, ${site.role}` }],
     type: "website",
   },
-  twitter: { card: "summary_large_image", creator: "@Muwaffaaq", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", creator: "@Muwaffaaq", images: ["/og.png?v=2"] },
 };
 
 // Runs before first paint so a saved light/dark choice never flashes.
