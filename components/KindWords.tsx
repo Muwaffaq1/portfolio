@@ -1,6 +1,6 @@
 import testimonials from "@/content/testimonials.json";
 
-type Quote = { quote: string; name: string; role: string; placeholder?: boolean };
+type Quote = { quote: string; name: string; role: string; featured?: boolean; placeholder?: boolean };
 
 // Placeholder quotes show only in local preview (npm run dev), never on the live site.
 // Replace them in content/testimonials.json and remove "placeholder": true.
@@ -12,9 +12,9 @@ export function KindWords() {
     <section id="kind-words" aria-labelledby="k-h">
       <div className="sh"><h2 id="k-h">Kind words</h2></div>
       <div className="quotes">
-        {/* The first quote is the featured one: it runs full width, so a long quote never stretches a short one beside it */}
+        {/* Featured quotes (from teammates) come first, side by side, a size larger */}
         {quotes.map((q, i) => (
-          <figure key={q.name} className={["quote", i === 0 && "featured", q.placeholder && "placeholder"].filter(Boolean).join(" ")}>
+          <figure key={q.name} className={["quote", q.featured && "featured", q.placeholder && "placeholder"].filter(Boolean).join(" ")}>
             <blockquote>{q.quote}</blockquote>
             <figcaption><b>{q.name}</b> {q.role}</figcaption>
           </figure>

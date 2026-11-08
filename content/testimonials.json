@@ -2,7 +2,14 @@
   {
     "quote": "Muwaffaq’s work shattered our team’s expectations every single time. Whatever he delivered came back refined, full of depth, nuance, and with a clear understanding of the visual language we were trying to communicate at Nūring. He shattered our expectations so consistently that his standards became the company's standards. His dedication to his craft fostered a stronger sense of excellence in our team.",
     "name": "Ridwan",
-    "role": "Chief Medical Officer, Nūring"
+    "role": "Chief Medical Officer, Nūring",
+    "featured": true
+  },
+  {
+    "quote": "Muwaffaq is one of those rare people who understands both the art of design and the discipline of engineering. At Nūring, he went beyond creating beautiful interfaces; he built systems, streamlined handoffs and personally delivered frontend implementations. His work raised the bar for design quality and collaboration across the team.",
+    "name": "Abdussamad",
+    "role": "Lead Developer, Nūring",
+    "featured": true
   },
   {
     "quote": "I looked into it, and it is absolutely amazing. Especially the private debt record, that is the most important for me.",
