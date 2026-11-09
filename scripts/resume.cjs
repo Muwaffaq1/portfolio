@@ -1,13 +1,11 @@
-// Renders both résumés to PDF (A4, selectable text, live links):
-//   resume/resume.html                   -> public/muwaffaq-yusuf-resume.pdf                   (product designer)
-//   resume/resume-design-engineer.html   -> public/muwaffaq-yusuf-resume-design-engineer.pdf   (design engineer)
+// Renders the résumé to PDF (A4, selectable text, live links):
+//   resume/resume.html   -> public/muwaffaq-yusuf-resume.pdf
 // Usage: node scripts/resume.cjs   (Playwright is borrowed from ~/Desktop/treeti, like record.cjs)
 const path = require("node:path");
 const { chromium } = require(path.join(process.env.HOME, "Desktop/treeti/node_modules/playwright"));
 
 const builds = [
   ["resume.html", "muwaffaq-yusuf-resume.pdf"],
-  ["resume-design-engineer.html", "muwaffaq-yusuf-resume-design-engineer.pdf"],
 ];
 
 (async () => {
