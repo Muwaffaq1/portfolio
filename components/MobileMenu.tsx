@@ -20,6 +20,7 @@ type Props = { light: boolean; onTheme: () => void; paused: boolean; onPause: ()
 // Phones only. A floating pill that grows into a sheet: pages, quick actions, and the theme and motion switches.
 export function MobileMenu({ light, onTheme, paused, onPause }: Props) {
   const [open, setOpen] = useState(false);
+  const [away, setAway] = useState(false);
   const pathname = usePathname() ?? "/";
   const reduce = useReducedMotion();
   const calm = reduce || paused;
@@ -59,8 +60,26 @@ export function MobileMenu({ light, onTheme, paused, onPause }: Props) {
     }
   }, [open, calm]);
 
-  // Close when the page changes (a link was followed).
-  useEffect(() => { setOpen(false); }, [pathname]);
+  // Close when the page changes (a link was followed), and bring the pill back.
+  useEffect(() => { setOpen(false); setAway(false); }, [pathname]);
+
+  // Steps aside while you scroll down to read, and slides back the moment you scroll up.
+  useEffect(() => {
+    let last = scrollY;
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = scrollY;
+        if (Math.abs(y - last) < 6) return; // ignore tiny jitters
+        const focused = pill.current === document.activeElement;
+        setAway(y > last && y > 120 && !focused);
+        last = y;
+      });
+    };
+    addEventListener("scroll", onScroll, { passive: true });
+    return () => { removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); };
+  }, []);
 
   const item = (i: number) => (calm
     ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.12 } }
@@ -164,6 +183,8 @@ export function MobileMenu({ light, onTheme, paused, onPause }: Props) {
             style={{ borderRadius: 24 }}
             transition={morph}
             onClick={() => setOpen(true)}
+            animate={{ y: away ? 90 : 0, opacity: away ? 0 : 1 }}
+            onFocus={() => setAway(false)}
             aria-haspopup="dialog"
             data-track="menu_open"
             aria-expanded={false}
