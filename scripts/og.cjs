@@ -15,7 +15,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 </style></head><body>
   <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7.5" fill="#1d1d1b"/><path d="M7 24V8h4.2L16 15.2 20.8 8H25v16h-3.6V14.1L16 22l-5.4-7.9V24z" fill="#edece8"/></svg>
   <h1>${site.name} <span>· ${site.role}.</span><br>I design, build and launch products I'd want to use.</h1>
-  <div class="foot"><span><b>muwaffaq.pages.dev</b></span><span>${site.location} · GMT+1</span></div>
+  <div class="foot"><span><b>muwaffaq.pages.dev</b></span><span>Remote · worldwide</span></div>
 </body></html>`;
 
 (async () => {

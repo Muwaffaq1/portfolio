@@ -8,7 +8,7 @@ import { site } from "@/lib/content";
 
 export const metadata = {
   title: `About — ${site.name}`,
-  description: `${site.name}, ${site.role} in ${site.location}.`,
+  description: `${site.name}, ${site.role}, working remotely.`,
 };
 
 // Drop a square photo at public/me.jpg and it appears here automatically.
@@ -24,7 +24,7 @@ export default function About() {
           <div className="cs-head" style={{ paddingTop: 0 }}>
             <Link className="cs-back" href="/">← Home</Link>
             <h1 className="cs-title">About me</h1>
-            <p className="cs-sum">{site.role} in {site.location}, Nigeria. Designing products for 4+ years.</p>
+            <p className="cs-sum">{site.role}, working remotely. Designing products for 4+ years.</p>
             <div className="links" style={{ marginTop: 6 }}>
               <a href={site.contact.resume} download>Résumé</a>
               <a href={site.contact.call} target="_blank" rel="noreferrer">Book a call</a>

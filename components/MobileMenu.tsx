@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import site from "@/content/site.json";
-import { LocalTime } from "@/components/LocalTime";
 import s from "./MobileMenu.module.css";
 
 const pages = [
@@ -16,10 +15,10 @@ const pages = [
   { href: "/#contact", label: "Contact", match: () => false },
 ];
 
-type Props = { hidden: boolean; light: boolean; onTheme: () => void; paused: boolean; onPause: () => void };
+type Props = { light: boolean; onTheme: () => void; paused: boolean; onPause: () => void };
 
 // Phones only. A floating pill that grows into a sheet: pages, quick actions, and the theme and motion switches.
-export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
+export function MobileMenu({ light, onTheme, paused, onPause }: Props) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() ?? "/";
   const reduce = useReducedMotion();
@@ -108,7 +107,7 @@ export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
             <span className={s.handle} aria-hidden="true" />
             <motion.div className={s.head} {...item(0)}>
               <img className={s.photo} src="/me.jpg" alt="" width={40} height={40} />
-              <span className={s.who}><b>{site.name}</b><span>{site.location} <LocalTime timeZone={site.timezone} /></span></span>
+              <span className={s.who}><b>{site.name}</b><span>{site.location}</span></span>
               <button type="button" className={s.close} onClick={close} aria-label="Close menu">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
               </button>
@@ -164,7 +163,6 @@ export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
             className={s.pill}
             style={{ borderRadius: 24 }}
             transition={morph}
-            animate={{ y: hidden ? 90 : 0, opacity: hidden ? 0 : 1 }}
             onClick={() => setOpen(true)}
             aria-haspopup="dialog"
             data-track="menu_open"

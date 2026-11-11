@@ -67,7 +67,7 @@ export function ContactSection() {
           <p className="d contact-alt">Working on a project? <a href="/services/">See how I work with businesses →</a></p>
         </div>
         <dl className="contact-meta">
-          <div><dt>Based in</dt><dd>{site.location}, Nigeria</dd></div>
+          <div><dt>Works</dt><dd>Remotely, worldwide</dd></div>
           <div><dt>Hours</dt><dd>{c.availability}</dd></div>
         </dl>
       </div>

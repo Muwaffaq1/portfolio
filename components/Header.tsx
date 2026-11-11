@@ -13,24 +13,14 @@ export function Header({ name }: { name: string }) {
     setPaused(motionPaused());
     return onMotionChange(() => setPaused(motionPaused()));
   }, []);
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Sticks to the top. Slides away while you scroll down to read, and comes back as soon as you scroll up.
+  // Pinned to the top at all times; once the page scrolls, it gets a frosted background and a hairline.
   useEffect(() => {
-    let last = scrollY;
     let frame = 0;
     const onScroll = () => {
       cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const y = scrollY;
-        setScrolled(y > 8);
-        if (Math.abs(y - last) < 6) return; // ignore tiny jitters
-        const header = document.querySelector(".top");
-        const focused = header?.contains(document.activeElement);
-        setHidden(y > last && y > 160 && !focused);
-        last = y;
-      });
+      frame = requestAnimationFrame(() => setScrolled(scrollY > 8));
     };
     setScrolled(scrollY > 8); // a reload can restore a scrolled position before any scroll event
     addEventListener("scroll", onScroll, { passive: true });
@@ -64,7 +54,7 @@ export function Header({ name }: { name: string }) {
 
   return (
     <>
-    <header className={`top${hidden ? " away" : ""}${scrolled ? " stuck" : ""}`} onFocus={() => setHidden(false)}>
+    <header className={`top${scrolled ? " stuck" : ""}`}>
       <Link className="me" href="/">
         <img className="av" src="/me.jpg" alt="" width={28} height={28} />
         {name}
@@ -83,8 +73,8 @@ export function Header({ name }: { name: string }) {
         {light ? "Dark" : "Light"}
       </button>
     </header>
-    {/* On phones the menu lives in a floating pill instead (outside the header, which moves when it hides) */}
-    <MobileMenu hidden={hidden} light={light} onTheme={toggle} paused={paused} onPause={() => setMotionPaused(!paused)} />
+    {/* On phones the menu lives in a floating pill instead */}
+    <MobileMenu light={light} onTheme={toggle} paused={paused} onPause={() => setMotionPaused(!paused)} />
     </>
   );
 }

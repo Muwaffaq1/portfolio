@@ -501,12 +501,10 @@ footer { margin-top: 96px; padding-block: 24px 48px; border-top: 1px solid var(-
 .ms-stage { -webkit-user-select: none; user-select: none; }
 
 /* Sticky header: full-width backdrop, hides on scroll down, returns on scroll up */
-.top { position: sticky; top: 0; z-index: 50; transition: transform 220ms var(--ease-out); }
+.top { position: sticky; top: 0; z-index: 50; }
 .top::before { content: ""; position: absolute; inset: 0 auto 0 50%; width: 100vw; transform: translateX(-50%); z-index: -1; background: color-mix(in srgb, var(--bg) 82%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; opacity: 0; transition: opacity 200ms ease; }
 .top.stuck::before { opacity: 1; border-bottom-color: var(--line); }
-.top.away { transform: translateY(-100%); }
 html { scroll-padding-top: 88px; }
-@media (prefers-reduced-motion: reduce) { .top { transition: none; } }
 
 /* Figma frames, presented: a quiet stage, a sharp 1600px render, and a full-size 4K viewer */
 .fig { margin: 28px 0; gap: 10px; }

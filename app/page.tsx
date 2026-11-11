@@ -4,7 +4,6 @@ import { Experience } from "@/components/Experience";
 import { Greeting } from "@/components/Greeting";
 import { KindWords } from "@/components/KindWords";
 import { Header } from "@/components/Header";
-import { LocalTime } from "@/components/LocalTime";
 import { lab } from "@/lib/lab";
 import { Rich } from "@/components/Rich";
 import { WorkTile } from "@/components/WorkTile";
@@ -32,7 +31,7 @@ export default function Home() {
           <div className="meta">
             <span>{site.role}</span>
             <span className="sep">·</span>
-            <span>{site.location} <LocalTime timeZone={site.timezone} /></span>
+            <span>{site.location}</span>
           </div>
           <div className="intro">
             {site.intro.map((p) => <p key={p}><Rich text={p} /></p>)}
