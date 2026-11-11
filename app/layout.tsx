@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk, Geist_Mono, Chivo, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { site } from "@/lib/content";
+import { ConsentNote } from "@/components/ConsentNote";
 import "./globals.css";
 
 const sans = Schibsted_Grotesk({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -56,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>{children}<ConsentNote /></body>
     </html>
   );
 }

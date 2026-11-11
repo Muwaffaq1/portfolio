@@ -76,10 +76,10 @@ export function Header({ name }: { name: string }) {
         <Link href="/about/">About</Link>
         <Link href="/#contact">Contact</Link>
       </nav>
-      <button type="button" className="motion-btn" onClick={() => setMotionPaused(!paused)} aria-pressed={paused} aria-label={paused ? "Play moving content" : "Pause moving content"}>
+      <button type="button" className="motion-btn" data-track="motion_toggle" onClick={() => setMotionPaused(!paused)} aria-pressed={paused} aria-label={paused ? "Play moving content" : "Pause moving content"}>
         {paused ? "Play" : "Pause"}
       </button>
-      <button type="button" onClick={toggle} aria-label="Switch light or dark">
+      <button type="button" data-track="theme_toggle" onClick={toggle} aria-label="Switch light or dark">
         {light ? "Dark" : "Light"}
       </button>
     </header>

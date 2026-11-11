@@ -137,7 +137,7 @@ export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
             </motion.div>
 
             <motion.div className={s.switches} {...item(pages.length + 2)}>
-              <button type="button" className={s.switch} onClick={onTheme} aria-label={light ? "Switch to dark mode" : "Switch to light mode"}>
+              <button type="button" className={s.switch} data-track="theme_toggle" onClick={onTheme} aria-label={light ? "Switch to dark mode" : "Switch to light mode"}>
                 <span className={s.switchIcon} aria-hidden="true">
                   {light
                     ? <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z" fill="currentColor" /></svg>
@@ -145,7 +145,7 @@ export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
                 </span>
                 {light ? "Dark mode" : "Light mode"}
               </button>
-              <button type="button" className={s.switch} onClick={onPause} aria-pressed={paused} aria-label={paused ? "Play moving content" : "Pause moving content"}>
+              <button type="button" className={s.switch} data-track="motion_toggle" onClick={onPause} aria-pressed={paused} aria-label={paused ? "Play moving content" : "Pause moving content"}>
                 <span className={s.switchIcon} aria-hidden="true">
                   {paused
                     ? <svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7L8 5z" fill="currentColor" /></svg>
@@ -167,6 +167,7 @@ export function MobileMenu({ hidden, light, onTheme, paused, onPause }: Props) {
             animate={{ y: hidden ? 90 : 0, opacity: hidden ? 0 : 1 }}
             onClick={() => setOpen(true)}
             aria-haspopup="dialog"
+            data-track="menu_open"
             aria-expanded={false}
             whileTap={calm ? undefined : { scale: 0.96 }}
           >
