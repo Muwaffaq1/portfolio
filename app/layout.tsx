@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Schibsted_Grotesk, Geist_Mono, Chivo, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Schibsted_Grotesk, Geist_Mono, Chivo, IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
 import { site } from "@/lib/content";
 import { ConsentNote } from "@/components/ConsentNote";
 import "./globals.css";
@@ -8,6 +8,8 @@ const sans = Schibsted_Grotesk({ variable: "--font-sans", subsets: ["latin"], we
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 // Chivo and Arabic appear on only a few screens, so they load when used instead of being preloaded on every page.
 const chivo = Chivo({ variable: "--font-chivo", subsets: ["latin"], weight: ["400", "500", "600", "700"], preload: false });
+// Inter is QuickPay's body font, used only inside the QuickPay prototype.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600"], preload: false });
 const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "600", "700"], preload: false });
 
 const description = "Product designer and design engineer, working remotely. I design products and build them, from the first sketch to production code.";
@@ -50,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${mono.variable} ${chivo.variable} ${arabic.variable}`}
+      className={`${sans.variable} ${mono.variable} ${chivo.variable} ${arabic.variable} ${inter.variable}`}
       style={style}
       suppressHydrationWarning
     >
