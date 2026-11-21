@@ -16,6 +16,7 @@ export type Project = {
   slug: string;
   name: string;
   summary: string;
+  tldr?: string; // a short summary of what I did, shown at the top of the case study
   industry: string;
   year: string;
   status: Status;

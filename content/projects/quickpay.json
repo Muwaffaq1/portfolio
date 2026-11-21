@@ -1,6 +1,7 @@
 {
   "name": "QuickPay",
   "summary": "A wallet and bills app. I audited 105 inconsistent screens and rebuilt them as 91 on one design system.",
+  "tldr": "QuickPay hired me to redesign its wallet and bills app. I audited 105 inconsistent screens, built a design system with 120+ tokens in light and dark, rebuilt the app as 91 screens, and prototyped the Send money flow in code.",
   "industry": "Fintech",
   "year": "’26",
   "status": "client",

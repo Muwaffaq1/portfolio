@@ -32,6 +32,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
           <Link className="cs-back" href="/#work">← All work</Link>
           <h1 className="cs-title">{project.name}</h1>
           <p className="cs-sum">{project.summary}</p>
+          {project.tldr && <p className="cs-tldr"><span>TL;DR</span>{project.tldr}</p>}
         </div>
         <div className="cs-stage">
           <WorkTile project={{ ...project, hasCaseStudy: false, link: undefined }} statusText={project.status ? statusLabel[project.status] : undefined} />

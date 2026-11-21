@@ -249,6 +249,9 @@ a.hint { text-decoration: none; }
 .cs-back { font-size: 13px; color: var(--muted); text-decoration: none; }
 .cs-title { font: 500 32px/1.1 var(--sans); letter-spacing: -.02em; margin: 8px 0 0; }
 .cs-sum { color: var(--muted); margin: 0; font-size: 16px; }
+/* TL;DR: what I did, in two sentences, before anything else */
+.cs-tldr { margin: 20px 0 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--raise); font-size: 16px; line-height: 1.6; max-width: 62ch; }
+.cs-tldr span { display: block; margin-bottom: 4px; font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .cs-stage { margin: 32px 0; max-width: 440px; }
 .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); margin: 0 0 40px; }
 .facts div { padding: 14px 14px 14px 0; min-width: 0; }

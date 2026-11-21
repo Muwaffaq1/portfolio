@@ -1,6 +1,7 @@
 {
   "name": "treeti",
   "summary": "Lending money to friends and family, put in writing with witnesses and reminders. My own app, designed and built by me.",
+  "tldr": "I designed and built treeti, my own app for putting money people lend each other in writing, with witnesses, repayments and private records. It launched on 14 October 2026, testers reshaped eight flows in its first ten days, and 80 people have signed up so far.",
   "industry": "Fintech",
   "year": "’26",
   "status": "live",
@@ -20,6 +21,6 @@
     "role": "Product, design and build",
     "timeline": "Oct 2026 – now (launched 14 Oct)",
     "tools": "Figma, Next.js, Supabase, Cloudflare, Claude Code",
-    "result": "72 people signed up, 23 agreements, ₦549,300 recorded"
+    "result": "80 people signed up; 23 agreements and ₦549,300 recorded in the first three weeks"
   }
 }

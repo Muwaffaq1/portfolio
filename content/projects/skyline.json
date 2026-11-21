@@ -1,6 +1,7 @@
 {
   "name": "Skyline",
   "summary": "A weather app that answers in seconds",
+  "tldr": "I designed and built a weather app around one order, now, next and later, so a visit takes seconds. A rule engine shows only the card that matters, and the rules people rely on are unit-tested.",
   "industry": "App",
   "year": "’26",
   "status": "completed",

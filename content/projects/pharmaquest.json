@@ -1,6 +1,7 @@
 {
   "name": "PharmaQuest",
   "summary": "Gamified practice for the pharmacist qualifying exam, built for a pharmacist preparing for it",
+  "tldr": "I designed and built PharmaQuest for a pharmacist preparing for the PEBC exam: 257 practice questions with every option explained, spaced repetition, and a game layer that rewards showing up. It's live, with progress saved to the cloud.",
   "industry": "Education",
   "year": "’26",
   "status": "live",
